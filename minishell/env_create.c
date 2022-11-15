@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:57:44 by yacis             #+#    #+#             */
-/*   Updated: 2022/11/14 21:14:03 by yacis            ###   ########.fr       */
+/*   Updated: 2022/11/15 12:58:33 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strlen2(char **str)
 	return (i);
 }
 
-void env_create(t_data *data, char **env)
+void	env_create(t_data *data, char **env)
 {
 	int		i;
 	int		j;

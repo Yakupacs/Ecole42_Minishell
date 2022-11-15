@@ -6,11 +6,25 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:02:01 by yacis             #+#    #+#             */
-/*   Updated: 2022/11/14 20:47:23 by yacis            ###   ########.fr       */
+/*   Updated: 2022/11/15 12:58:21 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+void	echo_line_n(t_data *data)
+{
+	int	i;
+
+	i = 2;
+	while (data->read2[i])
+	{
+		printf("%s", data->read2[i]);
+		if (data->read2[i + 1])
+			printf(" ");
+		i++;
+	}
+}
 
 int	ft_n_control(char *str)
 {
@@ -30,16 +44,11 @@ void	echo(t_data *data)
 {
 	int	i;
 
-	if (!(ft_strncmp(data->read2[1], "-n", 2)) && \
+	if (!data->read2[1])
+		printf("\n");
+	else if (!(ft_strncmp(data->read2[1], "-n", 2)) && \
 			ft_n_control(data->read2[1]))
-	{
-		i = 2;
-		while (data->read2[i])
-		{
-			printf("%s", data->read2[i]);
-			i++;
-		}
-	}
+		echo_line_n(data);
 	else
 	{
 		i = 1;
