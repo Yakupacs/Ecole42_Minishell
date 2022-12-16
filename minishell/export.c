@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:18:58 by yacis             #+#    #+#             */
-/*   Updated: 2022/11/15 12:58:40 by yacis            ###   ########.fr       */
+/*   Updated: 2022/11/16 17:44:24 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	export(t_data *data)
 {
-	printf("%s\n", data->av[0]);
+	(void)data;
+	printf("export coming soon...\n");
 }

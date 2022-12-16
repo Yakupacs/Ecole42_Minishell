@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   allocating_lines.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 18:11:29 by yacis             #+#    #+#             */
-/*   Updated: 2022/11/16 18:56:38 by yacis            ###   ########.fr       */
+/*   Created: 2022/11/16 20:33:52 by yacis             #+#    #+#             */
+/*   Updated: 2022/11/16 20:35:30 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int ac, char **av, char **env)
+void	allocating_lines(t_data *data)
 {
-	t_data	*data;
-
-	data = ft_calloc(sizeof(t_data), 1);
-	data->ac = ac;
-	data->av = av;
-	env_create(data, env);
-	while (1)
-	{
-		read_line(data);
-		free(data->read1);
-	}
+	
 }

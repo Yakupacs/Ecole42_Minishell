@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:14:55 by yacis             #+#    #+#             */
-/*   Updated: 2022/11/15 19:46:04 by yacis            ###   ########.fr       */
+/*   Updated: 2022/11/16 20:35:17 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_data
 	char	**env;
 	char	*read1;
 	char	**read2;
+	int		words_count;
 }		t_data;
 
 void	echo(t_data *data);
@@ -46,6 +47,8 @@ void	env_create(t_data *data, char **env);
 void	export(t_data *data);
 void	pwd(void);
 void	read_line(t_data *data);
+int		quote_control(t_data *data, int i);
+void	read_all_lines(t_data *data);
 int		ft_strlen2(char **str);
 
 #endif

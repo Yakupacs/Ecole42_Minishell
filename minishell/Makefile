@@ -6,7 +6,7 @@ RED		=	\033[31m
 
 NAME = minishell 
 
-SRCS = main.c echo.c pwd.c env_get.c env_create.c export.c read_line.c
+SRCS = main.c echo.c pwd.c env_get.c env_create.c export.c read_line.c quote_control.c
 
 OBJS = $(SRCS:.c=.o)
 
