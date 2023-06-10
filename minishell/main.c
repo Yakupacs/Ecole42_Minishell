@@ -12,6 +12,23 @@
 
 #include "minishell.h"
 
+int loop(char **line, char ***lexed)
+{
+    *line = readline("minishell$ ");
+    add_history(*line);
+    
+}
+
 int	main()
 {
+    char    **lexed;
+    char    *line;
+
+    line = NULL;
+    lexed = NULL;
+    while (1)
+    {
+        if (loop(&line, &lexed))
+            continue;
+    }
 }

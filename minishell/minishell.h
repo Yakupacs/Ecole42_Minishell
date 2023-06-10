@@ -22,4 +22,6 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 
+char		**lexer(char *line);
+
 #endif
