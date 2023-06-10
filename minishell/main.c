@@ -12,17 +12,6 @@
 
 #include "minishell.h"
 
-int	main(int ac, char **av, char **env)
+int	main()
 {
-	t_data	*data;
-
-	data = ft_calloc(sizeof(t_data), 1);
-	data->ac = ac;
-	data->av = av;
-	env_create(data, env);
-	while (1)
-	{
-		read_line(data);
-		free(data->read1);
-	}
 }
