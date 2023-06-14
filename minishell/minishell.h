@@ -22,6 +22,29 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 
+typedef struct s_command
+{
+	char				**full_cmd;
+	char				*full_path;
+	int					infile;
+	int					outfile;
+	int					fd[2];
+	struct s_command	*next;
+	struct s_command	*prev;
+	t_infile			*infile_list;
+	t_outfile			*outfile_list;
+	t_here_doc			*here_doc_list;
+	t_append			*append_list;
+	int					pid;
+	int					is_only_redir;
+}				t_command;
+
+typedef struct s_prompt
+{
+	t_command	*cmds;
+	char		**path;
+}				t_prompt;
+
 char		**lexer(char *line);
 
 #endif

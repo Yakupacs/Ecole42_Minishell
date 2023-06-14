@@ -5,6 +5,6 @@
 # include <stdlib.h>
 # include <../minishell.h>
 
-void    pwd(void);
+void    pwd_builtin(void);
 
 #endif

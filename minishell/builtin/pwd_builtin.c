@@ -1,6 +1,6 @@
 #include "builtin.h"
 
-void    pwd(void)
+void    pwd_builtin(void)
 {
     char    *path;
 

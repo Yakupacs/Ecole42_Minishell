@@ -16,13 +16,20 @@ int loop(char **line, char ***lexed)
 {
     *line = readline("minishell$ ");
     add_history(*line);
-    
+    *lexed = lexer(*line);
+    if (!*lexed)
+    {
+        free(*line);
+        return (1);
+    }
+    return (0);
 }
 
 int	main()
 {
-    char    **lexed;
-    char    *line;
+    char        **lexed;
+    char        *line;
+    t_prompt    *parsed;
 
     line = NULL;
     lexed = NULL;
@@ -30,5 +37,6 @@ int	main()
     {
         if (loop(&line, &lexed))
             continue;
+        parsed = parser(lexed);
     }
 }
