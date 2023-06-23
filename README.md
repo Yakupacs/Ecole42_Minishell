@@ -23,4 +23,5 @@
 ##### Executor, parser tarafından oluşturulan dilbilgisi ağacını alır ve bu ağaçtaki her komut için bir işlem oluşturur. Bash shell için executor, komutları işletmek ve sonuçlarını elde etmekle sorumludur. Executor, komutları işletirken, değişkenleri değerlendirir, dosya işlemlerini gerçekleştirir, diğer programları çalıştırır ve gerektiğinde çıktıyı bir sonraki komuta yönlendirmek için boruları (pipe) oluşturur. Executor ayrıca koşullu ifadeleri değerlendirir, döngülerin döngü koşullarını kontrol eder ve program akışını yönetir.
 
 ## 2. Çalışma Yapısı
-##### I. Yapı
+
+### I. Yapı
