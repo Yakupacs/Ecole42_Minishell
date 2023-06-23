@@ -4,16 +4,16 @@
 
 ### İçindekiler
 
-1. [Shell Adımlar](#1-shell-adımlar)
+1. [Shell Program Yapıları](#1-shell-program-yapıları)
      1. [Lexer](#11-lexer)
      2. [Parser](#12-parser)
      3. [Executor](#13-executor)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
-     1. [Yapı](#21-yapı)
+     1. [Akış Şeması](#21-akış-şeması)
 
 <br>
 
-## 1. Shell Adımlar
+## 1. Shell Program Yapıları
 
 
 ### 1.1 Lexer
@@ -30,7 +30,7 @@
 ## 2. Çalışma Yapısı
 
 
-### 2.1 Yapı
+### 2.1 Akış Şeması
 
 ![image](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/95882bea-cef8-4113-9354-8da56ccaaa55)
 
