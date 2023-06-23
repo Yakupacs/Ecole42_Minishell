@@ -10,6 +10,7 @@
      3. [Executor](#13-executor)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
+     2. [Fonksiyonlar](#22-fonksiyonlar)
 
 <br>
 
@@ -42,3 +43,37 @@
 
 ![image](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/95882bea-cef8-4113-9354-8da56ccaaa55)
 
+### 2.2 Fonksiyonlar
+
+| Fonksiyon  | Kütüphane | İşlev |
+| ------------- | ------------- | ------------- |
+| printf  | <stdio.h>  | Çıktıyı stdout'a yazdırır. |
+| malloc  | <stdlib.h>  | Dinamik bellek ayırır. |
+| free  | <stdlib.h>  | Dinamik belleği serbest bırakır. |
+| read  | <unistd.h>  | Veriyi okur. |
+| write  | <unistd.h>  | Veriyi yazar. |
+| open  | <fcntl.h>  | Dosyayı açar. |
+| close  | <unistd.h>  | Dosyayı kapatır. |
+| fork  | <unistd.h>  | Yeni bir child process oluşturur. |
+| wait  | <sys/wait.h>  | Bir child process işleminin tamamlanmasını bekler. |
+| waitpid  | <sys/wait.h>  | Belirli bir child process işleminin tamamlanmasını bekler. |
+| wait3  | <sys/wait.h>  | Bir child process işleminin tamamlanmasını bekler. |
+| wait4  | <sys/wait.h>  | Belirli bir child process işleminin tamamlanmasını bekler. |
+| signal  | <signal.h>  | Sinyal yakalayıcıyı ayarlar. |
+| kill  | <signal.h>  | İşlemi sonlandırıp sinyal gönderir. |
+| exit  | <stdlib.h>  | Programda çıkış yapar. |
+| getcwd  | <unistd.h>  | Geçerli çalışma dizinini alır. |
+| chdir  | <unistd.h>  | Çalışma dizinini değiştirir. |
+| stat  | <sys/stat.h>  | Dosya veya dizin hakkında bilgi alır. |
+| lstat  | <sys/stat.h>  | Sembolik bağlantının kendisi hakkında bilgi alır. |
+| fstat  | <sys/stat.h>  | Dosya tanımlayıcısına bağlı dosya hakkında bilgi alır. |
+| execve  | <unistd.h>  | Yeni bir program yürütür. |
+| dup  | <unistd.h>  | Dosya tanımlayıcısını kopyalar. |
+| dup2  | <unistd.h>  | Dosya tanımlayıcısını belirtilen dosya tanımlayıcısına kopyalar. |
+| pipe  | <unistd.h>  | İki yönlü bir iletişim kanalı (pipe) oluşturur. |
+| opendir  | <dirent.h>  | Dizin akışını açar. |
+| readdir  | <dirent.h>  | Bir sonraki dizin girdisini okur. |
+| closedir  | <dirent.h>  | Dizin akışını kapatır. |
+| strerror  | <string.h>  | Hata numarasına karşılık gelen bir hata açıklaması döndürür. |
+| errno  | <errno.h>  | Hata kodunu tutan bir değişken. |
+| termcap  | <term.h>  | Terminal özelliklerini elde eder. |
