@@ -31,3 +31,6 @@
 
 
 ### 2.1 Yapı
+
+![image](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/95882bea-cef8-4113-9354-8da56ccaaa55)
+
