@@ -10,6 +10,7 @@
      3. [Executor](#13-executor)
      4. [Pipe](#14-pipe)
      5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
+     6. [Pid](#16-pid)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
@@ -50,6 +51,18 @@ ls | grep ".txt"
 - Her bir komut çalıştırıldığında, çıkış durumu bir tam sayı değeriyle temsil edilir.
 - Başarı durumunda genellikle 0 değeri döndürülür, hata durumunda ise farklı bir değer döndürülür.
 - "$?" değişkeni, en son çalıştırılan komutun çıkış durumunu içerir.
+
+### 1.6 Pid
+- PID, çalışan bir işlemin benzersiz kimliğini temsil eder.
+- Her işlem, işletim sistemi tarafından PID ile tanımlanan benzersiz bir numaraya sahiptir.
+- PID, bir işlemin kimliğini takip etmek, işlemler arasında iletişim kurmak veya işlemi kontrol etmek için kullanılabilir.
+```
+pid_t pid = getpid();
+```
+- Bir işlemi sonlandırmak veya durdurmak istediğinizde PID'ye ihtiyaç duyarsınız. Ayrıca belirli bir işlemi izlemek veya diğer işlemlerle etkileşime geçmek için PID kullanabilirsiniz.
+- Bir işlem başlamadıysa "pid" numarasının değeri "-1" olarak ayarlanır.
+
+<br>
 
 ## 2. Çalışma Yapısı
 
