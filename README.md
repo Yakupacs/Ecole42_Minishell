@@ -10,7 +10,7 @@
      3. [Executor](#13-executor)
      4. [Pipe](#14-pipe)
      5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
-     6. [Pid](#16-pid)
+     6. [PID](#16-pid)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
