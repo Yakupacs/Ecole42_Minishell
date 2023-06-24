@@ -14,6 +14,9 @@
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
+3. [Redirections - Yönlendirmeler](#3-redirections)
+     1. [Giriş Yönlendirme '<'](#31-giriş-yönlendirme)
+     2. [Çıkış Yönlendirme '>'](#32-çıkış-yönlendirme)
 
 <br>
 
@@ -105,3 +108,42 @@ pid_t pid = getpid();
 | strerror  | <string.h>  | Hata numarasına karşılık gelen bir hata açıklaması döndürür. |
 | errno  | <errno.h>  | Hata kodunu tutan bir değişken. |
 | termcap  | <term.h>  | Terminal özelliklerini elde eder. |
+
+<br>
+
+## 3. Redirections - Yönlendirmeler
+
+### 3.1 Giriş Yönlendirme
+
+- "<" sembolü, bir dosyadan giriş almak için kullanılan bir yönlendirme işlemidir. Bu işlem, bir komutun girişini, belirtilen bir dosyanın içeriğiyle değiştirir.
+- Bir komut çalıştırıldığında, genellikle kullanıcının klavyeden giriş yapması beklenir. Ancak '<' sembolü kullanılarak, komutun girişi belirli bir dosyadan alınabilir.
+- Bu, komutun klavyeden giriş almak yerine, belirli bir dosyayı giriş olarak kullanmasını sağlar.
+
+```
+sort < girdi.txt
+```
+- Örneğin aşağıdaki komutta 'sort' komutunu çalıştırırken girişi "girdi.txt" adlı dosyadan alır. Yani, girdi.txt dosyasının içeriği sort komutunun girişi olarak kullanılır.
+
+
+### 3.2 Çıkış Yönlendirme
+- '>' sembolü, bir komutun çıktısını belirtilen bir dosyaya yönlendirmek için kullanılan bir yönlendirme işlemidir.
+- Bu işlem, komutun çıktısını bir dosyaya yazarak, komutun normalde ekrana veya standart çıktıya yazdığı çıktıyı dosyaya kaydetmek için kullanılır.
+
+```
+ls > dosya.txt
+```
+- Bu komut, ls komutunu çalıştırırken, çıktısını dosya.txt adlı bir dosyaya yönlendirir. 
+- Yani, ls komutunun normalde ekrana yazdığı dosya ve dizin listesi, bu sefer dosya.txt adlı dosyaya yazılır.
+
+
+
+
+
+
+
+
+
+
+
+
+
