@@ -9,7 +9,7 @@
      2. [Parser](#12-parser)
      3. [Executor](#13-executor)
      4. [Pipe](#14-pipe)
-     5. [Çıkış Durumu $?](#15-çıkış-durumu)
+     5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
