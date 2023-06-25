@@ -67,19 +67,30 @@ pid_t pid = getpid();
 - Bir işlem başlamadıysa "pid" numarasının değeri "-1" olarak ayarlanır.
 
 ### 1.7 ENV
-- Çevre değişkenlerini yönetmek ve kullanmak için kullanılan bir yapıdır.
-- Bir çevre değişkeni, bir programın çalışma sürecinde etkileyebileceği, genellikle metin tabanlı bir değerdir.
-- Bu değerler, kabuk oturumları veya kabuk betikleri aracılığıyla tanımlanır ve çeşitli programlar tarafından kullanılabilir.
-- "env" komutu, mevcut oturumdaki çevre değişkenlerini listelemek veya yeni çevre değişkenlerini tanımlamak için kullanılabilir.
+- Environment variables (Çevresel Değişkenler) sistemdeki programlar ve işlemler tarafından kullanılan değerlerdir.
+- Bu değişkenler, çalışan programlara ve komutlara bazı bilgiler sağlamak için kullanılır.
+- Bash, bu değişkenlere erişim sağlamak için çeşitli yöntemler sunar.
+- Environment variables, anahtar-değer (key-value) çiftleridir.
+- Anahtarlar değişkenlere erişmek için kullanılan isimlerdir ve değerler ise bu değişkenlerin taşıdığı bilgidir.
+- Örneğin, bir "PATH" değişkeni, sistemdeki programların bulunduğu dizinlerin bir listesini içerebilir.
+- Bir değişken tanımlamak için:
 ```
-env
+export MY_VARIABLE="Hello, World"
 ```
-- Mevcut çevre değişkenlerini ve değerlerini bir liste şeklinde görüntülemek için yukarıdaki komut çalıştırılabilir.
+değişkenin adını belirtip buna bir değer atamanız gerekir. Bash'te bu işlem için genellikle 'export' komutu kullanılır.
+- Bir değişkene erişmek için:
 ```
-env DEĞİŞKEN_ADI="değer" komut
+echo $MY_VARIABLE
 ```
-- Yukarıdaki komutta, "DEĞİŞKEN_ADI" adında yeni bir çevre değişkeni tanımlanır ve ona "değer" ataması yapılır. Ardından, "komut" bölümü, bu yeni çevre değişkenini kullanabilecek bir komutu temsil eder.
-<br>
+'$' işaretini kullanarak değişken adını çağırabiliriz.
+- Bazı environment variables, sistem tarafından otomatik olarak tanımlanır ve kullanılabilir. Örneğin:
+     - 'PATH': Sistemdeki programların bulunduğu dizinlerin listesi
+     - 'HOME': Kullanıcının ana dizini
+     - 'USER': Kullanıcının adı
+- Bash, çeşitli öntanımlı environment variables sağlar. Örneğin:
+     - 'PWD': Geçerli çalışma dizini
+     - 'SHELL': Kullanılan kabul (shell) programının adı
+     - 'LANG': Dil ayarı
 
 ## 2. Çalışma Yapısı
 
