@@ -11,6 +11,7 @@
      4. [Pipe](#14-pipe)
      5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
      6. [PID](#16-pid)
+     7. [ENV](#17-env)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
@@ -65,6 +66,19 @@ pid_t pid = getpid();
 - Bir işlemi sonlandırmak veya durdurmak istediğinizde PID'ye ihtiyaç duyarsınız. Ayrıca belirli bir işlemi izlemek veya diğer işlemlerle etkileşime geçmek için PID kullanabilirsiniz.
 - Bir işlem başlamadıysa "pid" numarasının değeri "-1" olarak ayarlanır.
 
+### 1.7 ENV
+- Çevre değişkenlerini yönetmek ve kullanmak için kullanılan bir yapıdır.
+- Bir çevre değişkeni, bir programın çalışma sürecinde etkileyebileceği, genellikle metin tabanlı bir değerdir.
+- Bu değerler, kabuk oturumları veya kabuk betikleri aracılığıyla tanımlanır ve çeşitli programlar tarafından kullanılabilir.
+- "env" komutu, mevcut oturumdaki çevre değişkenlerini listelemek veya yeni çevre değişkenlerini tanımlamak için kullanılabilir.
+```
+env
+```
+- Mevcut çevre değişkenlerini ve değerlerini bir liste şeklinde görüntülemek için yukarıdaki komut çalıştırılabilir.
+```
+env DEĞİŞKEN_ADI="değer" komut
+```
+- Yukarıdaki komutta, "DEĞİŞKEN_ADI" adında yeni bir çevre değişkeni tanımlanır ve ona "değer" ataması yapılır. Ardından, "komut" bölümü, bu yeni çevre değişkenini kullanabilecek bir komutu temsil eder.
 <br>
 
 ## 2. Çalışma Yapısı
