@@ -26,7 +26,7 @@
 
 ### 1.1 Lexer
 - Lexer, metin girdisini tararken belirli dilbilgisi kurallarına dayalı olarak metni analiz eder.
-- Bash shell için lexer, girilen metni parçalara ayırır ve her parçayı birer "token" olarak tanımlar.
+- Bash shell için lexer, girilen metni parçalara ayırır ve her parçayı birer **"token"** olarak tanımlar.
 - Tokenler, komutlar, argümanlar, değişkenler, operatörler vb. gibi dilbilgisi yapılarını temsil eder.
 - Lexer, metindeki karakterleri okur, bu karakterlerin anlamsal gruplara ayrılmasını sağlar ve daha sonra bu tokenlerin bir listesini oluşturur.
 
@@ -44,7 +44,7 @@
 ### 1.4 Pipe
 - Bir işlemin çıktısını doğrudan başka bir işlemin girişine yönlendirmek için kullanılır.
 - Birden çok işlemi bir araya getirerek verimli bir şekilde çalışmalarını sağlar.
-- Pipe, dikey çubuk " | " sembolü ile temsil edilir.
+- Pipe, dikey çubuk '|' sembolü ile temsil edilir.
 ```
 ls | grep ".txt"
 ```
@@ -57,7 +57,7 @@ ls | grep ".txt"
 - "$?" değişkeni, en son çalıştırılan komutun çıkış durumunu içerir.
 
 ### 1.6 Pid
-- PID, çalışan bir işlemin benzersiz kimliğini temsil eder.
+- PID, çalışan bir işlemin **benzersiz kimliğini** temsil eder.
 - Her işlem, işletim sistemi tarafından PID ile tanımlanan benzersiz bir numaraya sahiptir.
 - PID, bir işlemin kimliğini takip etmek, işlemler arasında iletişim kurmak veya işlemi kontrol etmek için kullanılabilir.
 ```
@@ -70,7 +70,7 @@ pid_t pid = getpid();
 - Environment variables (Çevresel Değişkenler) sistemdeki programlar ve işlemler tarafından kullanılan değerlerdir.
 - Bu değişkenler, çalışan programlara ve komutlara bazı bilgiler sağlamak için kullanılır.
 - Bash, bu değişkenlere erişim sağlamak için çeşitli yöntemler sunar.
-- Environment variables, anahtar-değer (key-value) çiftleridir.
+- Environment variables, **anahtar-değer (key-value)** çiftleridir.
 - Anahtarlar değişkenlere erişmek için kullanılan isimlerdir ve değerler ise bu değişkenlerin taşıdığı bilgidir.
 - Örneğin, bir "PATH" değişkeni, sistemdeki programların bulunduğu dizinlerin bir listesini içerebilir.
 - Bir değişken tanımlamak için:
@@ -82,15 +82,15 @@ değişkenin adını belirtip buna bir değer atamanız gerekir. Bash'te bu işl
 ```
 echo $MY_VARIABLE
 ```
-'$' işaretini kullanarak değişken adını çağırabiliriz.
+**'$'** işaretini kullanarak değişken adını çağırabiliriz.
 - Bazı environment variables, sistem tarafından otomatik olarak tanımlanır ve kullanılabilir. Örneğin:
-     - 'PATH': Sistemdeki programların bulunduğu dizinlerin listesi
-     - 'HOME': Kullanıcının ana dizini
-     - 'USER': Kullanıcının adı
+     - **'PATH'**: Sistemdeki programların bulunduğu dizinlerin listesi
+     - **'HOME'**: Kullanıcının ana dizini
+     - **'USER'**: Kullanıcının adı
 - Bash, çeşitli öntanımlı environment variables sağlar. Örneğin:
-     - 'PWD': Geçerli çalışma dizini
-     - 'SHELL': Kullanılan kabul (shell) programının adı
-     - 'LANG': Dil ayarı
+     - **'PWD'**: Geçerli çalışma dizini
+     - **'SHELL'**: Kullanılan kabul (shell) programının adı
+     - **'LANG'**: Dil ayarı
 
 ## 2. Çalışma Yapısı
 
