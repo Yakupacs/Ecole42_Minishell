@@ -11,7 +11,7 @@
      4. [Pipe](#14-pipe)
      5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
      6. [PID](#16-pid)
-     7. [ENV](#17-env)
+     7. [Environments (ENV)](#17-env)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
