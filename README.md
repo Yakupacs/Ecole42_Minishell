@@ -8,7 +8,7 @@
      1. **[Lexer](#11-lexer)**
      2. **[Parser](#12-parser)**
      3. **[Executor](#13-executor)**
-     4. **[Pipe](#14-pipe)**
+     4. **[PIPE '|'](#14-pipe)**
      5. **[AND Operatörü (&&)](#15-and-operatörü)**
      6. **[Çıkış Durumu ($?)](#16-çıkış-durumu)**
      7. **[PID](#17-pid)**
