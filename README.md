@@ -10,13 +10,14 @@
      3. **[Executor](#13-executor)**
      4. **[PIPE '|'](#14-pipe)**
      5. **[AND Operatörü (&&)](#15-and-operatörü)**
-     6. **[Çıkış Durumu ($?)](#16-çıkış-durumu)**
-     7. **[PID](#17-pid)**
-     8. **[Environments (ENV)](#18-env)**
-     9. **[Export](#19-export)**
-     10. **[Declare](#110-declare)**
-     11. **[Echo](#111-echo)**
-     12. **[File Descriptors](#112-file-descriptors)**
+     6. **[OR Operatörü (||)](#16-or-operatörü)**
+     7. **[Çıkış Durumu ($?)](#17-çıkış-durumu)**
+     8. **[PID](#18-pid)**
+     9. **[Environments (ENV)](#19-env)**
+     10. **[Export](#110-export)**
+     11. **[Declare](#111-declare)**
+     12. **[Echo](#112-echo)**
+     13. **[File Descriptors](#113-file-descriptors)**
 2. **[Çalışma Yapısı](#2-çalışma-yapısı)**
      1. **[Akış Şeması](#21-akış-şeması)**
      2. **[Fonksiyonlar](#22-fonksiyonlar)**
@@ -93,7 +94,19 @@ git add . && git commit -m "commit" && git push
 
 <br>
 
-### 1.6 Çıkış Durumu
+### 1.6 OR Operatörü
+- Komut satırında **'||'** operatörü yalnızca soldaki ifade başarısız ise sağındakini çalıştırır.
+```
+make || make fcleal
+```
+```
+gcc deneme.c || echo "Failed."
+```
+
+
+<br>
+
+### 1.7 Çıkış Durumu
 - Her bir komut çalıştırıldığında, çıkış durumu bir tam sayı değeriyle temsil edilir.
 - Başarı durumunda genellikle 0 değeri döndürülür, hata durumunda ise farklı bir değer döndürülür.
 - "$?" değişkeni, en son çalıştırılan komutun çıkış durumunu içerir.
@@ -115,7 +128,7 @@ $?
 
 <br>
 
-### 1.7 Pid
+### 1.8 Pid
 - PID, çalışan bir işlemin **benzersiz kimliğini** temsil eder.
 - Her işlem, işletim sistemi tarafından PID ile tanımlanan benzersiz bir numaraya sahiptir.
 - PID, bir işlemin kimliğini takip etmek, işlemler arasında iletişim kurmak veya işlemi kontrol etmek için kullanılabilir.
@@ -127,7 +140,7 @@ pid_t pid = getpid();
 
 <br>
 
-### 1.8 ENV
+### 1.9 ENV
 - Environment variables (Çevresel Değişkenler) sistemdeki programlar ve işlemler tarafından kullanılan değerlerdir.
 - Bu değişkenler, çalışan programlara ve komutlara bazı bilgiler sağlamak için kullanılır.
 - Bash, bu değişkenlere erişim sağlamak için çeşitli yöntemler sunar.
@@ -159,7 +172,7 @@ unset MY_VARIABLE
 
 <br>
 
-### 1.9 Export
+### 1.10 Export
 ```
 export
 ```
@@ -175,7 +188,7 @@ export my_var
 
 <br>
 
-### 1.10 Declare
+### 1.11 Declare
 - **"declare"** komutu, değişkenlerin tanımlanması, türü belirlenmesi ve özelliklerinin atanması için kullanılır.
 ```
 declare [options] variable=value
@@ -207,7 +220,7 @@ declare -f my_function
 
 <br>
 
-### 1.11 Echo
+### 1.12 Echo
 - **'echo'**, bir metni ya da değişkenin değerini ekrana yazdırmak için kullanılan bir komuttur.
 - **'-n'** seçeneği ise çıktının sonuna bir satır atlama karakteri (\n) eklememeyi sağlar.
 ```
@@ -223,7 +236,7 @@ echo -n "Hello, " && echo "World"
 
 <br>
 
-### 1.12 File Descriptors
+### 1.13 File Descriptors
 - Bash kabuğunda kullanılan dosya tanımlayıcıları (file descriptors) bir sürecin giriş, çıkış ve hata akışlarını yönlendirmek için kullanılan sayısal değerlerdir.
 - İlk 3 file descriptor OS'a ayrılmıştır, gerisini kullanıcı doldurur.
 
