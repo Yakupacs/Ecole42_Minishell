@@ -97,6 +97,7 @@ unset MY_VARIABLE
      - **'PWD'**: Geçerli çalışma dizini
      - **'SHELL'**: Kullanılan kabul (shell) programının adı
      - **'LANG'**: Dil ayarı
+
 ### 1.8 Export
 - **"export"** komutu, bir değişkeni kabuk ortamına aktarmak için kullanılır.
 - Bir değişkeni **"export"** ettiğinizde, bu değişken ve değeri, alt kabuk süreçlerine aktarılır ve bu süreçlerde erişilebilir hale gelir.
@@ -105,10 +106,33 @@ unset MY_VARIABLE
 
 ### 1.9 Declare
 - **"declare"** komutu, değişkenlerin tanımlanması, türü belirlenmesi ve özelliklerinin atanması için kullanılır.
+```
+declare [options] variable=value
+```
 - Değişkenlerin türünü belirleyebilirsiniz. Örneğin, **"-i"** seçeneğiyle bir değişkeni tamsayı (integer) olarak tanımlayabilirsiniz.
 - Değişkenlere özel nitelikler (readonly, local vb.) atayabilirsiniz.
 - **"declare"** komutu, sadece tanımlandığı kabuk oturumu veya kabuk betiği içinde geçerli olan değişkenler oluşturmanıza olanak sağlar.
 - Yani, alt kabuk süreçlerinde geçerli olmazlar.
+```
+declare -i num=10
+```
+- 'num' değişkeni tamsayı olarak tanımlanır.
+```
+declare -r readonly_var="Hello"
+```
+- 'readonly_var' değişkeni salt okunur olarak tanımlanır.
+```
+declare -x exported_var="World"
+```
+- 'exported_var' değişkeni kabuk ortamına aktarılır.
+```
+declare -a my_array=(1 2 3)
+```
+- 'my_array' değişkeni dizi olarak tanımlanır.
+```
+declare -f my_function
+```
+- 'my_function' isimli bir işlev tanımlanır.
 
 ## 2. Çalışma Yapısı
 
