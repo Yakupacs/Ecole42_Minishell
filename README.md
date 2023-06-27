@@ -4,23 +4,23 @@
 
 ### İçindekiler
 
-1. [Shell Program Yapıları](#1-shell-program-yapıları)
-     1. [Lexer](#11-lexer)
-     2. [Parser](#12-parser)
-     3. [Executor](#13-executor)
-     4. [Pipe](#14-pipe)
-     5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
-     6. [PID](#16-pid)
-     7. [Environments (ENV)](#17-env)
-     8. [Export](#18-export)
-     9. [Declare](#19-declare)
-     10. [Echo](#110-echo)
-2. [Çalışma Yapısı](#2-çalışma-yapısı)
-     1. [Akış Şeması](#21-akış-şeması)
-     2. [Fonksiyonlar](#22-fonksiyonlar)
-3. [Redirections - Yönlendirmeler](#3-redirections)
-     1. [Giriş Yönlendirme '<'](#31-giriş-yönlendirme)
-     2. [Çıkış Yönlendirme '>'](#32-çıkış-yönlendirme)
+1. **[Shell Program Yapıları](#1-shell-program-yapıları)**
+     1. **[Lexer](#11-lexer)**
+     2. **[Parser](#12-parser)**
+     3. **[Executor](#13-executor)**
+     4. **[Pipe](#14-pipe)**
+     5. **[Çıkış Durumu ($?)](#15-çıkış-durumu)**
+     6. **[PID](#16-pid)**
+     7. **[Environments (ENV)](#17-env)**
+     8. **[Export](#18-export)**
+     9. **[Declare](#19-declare)**
+     10. **[Echo](#110-echo)**
+2. **[Çalışma Yapısı](#2-çalışma-yapısı)**
+     1. **[Akış Şeması](#21-akış-şeması)**
+     2. **[Fonksiyonlar](#22-fonksiyonlar)**
+3. **[Redirections - Yönlendirmeler](#3-redirections)**
+     1. **[Giriş Yönlendirme '<'](#31-giriş-yönlendirme)**
+     2. **[Çıkış Yönlendirme '>'](#32-çıkış-yönlendirme)**
 
 <br>
 
