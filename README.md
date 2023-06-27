@@ -99,10 +99,18 @@ unset MY_VARIABLE
      - **'LANG'**: Dil ayarı
 
 ### 1.8 Export
-- **"export"** komutu, bir değişkeni kabuk ortamına aktarmak için kullanılır.
+```
+export
+```
+- **"export"** komutu, bir değişkeni kabuk ortamına (environment) aktarmak için kullanılır.
 - Bir değişkeni **"export"** ettiğinizde, bu değişken ve değeri, alt kabuk süreçlerine aktarılır ve bu süreçlerde erişilebilir hale gelir.
 - "export" komutu, genellikle çevre değişkenlerini (örneğin, PATH, HOME) veya kullanıcı tanımlı değişkenleri alt kabuk süreçlerinde kullanılabilir hale getirmek için kullanılır.
 - Aktarılan değişkenler, alt kabuk süreçlerinde değiştirilebilir ve bu değişiklikler ebeveyn kabuk sürecini etkilemez. Yani, alt kabuk süreçlerinde yapılan değişiklikler yalnızca o süreçleri etkiler.
+```
+my_var="Hello"
+export my_var
+```
+- Yukarıdaki örnekte, "my_var" adında bir değişken oluşturulur ve daha sonra "export" komutuyla kabuk ortamına aktarılır. Bu "my_var" değişkeninin alt kabuk süreçlerinde de erişilebilir hale gelmesini sağlar.
 
 ### 1.9 Declare
 - **"declare"** komutu, değişkenlerin tanımlanması, türü belirlenmesi ve özelliklerinin atanması için kullanılır.
