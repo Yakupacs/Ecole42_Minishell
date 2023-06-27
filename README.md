@@ -177,6 +177,8 @@ echo -n "Hello, " && echo "World"
 - **'&&'** operatörü Bash kabuğunda kullanılan bir mantıksal operatördür ve ardışık komutları birleştirmek için kullanılır.
 
 ### 1.11 File Descriptors
+- Bash kabuğunda kullanılan dosya tanımlayıcıları (file descriptors) bir sürecin giriş, çıkış ve hata akışlarını yönlendirmek için kullanılan sayısal değerlerdir.
+- İlk 3 file descriptor OS'a ayrılmıştır, gerisini kullanıcı doldurur.
 
 #### 0: Standart Giriş (stdin):
 - Standart giriş, bir sürece veri sağlayan mekanizmadır. Genellikle klavye veya başka bir süreç tarafından sağlanan girişe karşılık gelir.
