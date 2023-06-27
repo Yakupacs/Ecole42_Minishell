@@ -27,6 +27,7 @@
 
 ## 1. Shell Program Yapıları
 
+<br>
 
 ### 1.1 Lexer
 - Lexer, metin girdisini tararken belirli dilbilgisi kurallarına dayalı olarak metni analiz eder.
@@ -52,16 +53,22 @@ OPERATOR: "*"
  
 *INTEGER: "2"*
 
+<br>
+
 ### 1.2 Parser
 - Parser, lexer tarafından oluşturulan token listesini alır ve bu tokenlerin belirli bir dilbilgisi yapısını takip ettiğini kontrol eder.
 - Parser, dilbilgisi kurallarını kullanarak tokenleri işler, onları sözdizimsel olarak doğru bir şekilde sıralar ve dilin gramerine uygun bir ağaç yapısı oluşturur.
 - Bash shell için parser, komutların doğru bir şekilde düzenlenmesini, argümanların ve seçeneklerin doğru yerleştirilmesini ve işaretçilerin (örneğin; ifadelerin bitişini veya döngülerin başlangıcını belirten belirteçler) doğru kullanılmasını kontrol eder.
+
+<br>
 
 ### 1.3 Executor
 - Executor, parser tarafından oluşturulan dilbilgisi ağacını alır ve bu ağaçtaki her komut için bir işlem oluşturur.
 - Bash shell için executor, komutları işletmek ve sonuçlarını elde etmekle sorumludur.
 - Executor, komutları işletirken, değişkenleri değerlendirir, dosya işlemlerini gerçekleştirir, diğer programları çalıştırır ve gerektiğinde çıktıyı bir sonraki komuta yönlendirmek için boruları (pipe) oluşturur.
 - Executor ayrıca koşullu ifadeleri değerlendirir, döngülerin döngü koşullarını kontrol eder ve program akışını yönetir.
+
+<br>
 
 ### 1.4 Pipe
 - Bir işlemin çıktısını doğrudan başka bir işlemin girişine yönlendirmek için kullanılır.
@@ -73,10 +80,14 @@ ls | grep ".txt"
 - Bu komut "ls" komutunun çıktısındaki ".txt" uzantısına sahip olan dosyaları filtrelemek için "grep" komutunu kullanılır.
 - "ls" komutu dosya listesini üretir ve bu çıktı "grep" komutuna geçirilir. Sonuç olarak, yalnızca ".txt" uzantısına sahip dosyalar ekrana yazdırılır.
 
+<br>
+
 ### 1.5 Çıkış Durumu
 - Her bir komut çalıştırıldığında, çıkış durumu bir tam sayı değeriyle temsil edilir.
 - Başarı durumunda genellikle 0 değeri döndürülür, hata durumunda ise farklı bir değer döndürülür.
 - "$?" değişkeni, en son çalıştırılan komutun çıkış durumunu içerir.
+
+<br>
 
 ### 1.6 Pid
 - PID, çalışan bir işlemin **benzersiz kimliğini** temsil eder.
@@ -87,6 +98,8 @@ pid_t pid = getpid();
 ```
 - Bir işlemi sonlandırmak veya durdurmak istediğinizde PID'ye ihtiyaç duyarsınız. Ayrıca belirli bir işlemi izlemek veya diğer işlemlerle etkileşime geçmek için PID kullanabilirsiniz.
 - Bir işlem başlamadıysa "pid" numarasının değeri "-1" olarak ayarlanır.
+
+<br>
 
 ### 1.7 ENV
 - Environment variables (Çevresel Değişkenler) sistemdeki programlar ve işlemler tarafından kullanılan değerlerdir.
@@ -118,6 +131,8 @@ unset MY_VARIABLE
      - **'SHELL'**: Kullanılan kabul (shell) programının adı
      - **'LANG'**: Dil ayarı
 
+<br>
+
 ### 1.8 Export
 ```
 export
@@ -131,6 +146,8 @@ my_var="Hello"
 export my_var
 ```
 - Yukarıdaki örnekte, "my_var" adında bir değişken oluşturulur ve daha sonra "export" komutuyla kabuk ortamına aktarılır. Bu "my_var" değişkeninin alt kabuk süreçlerinde de erişilebilir hale gelmesini sağlar.
+
+<br>
 
 ### 1.9 Declare
 - **"declare"** komutu, değişkenlerin tanımlanması, türü belirlenmesi ve özelliklerinin atanması için kullanılır.
@@ -161,7 +178,9 @@ declare -a my_array=(1 2 3)
 declare -f my_function
 ```
 - 'my_function' isimli bir işlev tanımlanır.
- 
+
+<br>
+
 ### 1.10 Echo
 - **'echo'**, bir metni ya da değişkenin değerini ekrana yazdırmak için kullanılan bir komuttur.
 - **'-n'** seçeneği ise çıktının sonuna bir satır atlama karakteri (\n) eklememeyi sağlar.
@@ -175,6 +194,8 @@ echo -n "Hello, " && echo "World"
 ```
 - Yukarıdaki örnekte, **"-n"** seçeneği kullanılarak ilk "echo" komutunda satır atlama karakteri devre dışı bırakılır. İkinci "echo" komutu ise satır atlama karakteriyle birlikte çalışır ve çıktı olarak "Hello, World!" ifadesini görürürüz.
 - **'&&'** operatörü Bash kabuğunda kullanılan bir mantıksal operatördür ve ardışık komutları birleştirmek için kullanılır.
+
+<br>
 
 ### 1.11 File Descriptors
 - Bash kabuğunda kullanılan dosya tanımlayıcıları (file descriptors) bir sürecin giriş, çıkış ve hata akışlarını yönlendirmek için kullanılan sayısal değerlerdir.
@@ -211,11 +232,17 @@ command_not_found 2> error.log
 ```
 - Yukarıdaki komut, mevcut olmayan bir komutu çalıştırmaya çalışır ve oluşan hata mesajını "error.log" dosyasına yazar. Standart hata (stderr), dosyaya yönlendirilerek hatalar kaydedilir.
 
+<br>
+
 ## 2. Çalışma Yapısı
+
+<br>
 
 ### 2.1 Akış Şeması
 
 ![image](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/95882bea-cef8-4113-9354-8da56ccaaa55)
+
+<br>
 
 ### 2.2 Fonksiyonlar
 
@@ -256,6 +283,8 @@ command_not_found 2> error.log
 
 ## 3. Redirections - Yönlendirmeler
 
+<br>
+
 ### 3.1 Giriş Yönlendirme
 
 - "<" sembolü, bir dosyadan giriş almak için kullanılan bir yönlendirme işlemidir. Bu işlem, bir komutun girişini, belirtilen bir dosyanın içeriğiyle değiştirir.
@@ -267,6 +296,7 @@ sort < girdi.txt
 ```
 - Örneğin aşağıdaki komutta 'sort' komutunu çalıştırırken girişi "girdi.txt" adlı dosyadan alır. Yani, girdi.txt dosyasının içeriği sort komutunun girişi olarak kullanılır.
 
+<br>
 
 ### 3.2 Çıkış Yönlendirme
 - '>' sembolü, bir komutun çıktısını belirtilen bir dosyaya yönlendirmek için kullanılan bir yönlendirme işlemidir.
