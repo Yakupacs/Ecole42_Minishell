@@ -31,6 +31,24 @@
 - Bash shell için lexer, girilen metni parçalara ayırır ve her parçayı birer **"token"** olarak tanımlar.
 - Tokenler, komutlar, argümanlar, değişkenler, operatörler vb. gibi dilbilgisi yapılarını temsil eder.
 - Lexer, metindeki karakterleri okur, bu karakterlerin anlamsal gruplara ayrılmasını sağlar ve daha sonra bu tokenlerin bir listesini oluşturur.
+```
+3 + 4 * 2
+```
+- Lexer, yukarıdaki örnekte her bir karakteri sırayla analiz eder ve sırasıyla "3", "+", "4", "*" ve "2" karakterlerini analiz edecektir.
+- Lexer, karakter analizi sırasında dilbilgisel yapıları (tokenleri) tanır ve oluşturur.
+- Tamsayı: "3", "4", "2"
+- Operatör: "+", "*"
+- Lexer tanımlanan tokenleri çıktı olarak sunar.
+
+*INTEGER: "3"*
+
+*OPERATOR: "+"*
+
+*INTEGER: "4"*
+
+OPERATOR: "*"
+ 
+*INTEGER: "2"*
 
 ### 1.2 Parser
 - Parser, lexer tarafından oluşturulan token listesini alır ve bu tokenlerin belirli bir dilbilgisi yapısını takip ettiğini kontrol eder.
