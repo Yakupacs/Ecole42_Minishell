@@ -83,6 +83,10 @@ değişkenin adını belirtip buna bir değer atamanız gerekir. Bash'te bu işl
 echo $MY_VARIABLE
 ```
 **'$'** işaretini kullanarak değişken adını çağırabiliriz.
+- Bir değişkeni silmek için:
+```
+unset MY_VARIABLE
+```
 - Bazı environment variables, sistem tarafından otomatik olarak tanımlanır ve kullanılabilir. Örneğin:
      - **'PATH'**: Sistemdeki programların bulunduğu dizinlerin listesi
      - **'HOME'**: Kullanıcının ana dizini
