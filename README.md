@@ -86,6 +86,21 @@ ls | grep ".txt"
 - Her bir komut çalıştırıldığında, çıkış durumu bir tam sayı değeriyle temsil edilir.
 - Başarı durumunda genellikle 0 değeri döndürülür, hata durumunda ise farklı bir değer döndürülür.
 - "$?" değişkeni, en son çalıştırılan komutun çıkış durumunu içerir.
+```
+echo a
+$?
+```
+- Başarılı olduğu için '0' döner.
+```
+cat abc.txt
+$?
+```
+- Böyle bir dosya olmadığı için '1' hata durumu döner.
+```
+/bin/ech0
+$?
+```
+- Böyle bir komut bulamadığı için '127' döner.
 
 <br>
 
