@@ -12,6 +12,8 @@
      5. [Çıkış Durumu ($?)](#15-çıkış-durumu)
      6. [PID](#16-pid)
      7. [Environments (ENV)](#17-env)
+     8. [Export](#18-export)
+     9. [Declare](#19-declare)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
@@ -95,9 +97,20 @@ unset MY_VARIABLE
      - **'PWD'**: Geçerli çalışma dizini
      - **'SHELL'**: Kullanılan kabul (shell) programının adı
      - **'LANG'**: Dil ayarı
+### 1.8 Export
+- **"export"** komutu, bir değişkeni kabuk ortamına aktarmak için kullanılır.
+- Bir değişkeni **"export"** ettiğinizde, bu değişken ve değeri, alt kabuk süreçlerine aktarılır ve bu süreçlerde erişilebilir hale gelir.
+- "export" komutu, genellikle çevre değişkenlerini (örneğin, PATH, HOME) veya kullanıcı tanımlı değişkenleri alt kabuk süreçlerinde kullanılabilir hale getirmek için kullanılır.
+- Aktarılan değişkenler, alt kabuk süreçlerinde değiştirilebilir ve bu değişiklikler ebeveyn kabuk sürecini etkilemez. Yani, alt kabuk süreçlerinde yapılan değişiklikler yalnızca o süreçleri etkiler.
+
+### 1.9 Declare
+- **"declare"** komutu, değişkenlerin tanımlanması, türü belirlenmesi ve özelliklerinin atanması için kullanılır.
+- Değişkenlerin türünü belirleyebilirsiniz. Örneğin, **"-i"** seçeneğiyle bir değişkeni tamsayı (integer) olarak tanımlayabilirsiniz.
+- Değişkenlere özel nitelikler (readonly, local vb.) atayabilirsiniz.
+- **"declare"** komutu, sadece tanımlandığı kabuk oturumu veya kabuk betiği içinde geçerli olan değişkenler oluşturmanıza olanak sağlar.
+- Yani, alt kabuk süreçlerinde geçerli olmazlar.
 
 ## 2. Çalışma Yapısı
-
 
 ### 2.1 Akış Şeması
 
