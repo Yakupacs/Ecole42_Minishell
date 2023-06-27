@@ -14,6 +14,7 @@
      7. [Environments (ENV)](#17-env)
      8. [Export](#18-export)
      9. [Declare](#19-declare)
+     10. [Echo](#110-echo)
 2. [Çalışma Yapısı](#2-çalışma-yapısı)
      1. [Akış Şeması](#21-akış-şeması)
      2. [Fonksiyonlar](#22-fonksiyonlar)
@@ -159,6 +160,15 @@ declare -a my_array=(1 2 3)
 declare -f my_function
 ```
 - 'my_function' isimli bir işlev tanımlanır.
+ 
+## 1.10 Echo
+- **'echo'**, bir metni ya da değişkenin değerini ekrana yazdırmak için kullanılan bir komuttur.
+- **'-n'** seçeneği ise çıktının sonuna bir satır atlama karakteri (\n) eklememeyi sağlar.
+```
+name="Yakup"
+echo "My name. is $name"
+```
+- Yukarıdaki örnekte, "name" adında bir değişken tanımlanır ve "echo" komutuyla değişkenin değeri ekrana yazdırılır. Çıktı olarak "My name is Yakup" ifadesini görürüz.
 
 ## 2. Çalışma Yapısı
 
