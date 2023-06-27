@@ -15,6 +15,7 @@
      8. **[Export](#18-export)**
      9. **[Declare](#19-declare)**
      10. **[Echo](#110-echo)**
+     11. **[File Descriptors](#111-file-descriptors)**
 2. **[Çalışma Yapısı](#2-çalışma-yapısı)**
      1. **[Akış Şeması](#21-akış-şeması)**
      2. **[Fonksiyonlar](#22-fonksiyonlar)**
@@ -161,7 +162,7 @@ declare -f my_function
 ```
 - 'my_function' isimli bir işlev tanımlanır.
  
-## 1.10 Echo
+### 1.10 Echo
 - **'echo'**, bir metni ya da değişkenin değerini ekrana yazdırmak için kullanılan bir komuttur.
 - **'-n'** seçeneği ise çıktının sonuna bir satır atlama karakteri (\n) eklememeyi sağlar.
 ```
@@ -174,6 +175,39 @@ echo -n "Hello, " && echo "World"
 ```
 - Yukarıdaki örnekte, **"-n"** seçeneği kullanılarak ilk "echo" komutunda satır atlama karakteri devre dışı bırakılır. İkinci "echo" komutu ise satır atlama karakteriyle birlikte çalışır ve çıktı olarak "Hello, World!" ifadesini görürürüz.
 - **'&&'** operatörü Bash kabuğunda kullanılan bir mantıksal operatördür ve ardışık komutları birleştirmek için kullanılır.
+
+### 1.11 File Descriptors
+
+#### 0: Standart Giriş (stdin):
+- Standart giriş, bir sürece veri sağlayan mekanizmadır. Genellikle klavye veya başka bir süreç tarafından sağlanan girişe karşılık gelir.
+- Dosya tanımlayıcısı 0 olarak kabul edilir.
+
+#### 1: Standart Çıkış (stdout):
+- Standart çıkış, bir sürecin çıktısını yönlendirdiği yerdir. Varsayılan olarak, standart çıktı, verilerin kabuk penceresine veua bir dosyaya yazdırılmasını sağlar.
+- Dosya tanımlayıcısı 1 olarak temsil edilir.
+
+#### 2: Standart Hata (stderr):
+- Standart hata, bir sürecin hata ve hata mesajlarını yönlendirdiği yerdir.
+- Genellikle standart çıktıdan ayrı tutulur ve hata ayıklama ve hata yönetimi için kullanılır.
+- Dosya tanımlayıcısı 2 olarak temsil edilir.
+
+#### 1. Standart Girişten Okuma:
+```
+read line
+```
+- Yukarıdaki komut, kullanıcıdan bir giriş satırı okur. Kullanıcıdan girilen veri, standart giriş (stdin) üzerinden alınır.
+
+#### 2. Standart Çıktıya Yazdırma:
+```
+echo "Hello, World" > file.txt
+```
+- Yukarıdaki komut, "Hello, World" metnini "file.txt" dosyasına yazar. Standart çıktı (stdout) yönlendirilerek dosyaya veri yazılır.
+
+#### 3. Standart Hata Çıktısını Yönlendirme:
+```
+command_not_found 2> error.log
+```
+- Yukarıdaki komut, mevcut olmayan bir komutu çalıştırmaya çalışır ve oluşan hata mesajını "error.log" dosyasına yazar. Standart hata (stderr), dosyaya yönlendirilerek hatalar kaydedilir.
 
 ## 2. Çalışma Yapısı
 
