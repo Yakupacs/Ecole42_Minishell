@@ -169,6 +169,11 @@ name="Yakup"
 echo "My name. is $name"
 ```
 - Yukarıdaki örnekte, "name" adında bir değişken tanımlanır ve "echo" komutuyla değişkenin değeri ekrana yazdırılır. Çıktı olarak "My name is Yakup" ifadesini görürüz.
+```
+echo -n "Hello, " && echo "World"
+```
+- Yukarıdaki örnekte, **"-n"** seçeneği kullanılarak ilk "echo" komutunda satır atlama karakteri devre dışı bırakılır. İkinci "echo" komutu ise satır atlama karakteriyle birlikte çalışır ve çıktı olarak "Hello, World!" ifadesini görürürüz.
+- **'&&'** operatörü Bash kabuğunda kullanılan bir mantıksal operatördür ve ardışık komutları birleştirmek için kullanılır.
 
 ## 2. Çalışma Yapısı
 
