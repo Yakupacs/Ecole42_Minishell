@@ -19,10 +19,12 @@
      12. **[Echo](#112-echo)**
      13. **[File Descriptors](#113-file-descriptors)**
 2. **[Shell Program Fonksiyonları](#2-shell-program-fonksiyonları)**
-3. **[Çalışma Yapısı](#3-çalışma-yapısı)**
+     1. **[Fork()](#21-fork)**
+     2. **[Pipe()](#22-pipe)**
+4. **[Çalışma Yapısı](#3-çalışma-yapısı)**
      1. **[Akış Şeması](#31-akış-şeması)**
      2. **[Fonksiyonlar](#32-fonksiyonlar)**
-4. **[Redirections - Yönlendirmeler](#4-redirections)**
+5. **[Redirections - Yönlendirmeler](#4-redirections)**
      1. **[Giriş Yönlendirme '<'](#41-giriş-yönlendirme)**
      2. **[Çıkış Yönlendirme '>'](#42-çıkış-yönlendirme)**
 
@@ -275,6 +277,27 @@ command_not_found 2> error.log
 <br>
 
 ## 2. Shell Program Fonksiyonları
+
+<br>
+
+### 2.1 Fork
+- Fork() sistem çağrısı, yeni bir process oluşturmak için kullanılır.
+- Bu işlem child process olarak adlandırılır ve fork() çağrısını yapan process(parent process) ile eş zamanlı olarak çalışır.
+- Yeni bir child process oluşturulduktan sonra, her iki işlem de fork() sistem çağrısını takip eden bir sonraki komutu yürütür.
+- Child process parent process ile aynı pc(program counter) aynı CPU registerlere ve aynı open files'lere sahiptir.
+- Fork() işlemi herhangi bir parametre almaz ve bir tamsayı değeri döndürür.
+
+| Dönüş Değeri  | Tanım |
+| ------------- | ------------- |
+| Negatif değer  | Child process oluşturma başarısız.  |
+| Sıfır (0)  | Yeni bir child process oluşturuldu.  |
+| Pozitif değer  | Yeni oluşturulan child process'in ID'sini içerir.  |
+
+<br>
+
+### 2.2 Pipe
+
+<br>
 
 ## 3. Çalışma Yapısı
 
