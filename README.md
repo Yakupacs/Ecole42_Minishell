@@ -18,12 +18,13 @@
      11. **[Declare](#111-declare)**
      12. **[Echo](#112-echo)**
      13. **[File Descriptors](#113-file-descriptors)**
-2. **[Çalışma Yapısı](#2-çalışma-yapısı)**
-     1. **[Akış Şeması](#21-akış-şeması)**
-     2. **[Fonksiyonlar](#22-fonksiyonlar)**
-3. **[Redirections - Yönlendirmeler](#3-redirections)**
-     1. **[Giriş Yönlendirme '<'](#31-giriş-yönlendirme)**
-     2. **[Çıkış Yönlendirme '>'](#32-çıkış-yönlendirme)**
+2. **[Shell Program Fonksiyonları](#2-shell-program-fonksiyonları)**
+3. **[Çalışma Yapısı](#3-çalışma-yapısı)**
+     1. **[Akış Şeması](#31-akış-şeması)**
+     2. **[Fonksiyonlar](#32-fonksiyonlar)**
+4. **[Redirections - Yönlendirmeler](#4-redirections)**
+     1. **[Giriş Yönlendirme '<'](#41-giriş-yönlendirme)**
+     2. **[Çıkış Yönlendirme '>'](#42-çıkış-yönlendirme)**
 
 <br>
 
@@ -273,17 +274,19 @@ command_not_found 2> error.log
 
 <br>
 
-## 2. Çalışma Yapısı
+## 2. Shell Program Fonksiyonları
+
+## 3. Çalışma Yapısı
 
 <br>
 
-### 2.1 Akış Şeması
+### 3.1 Akış Şeması
 
 ![image](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/95882bea-cef8-4113-9354-8da56ccaaa55)
 
 <br>
 
-### 2.2 Fonksiyonlar
+### 3.2 Fonksiyonlar
 
 | Fonksiyon  | Kütüphane | İşlev |
 | ------------- | ------------- | ------------- |
@@ -320,11 +323,11 @@ command_not_found 2> error.log
 
 <br>
 
-## 3. Redirections - Yönlendirmeler
+## 4. Redirections
 
 <br>
 
-### 3.1 Giriş Yönlendirme
+### 4.1 Giriş Yönlendirme
 
 - "<" sembolü, bir dosyadan giriş almak için kullanılan bir yönlendirme işlemidir. Bu işlem, bir komutun girişini, belirtilen bir dosyanın içeriğiyle değiştirir.
 - Bir komut çalıştırıldığında, genellikle kullanıcının klavyeden giriş yapması beklenir. Ancak '<' sembolü kullanılarak, komutun girişi belirli bir dosyadan alınabilir.
@@ -337,7 +340,7 @@ sort < girdi.txt
 
 <br>
 
-### 3.2 Çıkış Yönlendirme
+### 4.2 Çıkış Yönlendirme
 - '>' sembolü, bir komutun çıktısını belirtilen bir dosyaya yönlendirmek için kullanılan bir yönlendirme işlemidir.
 - Bu işlem, komutun çıktısını bir dosyaya yazarak, komutun normalde ekrana veya standart çıktıya yazdığı çıktıyı dosyaya kaydetmek için kullanılır.
 
