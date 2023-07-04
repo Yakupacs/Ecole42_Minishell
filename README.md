@@ -287,11 +287,36 @@ command_not_found 2> error.log
 - Child process parent process ile aynı pc(program counter) aynı CPU registerlere ve aynı open files'lere sahiptir.
 - Fork() işlemi herhangi bir parametre almaz ve bir tamsayı değeri döndürür.
 
+![a](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/29ba1dd6-d2c0-4631-a7c6-53efa91dd787)
+
 | Dönüş Değeri  | Tanım |
 | ------------- | ------------- |
 | Negatif değer  | Child process oluşturma başarısız.  |
 | Sıfır (0)  | Yeni bir child process oluşturuldu.  |
 | Pozitif değer  | Yeni oluşturulan child process'in ID'sini içerir.  |
+
+```
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+ 
+int main(int argc, char *argv[]){
+     int id = fork();
+     if (id == 0){
+          printf("Hello from child process\n");
+     } else {
+          printf("Hello from the main process\n");
+     }
+     return 0;
+}
+```
+
+```
+output:
+     Hello from child process
+     Hello from the main process
+```
+
 
 <br>
 
