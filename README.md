@@ -322,6 +322,14 @@ output:
 
 ### 2.2 Pipe
 
+- Pipe, bir işlemin standart çıkışının diğer bir sürecin standart girdisi haline geldiği iki process arasındaki bağlantıdır.
+- Pipe, yalnızca tek yönlü iletişim sağlar. Yani bir process bir pipe'e yazarken diğer process pipe'den okur.
+- Pipe "sanal dosya" olarak işlem gören ana bellekteki bir alanı açar.
+- Bir process bu "sanal dosyaya" veya pipe'e yazabilirken, diğer ilişkili process ondan okuyabilir.
+- Eğer bir process pipe'e bir şey yazılmadan önce okumaya çalışırsa, process yazılan bir şey olana kadar askıya alınır.
+![pipe](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/d2e1c274-ef21-4601-8daa-da16fc4767ec)
+
+
 <br>
 
 ## 3. Çalışma Yapısı
