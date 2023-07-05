@@ -40,6 +40,10 @@ typedef struct s_data
 	int				error_flag;
 }	t_data;
 
+void	ft_struct_initilaize(char **envp, int flag);
+void	ft_sig_handler(int sig);
+char	**copy_env(char **envp);
+
 t_data  g_data;
 
 #endif

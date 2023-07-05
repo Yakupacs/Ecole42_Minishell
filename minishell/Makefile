@@ -1,33 +1,34 @@
-SRCS =
+SRCS		=	main.c copy_env.c
 
-LIBFT =
+LIBFT		=	libft/libft.a
 
-OBJS = 
+OBJS		= 	$(SRCS:.c=.o)
 
-NAME	=	minishell
+NAME		=	minishell
 
-CC		=	gcc -g
+CC			=	gcc -g
 
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra
 
-RM		=	rm -rf
+RM			=	rm -rf
 
-all:	$(NAME)
+all:		$(NAME) 
 
-$(NAME):	$(OBJS) $(LIBFT)
 
-clean:	
-		@$(RM) $(OBJS)
-		@make clean -C ./libft
+$(NAME):		$(OBJS) $(LIBFT)
+				$(CC) $(OBJS) $(CFLAGS) $(LIBFT) -lreadline -o $(NAME)
 
+clean:
+				@$(RM) $(OBJS)
+				@make clean -C ./libft
 $(LIBFT):
-		@make -C ./libft
-		@make bonus -C ./libft
-	
+			@make -C ./libft
+			@make bonus -C ./libft
+
 fclean:
-		@$(RM) $(OBJS) $(NAME)
-		@make fclean -C libft
+				@$(RM) $(OBJS) $(NAME)
+				@make fclean -C libft
 
-re:		fclean all
+re:			fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:		all clean fclean re
