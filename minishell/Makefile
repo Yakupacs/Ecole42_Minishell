@@ -1,4 +1,4 @@
-SRCS		=	main.c copy_env.c
+SRCS		=	main.c copy_env.c ft_signals.c ft_free.c ft_parse.c
 
 LIBFT		=	libft/libft.a
 

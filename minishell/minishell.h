@@ -1,5 +1,6 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
+# include "parse.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
@@ -14,8 +15,8 @@
 
 typedef struct s_data
 {
-/* 	t_arg			*list;
-	t_type_counter	*count_type; */
+	t_arg			*list;
+	t_type_counter	*count_type;
 	char			*line;
 	char			**envp;
 	char			**ex_path;
@@ -40,9 +41,20 @@ typedef struct s_data
 	int				error_flag;
 }	t_data;
 
+void    loop(void);
+int		after_loop(t_arg *temp);
+
 void	ft_struct_initilaize(char **envp, int flag);
-void	ft_sig_handler(int sig);
 char	**copy_env(char **envp);
+
+void	signal_exit(void);
+void	ft_sig_handler(int sig);
+
+int		ft_parse(void);
+
+void	freeliazer(t_arg *temp);
+void	ft_free_all(void);
+void	ft_free_all2(void);
 
 t_data  g_data;
 
