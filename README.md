@@ -27,9 +27,9 @@
      1. **[Akış Şeması](#31-akış-şeması)**
      2. **[Fonksiyonlar](#32-fonksiyonlar)**
 5. **[Redirections - Yönlendirmeler](#4-redirections)**
-     1. **[Giriş Yönlendirme '<'](#41-giriş-yönlendirme)**
-     2. **[Çıkış Yönlendirme '>'](#42-çıkış-yönlendirme)**
-     3. **[Eklemeli Çıkış Yönlendirme '>>'](#43-eklemeli-çıkış-yönlendirme)**
+     1. **[Standart Input '<'](#41-standart-input)**
+     2. **[Standart Output '>'](#42-standart-output)**
+     3. **[Appending Redirected Output ">>"](#43-appending-redirected-output)**
      4. **[Here Documents '<<'](#44-here-documents)**
 <br>
 
@@ -480,9 +480,8 @@ int main()
 
 <br>
 
-### 4.1 Giriş Yönlendirme
+### 4.1 Standart Input
 
-- Standart Input "<"
 - "<" sembolü, bir dosyadan giriş almak için kullanılan bir yönlendirme işlemidir. Bu işlem, bir komutun girişini, belirtilen bir dosyanın içeriğiyle değiştirir.
 - Bir komut çalıştırıldığında, genellikle kullanıcının klavyeden giriş yapması beklenir. Ancak '<' sembolü kullanılarak, komutun girişi belirli bir dosyadan alınabilir.
 - Bu, komutun klavyeden giriş almak yerine, belirli bir dosyayı giriş olarak kullanmasını sağlar.
@@ -502,9 +501,8 @@ grep "kelime" < arama.txt
 
 <br>
 
-### 4.2 Çıkış Yönlendirme
+### 4.2 Standart Output
 
-- Standart Output ">"
 - '>' sembolü, bir komutun çıktısını belirtilen bir dosyaya yönlendirmek için kullanılan bir yönlendirme işlemidir.
 - Bu işlem, komutun çıktısını bir dosyaya yazarak, komutun normalde ekrana veya standart çıktıya yazdığı çıktıyı dosyaya kaydetmek için kullanılır.
 
@@ -519,9 +517,9 @@ echo "Merhaba dünya" > dosya.txt
 - Bu komut "Merhaba dünya" ifadesini dosya.txt adlı bir dosyaya yazar.
 
 
-### 4.3 Eklemeli Çıkış Yönlendirme
+### 4.3 Appending Redirected Output
 
-- Appending Redirected Output ">>"
+- ">>"
 - Shell komut dosyalarında ve terminal komutlarında çıktıyı bir dosyaya eklemek için kullanılan bir yönlendirme işlemidir.
 - Bu yöntem, bir komutum veya betiğin çıktısını bir dosyaya yazarken var olan bir dosyanın içeriğini korumak veya bir dosyaya ardışık çıktı eklemek için kullanılır.
 
