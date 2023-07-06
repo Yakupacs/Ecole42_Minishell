@@ -481,18 +481,29 @@ int main()
 
 ### 4.1 Giriş Yönlendirme
 
+- Standart Input "<"
 - "<" sembolü, bir dosyadan giriş almak için kullanılan bir yönlendirme işlemidir. Bu işlem, bir komutun girişini, belirtilen bir dosyanın içeriğiyle değiştirir.
 - Bir komut çalıştırıldığında, genellikle kullanıcının klavyeden giriş yapması beklenir. Ancak '<' sembolü kullanılarak, komutun girişi belirli bir dosyadan alınabilir.
 - Bu, komutun klavyeden giriş almak yerine, belirli bir dosyayı giriş olarak kullanmasını sağlar.
 
 ```
-sort < girdi.txt
+sort < dosya.txt
 ```
 - Örneğin aşağıdaki komutta 'sort' komutunu çalıştırırken girişi "girdi.txt" adlı dosyadan alır. Yani, girdi.txt dosyasının içeriği sort komutunun girişi olarak kullanılır.
+```
+cat < dosya.txt
+```
+- Yukarıdaki kodda dosya.txt adlı dosyanın içeriği okunur.
+```
+grep "kelime" < arama.txt
+```
+- Yukarıdaki kodda bir komutun girdisini standart girdiden değil de bir dosyadan alır ve "kelime" stringini arama.txt adı dosyada arar.
 
 <br>
 
 ### 4.2 Çıkış Yönlendirme
+
+- Standart Output ">"
 - '>' sembolü, bir komutun çıktısını belirtilen bir dosyaya yönlendirmek için kullanılan bir yönlendirme işlemidir.
 - Bu işlem, komutun çıktısını bir dosyaya yazarak, komutun normalde ekrana veya standart çıktıya yazdığı çıktıyı dosyaya kaydetmek için kullanılır.
 
@@ -501,6 +512,10 @@ ls > dosya.txt
 ```
 - Bu komut, ls komutunu çalıştırırken, çıktısını dosya.txt adlı bir dosyaya yönlendirir. 
 - Yani, ls komutunun normalde ekrana yazdığı dosya ve dizin listesi, bu sefer dosya.txt adlı dosyaya yazılır.
+```
+echo "Merhaba dünya" > dosya.txt
+```
+- Bu komut "Merhaba dünya" ifadesini dosya.txt adlı bir dosyaya yazar.
 
 
 
