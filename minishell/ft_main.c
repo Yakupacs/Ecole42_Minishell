@@ -35,12 +35,12 @@ void loop(void)
 	{
 		ft_struct_initilaize(g_data.envp, 0);
 		g_data.line = readline("minishell-$ ");
-		if (g_data.sig_flag == 1)
+		if (g_data.sig_flag == 1) // NULL Enter
 		{
 			free(g_data.line);
 			continue;
 		}
-		if (!g_data.line)
+		if (!g_data.line) // Ctrl + D
 			signal_exit();
 		ft_parse();
 		// cpy_g_data_list = g_data.list;
