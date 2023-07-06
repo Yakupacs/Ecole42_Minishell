@@ -102,7 +102,7 @@ git add . && git commit -m "commit" && git push
 ### 1.6 OR Operatörü
 - Komut satırında **'||'** operatörü yalnızca soldaki ifade başarısız ise sağındakini çalıştırır.
 ```
-make || make fcleal
+make || make fclean
 ```
 ```
 gcc deneme.c || echo "Failed."
