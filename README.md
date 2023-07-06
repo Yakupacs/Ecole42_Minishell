@@ -406,6 +406,7 @@ int main()
 
 ### 2.4 Dup2
 
+- int dup2(int oldfd, int newfd);
 - dup() fonksiyonu ile temel farkları, kullanıcının belirttiği tanımlayıcı numarasını kullanmak yerine kullanılmayan en düşük numaralı dosya tanımlayıcısını kullanmaktır.
 
 ```
