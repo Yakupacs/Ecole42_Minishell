@@ -327,8 +327,49 @@ output:
 - Pipe "sanal dosya" olarak işlem gören ana bellekteki bir alanı açar.
 - Bir process bu "sanal dosyaya" veya pipe'e yazabilirken, diğer ilişkili process ondan okuyabilir.
 - Eğer bir process pipe'e bir şey yazılmadan önce okumaya çalışırsa, process yazılan bir şey olana kadar askıya alınır.
+
 ![pipe](https://github.com/Yakupacs/Ecole42_Minishell/assets/73075252/d2e1c274-ef21-4601-8daa-da16fc4767ec)
 
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <unistd.h>
+
+int main() {
+    int fd[2]; // fd[0] => Read, fd[1] => Write
+    char buffer[20];
+
+    if (pipe(fd) == -1) {
+        perror("Pipe oluşturma hatası");
+        return 1;
+    }
+
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        // Child process
+        close(fd[0]); // Read kapattı.
+        char message[] = "Merhaba Ebeveyn!";
+        write(fd[1], message, sizeof(message)); // Write(fd[1]) içerisinde "Merhaba Ebeveyn!"
+        close(fd[1]); // Write kapattı.
+    } else {
+        // Parent process
+        close(fd[1]); // Yazma kapattı.
+        read(fd[0], buffer, sizeof(buffer)); // Read(fd[0]) içerisinden "Merhaba Ebeveyn" okudu.
+        printf("Ebeveyn: %s\n", buffer);
+        close(fd[0]);
+    }
+
+    return 0;
+}
+```
+
+```
+output:
+     Ebeveyn: Merhaba Ebeveyn!
+```
 
 <br>
 
