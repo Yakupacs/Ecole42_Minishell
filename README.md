@@ -29,7 +29,8 @@
 5. **[Redirections - Yönlendirmeler](#4-redirections)**
      1. **[Giriş Yönlendirme '<'](#41-giriş-yönlendirme)**
      2. **[Çıkış Yönlendirme '>'](#42-çıkış-yönlendirme)**
-
+     3. **[Eklemeli Çıkış Yönlendirme '>>'](#43-eklemeli-çıkış-yönlendirme)**
+     4. **[Here Documents '<<'](#44-here-documents)**
 <br>
 
 ## 1. Shell Program Yapıları
@@ -518,14 +519,62 @@ echo "Merhaba dünya" > dosya.txt
 - Bu komut "Merhaba dünya" ifadesini dosya.txt adlı bir dosyaya yazar.
 
 
+### 4.3 Eklemeli Çıkış Yönlendirme
 
+- Appending Redirected Output ">>"
+- Shell komut dosyalarında ve terminal komutlarında çıktıyı bir dosyaya eklemek için kullanılan bir yönlendirme işlemidir.
+- Bu yöntem, bir komutum veya betiğin çıktısını bir dosyaya yazarken var olan bir dosyanın içeriğini korumak veya bir dosyaya ardışık çıktı eklemek için kullanılır.
 
+```
+echo "Yeni satır" >> dosya.txt
+```
+- Bu komut "Yeni satır" metnini "dosya.txt" adlı bir dosyaya ekleyecektir. Eğer dosya mevcut değilse oluşturulur.
+- Eğer dosya zaten varsa "Yeni satır" metni mevcut içeriğin sonuna eklenir.
+```
+date >> log.txt
+echo "Komut çalıştırıldı." >> log.txt
+```
+- Önce "date" komutunun çıktısı "log.txt" adlı bir dosyaya eklenir. Sonra da "Komut çalıştırıldı." metni aynı dosyanın sonuna eklenir. Bu şekilde ardışık komutların çıktıları dosyada biriktirilebilir.
 
+### 4.4 Here Documents
 
+- "<<"
+- Shell komut dosyalarında ve terminal komutlarında, bir komuta veya betiğe içeriden metin girişi sağlamak için kullanılan bir yönlendirme işlemidir.
+- Bu yöntem harici bir dosya kullanmadan çok satırlı metin girişi yapmanızı sağlar.
+```
+cat << END
+This is line 1.
+This is line 2.
+This is line 3.
+END
+```
+```
+output:
+     This is line 1.
+     This is line 2.
+     This is line 3.
+```
+- Yukarıdaki komutta birden fazla satır END ifadesi gelene kadar input olarak alınır ve cat komutuna aktarılır.
 
+```
+grep "keyword" << END
+This line contains the keyword.
+Another line without the keyword.
+END
+```
+```
+output:
+     This line contains the keyword.
+     Another line without the keyword.
+```
+- Yukarıdaki komutta END ifadesi gelene kadar girilen ifadeler input olarak grep "keyword" komutuna aktarılır.
 
-
-
-
+```
+cat << EOF > deneme.txt
+Key1=Value1
+Key2=Value2
+EOF
+```
+- Yukarıdaki komut ile EOF ifadesi gelene kadar girilen ifadeler deneme.txt içerisine input olarak aktarılır.
 
 
