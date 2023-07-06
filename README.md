@@ -21,6 +21,7 @@
 2. **[Shell Program Fonksiyonları](#2-shell-program-fonksiyonları)**
      1. **[Fork()](#21-fork)**
      2. **[Pipe()](#22-pipe)**
+     3. **[Dup()](#23-dup)**
 4. **[Çalışma Yapısı](#3-çalışma-yapısı)**
      1. **[Akış Şeması](#31-akış-şeması)**
      2. **[Fonksiyonlar](#32-fonksiyonlar)**
@@ -370,6 +371,35 @@ int main() {
 output:
      Ebeveyn: Merhaba Ebeveyn!
 ```
+
+### 2.3 Dup
+
+- dup() sistem çağrısı, bir dosya tanımlaycısının bir kopyasını oluşturur.
+- Yeni tanımlayıcı için kullanılmayan en düşük numaralı tanımlayıcıyı kullanır.
+- Kopya başarılı oluşturulursa, orijinal ve kopya dosya tanımlayıcıları birbirinin yerine kullanılabilir.
+- Her ikisi de aynı açık dosya tanımına işaret eder ve bu nedenle dosya konumunu ve dosya durum bayraklarını paylaşırlar.
+
+```
+#include<stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+  
+int main()
+{
+    int file_desc = open("dup.txt", O_WRONLY | O_APPEND);
+      
+    if(file_desc < 0)
+        printf("Error opening the file\n");
+
+    int copy_desc = dup(file_desc);
+
+    write(copy_desc,"This will be output to the file named dup.txt\n", 46);
+          
+    write(file_desc,"This will also be output to the file named dup.txt\n", 51);
+
+}
+```
+- Yukarıdaki kodda daha önceden oluşturulan dup.txt dosyası dup() fonksiyonu ile kopyalanarak iki dosya tanımlayıcısı tarafından kullanılır ve iki tanımlayıcı da dosyaya yazma işlemi yapabilir.
 
 <br>
 
