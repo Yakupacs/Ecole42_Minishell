@@ -34,7 +34,7 @@ void loop(void)
 	while (1)
 	{
 		ft_struct_initilaize(g_data.envp, 0);
-		g_data.line = readline("minishell-$ ");
+		g_data.line = readline("minishell$ ");
 		if (g_data.sig_flag == 1) // NULL Enter
 		{
 			free(g_data.line);
