@@ -22,6 +22,7 @@
      1. **[Fork()](#21-fork)**
      2. **[Pipe()](#22-pipe)**
      3. **[Dup()](#23-dup)**
+     4. **[Dup2()](#24-dup2)**
 4. **[Çalışma Yapısı](#3-çalışma-yapısı)**
      1. **[Akış Şeması](#31-akış-şeması)**
      2. **[Fonksiyonlar](#32-fonksiyonlar)**
@@ -400,6 +401,29 @@ int main()
 }
 ```
 - Yukarıdaki kodda daha önceden oluşturulan dup.txt dosyası dup() fonksiyonu ile kopyalanarak iki dosya tanımlayıcısı tarafından kullanılır ve iki tanımlayıcı da dosyaya yazma işlemi yapabilir.
+
+<br>
+
+### 2.4 Dup2
+
+- dup() fonksiyonu ile temel farkları, kullanıcının belirttiği tanımlayıcı numarasını kullanmak yerine kullanılmayan en düşük numaralı dosya tanımlayıcısını kullanmaktır.
+
+```
+#include<stdlib.h>
+#include<unistd.h>
+#include<stdio.h>
+#include<fcntl.h>
+  
+int main()
+{
+    int fd = open("tricky.txt", O_WRONLY | O_APPEND, 0777);
+
+    dup2(fd, 1) ; 
+          
+    printf("I will be printed in the file tricky.txt\n");
+}
+```
+- Yukarıdaki kodda STDOUT = 1 oluşturulan fd tanımlayıcısına aktarılır ve STDOUT'a aktarılan çıktılar fd içerisine yazılır.
 
 <br>
 
