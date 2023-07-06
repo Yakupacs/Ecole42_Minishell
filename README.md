@@ -516,6 +516,7 @@ echo "Merhaba dünya" > dosya.txt
 ```
 - Bu komut "Merhaba dünya" ifadesini dosya.txt adlı bir dosyaya yazar.
 
+<br>
 
 ### 4.3 Appending Redirected Output
 
@@ -533,6 +534,8 @@ date >> log.txt
 echo "Komut çalıştırıldı." >> log.txt
 ```
 - Önce "date" komutunun çıktısı "log.txt" adlı bir dosyaya eklenir. Sonra da "Komut çalıştırıldı." metni aynı dosyanın sonuna eklenir. Bu şekilde ardışık komutların çıktıları dosyada biriktirilebilir.
+
+<br>
 
 ### 4.4 Here Documents
 
