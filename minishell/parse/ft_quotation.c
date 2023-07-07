@@ -1,53 +1,28 @@
 #include "../minishell.h"
 #include "parse.h"
 
-int check_double_quote(char *line)
+int    check_quote(char *line)
 {
     int i;
-    int len;
-
+    int sign;
+    
+    sign = 0;
     i = 0;
-    len = 0;
     while (line[i])
     {
-        if (line[i] == '\"')
-            len++;
+        if (line[i] == '\''){
+            if (sign != 1 && sign != 2)
+                sign = 1;
+            else if (sign == 1)
+                sign = 0;
+        }
+        else if (line[i] == '\"'){
+            if (sign != 1 && sign != 2)
+                sign = 2;
+            else if (sign == 2)
+                sign = 0;
+        }
         i++;
     }
-    if (len % 2)
-    {
-        g_data.error_flag = -1;
-        return (-1);
-    }
-    else
-        return (len);
-}
-
-int	check_single_quote(char *line)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (line[i])
-	{
-		while (line[i] != '"' && line[i] != '\0')
-		{
-			if (line[i] == '\'')
-				count++;
-			i++;
-		}
-		if (line[i])
-			i++;
-		while (line[i] != '"' && line[i] != '\0')
-			i++;
-		if (line[i])
-			i++;
-	}
-    if (count % 2 != 0){
-        g_data.error_flag = -1;
-        return (-1);
-    }
-	return (count);
+    return (sign);
 }

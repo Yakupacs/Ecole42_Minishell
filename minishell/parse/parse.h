@@ -43,8 +43,7 @@ void	split_line2(int st, int len, char *line, t_arg *tmp_line);
 
 void	check_space(char *line, t_arg **tmp_line);
 
-int check_double_quote(char *line);
-int	check_single_quote(char *line);
+int    check_quote(char *line);
 
 t_arg	*p_lstlast(t_arg *lst);
 void	p_lstadd_back(t_arg **lst, t_arg *new);
