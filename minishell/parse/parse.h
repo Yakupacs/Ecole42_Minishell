@@ -35,24 +35,30 @@ typedef struct s_arg {
     struct s_arg		*next;
 }					t_arg;
 
-int ft_parse(void);
-int tokenizer(t_arg **tmp_line);
+int		ft_parse(void);
+int		tokenizer(t_arg **tmp_line);
 
 void	split_line(char *s, t_arg *line);
 void	split_line2(int st, int len, char *line, t_arg *tmp_line);
 
+int		check_quote(char *line);
 void	check_space(char *line, t_arg **tmp_line);
 
-int    check_quote(char *line);
+void	check_redirection(t_arg **tmp_line);
+void	check_pipe(t_arg **prompt);
 
 t_arg	*p_lstlast(t_arg *lst);
 void	p_lstadd_back(t_arg **lst, t_arg *new);
 t_arg	*p_lstnew(int type, char *line);
-int	p_lstsize(t_arg *lst);
+int		p_lstsize(t_arg *lst);
 
-int is_space(char c);
-int	is_quotation(char *s);
+int 	is_space(char c);
+int		is_quotation(char *s);
+int		is_pipe(char *s);
+int		is_redirection(char *line);
 
-void	check_redirection(t_arg **tmp_line);
+int		handle_character(t_arg **list, int (*checker)(char *));
+void	*append_list(t_arg **prompt, int st, int len);
+t_arg	*create_front(int st, int len, t_arg **list, t_arg *tmp);
 
 #endif

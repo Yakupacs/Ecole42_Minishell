@@ -23,7 +23,7 @@ void ft_struct_initilaize(char **envp, int flag)
 
 int after_loop(t_arg *temp)
 {
-	printf("after loop temp->content: %s\n", temp->content);
+	printf("after loop temp->content: %s\n", temp->arg);
 	return 0;
 }
 

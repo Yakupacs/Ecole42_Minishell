@@ -51,7 +51,7 @@ void	freeliazer(t_arg *temp)
 		while (temp)
 		{
 			tmp = temp;
-			free(tmp->content);
+			free(tmp->arg);
 			temp = temp->next;
 			free(tmp);
 		}

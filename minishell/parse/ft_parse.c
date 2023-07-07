@@ -10,14 +10,16 @@ int tokenizer(t_arg **tmp_line)
         return (0);
     }
 
+    check_redirection(tmp_line);
+    check_pipe(tmp_line);
+
     int i = 0;
     while (*tmp_line != NULL){
-        printf("%d.arg: %s\n", i + 1, (*tmp_line)->arg);
+        printf("%d.arg: %s, type: %u\n", i + 1, (*tmp_line)->arg, (*tmp_line)->type);
         *tmp_line = (*tmp_line)->next;
         i++;
     }
 
-    check_redirection(tmp_line);
     return (1);
 }
 
