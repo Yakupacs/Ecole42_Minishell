@@ -1,6 +1,6 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
-# include "parse.h"
+# include "parse/parse.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>

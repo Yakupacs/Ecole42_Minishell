@@ -23,13 +23,13 @@ void ft_struct_initilaize(char **envp, int flag)
 
 int after_loop(t_arg *temp)
 {
-	printf("%s", temp->content);
+	printf("after loop temp->content: %s\n", temp->content);
 	return 0;
 }
 
 void loop(void)
 {
-	// t_arg	*cpy_g_data_list;
+	//t_arg	*cpy_g_data_list;
 
 	while (1)
 	{
@@ -43,11 +43,11 @@ void loop(void)
 		if (!g_data.line) // Ctrl + D
 			signal_exit();
 		ft_parse();
-		// cpy_g_data_list = g_data.list;
-		add_history(g_data.line);
-		// free(g_data.line);
-		// after_loop(cpy_g_data_list);
-		// freeliazer(cpy_g_data_list);
+		//cpy_g_data_list = g_data.list;
+		//add_history(g_data.line);
+		//free(g_data.line);
+		//after_loop(cpy_g_data_list);
+		//freeliazer(cpy_g_data_list);
 	}
 }
 
