@@ -1,4 +1,13 @@
-SRCS		=	ft_main.c ft_copy_env.c ft_signals.c ft_free.c parse/ft_parse.c parse/ft_lists.c parse/ft_quotation.c parse/ft_space.c parse/ft_split_line.c
+SRCS		=	ft_main.c \
+					ft_copy_env.c \
+					ft_signals.c \
+					ft_free.c \
+					parse/ft_parse.c \
+					parse/ft_lists.c \
+					parse/ft_quotation.c \
+					parse/ft_space.c \
+					parse/ft_split_line.c \
+					parse/ft_redirection.c \
 
 LIBFT		=	libft/libft.a
 

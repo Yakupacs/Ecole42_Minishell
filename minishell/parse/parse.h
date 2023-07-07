@@ -30,7 +30,7 @@ typedef struct s_type_counter{
 }					t_type_counter;
 
 typedef struct s_arg {
-	char				*content;
+	char				*arg;
     enum e_character	type;
     struct s_arg		*next;
 }					t_arg;
@@ -48,8 +48,11 @@ int    check_quote(char *line);
 t_arg	*p_lstlast(t_arg *lst);
 void	p_lstadd_back(t_arg **lst, t_arg *new);
 t_arg	*p_lstnew(int type, char *line);
+int	p_lstsize(t_arg *lst);
 
 int is_space(char c);
 int	is_quotation(char *s);
+
+void	check_redirection(t_arg **tmp_line);
 
 #endif

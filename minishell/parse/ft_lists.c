@@ -32,9 +32,22 @@ t_arg	*p_lstnew(int type, char *line)
 		free(node);
 		return (0);
 	}
-	node->content = ft_strdup(line);
+	node->arg = ft_strdup(line);
 	node->type = type;
 	node->next = NULL;
 	free(line);
 	return (node);
+}
+
+int	p_lstsize(t_arg *lst)
+{
+	int	i;
+
+	i = 1;
+	while (lst->next)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

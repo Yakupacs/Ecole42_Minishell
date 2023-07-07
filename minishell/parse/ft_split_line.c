@@ -26,7 +26,7 @@ void split_line(char *s, t_arg *line)
 	split_line2(st, len, s, line);
 }
 
-void split_line2(int st, int len, char *line, t_arg *tmp_line) // len = 1, st = 0, line = (echo "ya'kup")
+void split_line2(int st, int len, char *line, t_arg *tmp_line)
 {
 	int i;
 
@@ -41,7 +41,6 @@ void split_line2(int st, int len, char *line, t_arg *tmp_line) // len = 1, st = 
 				len++;
 		if (is_space(line[i]) || !line[i])
 		{
-			printf("len: %d\n", len); 
 			if (len != 1)
 				p_lstadd_back(&tmp_line, p_lstnew(0, ft_substr(line, st, len - 1)));
 			st = i + 1;
