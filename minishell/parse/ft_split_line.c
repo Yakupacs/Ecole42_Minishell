@@ -41,10 +41,8 @@ void	split_line2(int st, int len, char *line, t_arg *tmp_line) // len = 1, st = 
 				len++;
 		if (is_space(line[i]) || !line[i])
 		{
-			if (len != 1){
-				printf("len: %d\n", len);
+			if (len != 1)
                 p_lstadd_back(&tmp_line, p_lstnew(0, ft_substr(line, st, len - 1)));
-            }
 			st = i + 1;
 			len = 0;
 		}

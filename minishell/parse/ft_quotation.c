@@ -10,7 +10,7 @@ int check_double_quote(char *line)
     len = 0;
     while (line[i])
     {
-        if (line[i] == '\"') // " 
+        if (line[i] == '\"')
             len++;
         i++;
     }
@@ -30,7 +30,7 @@ int	check_single_quote(char *line)
 
 	i = 0;
 	count = 0;
-	while (line[i]) // echo 'a"a'
+	while (line[i])
 	{
 		while (line[i] != '"' && line[i] != '\0')
 		{
@@ -46,7 +46,6 @@ int	check_single_quote(char *line)
 			i++;
 	}
     if (count % 2 != 0){
-        printf("count: %d\n", count);
         g_data.error_flag = -1;
         return (-1);
     }
