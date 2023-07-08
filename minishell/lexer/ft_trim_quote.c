@@ -1,5 +1,5 @@
 #include "../minishell.h"
-#include "parse.h"
+#include "../parse/parse.h"
 
 int	check_quotation(char *s)
 {

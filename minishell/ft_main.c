@@ -43,8 +43,6 @@ void	loop(void)
 		if (!g_data.line) // Ctrl + D
 			signal_exit();
 		ft_parse();
-		if (g_data.error_flag)
-			printf("Not closed quote!\n");
 		cpy_g_data_list = g_data.list;
 		add_history(g_data.line);
 

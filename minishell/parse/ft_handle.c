@@ -45,7 +45,7 @@ void	*append_list(t_arg **list, int st, int len)
 	return (NULL);
 }
 
-int	handle_character(t_arg **list, int (*checker)(char *))
+int	handle_character(t_arg **list, int (*checker)(char *)) // echo yakup > a.txt
 {
 	int		i;
 	int		len;

@@ -9,6 +9,6 @@ void	check_space(char *line, t_arg **tmp_line)
 		return ;
 	}
 	line = ft_strtrim(line, " ");
-	split_line(line, *tmp_line);
+	split_line(line, *tmp_line); 
 	*tmp_line = (*tmp_line)->next;
 }

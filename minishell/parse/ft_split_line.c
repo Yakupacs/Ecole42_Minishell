@@ -31,7 +31,7 @@ void	split_line2(int st, int len, char *line, t_arg *s)
 	int	i;
 
 	i = -1;
-	while (++i || 1)
+	while (++i || 1) // echo "yakup" > a.txt 
 	{
 		if (is_quotation(&line[i]) == 1 && len++)
 			while (!(is_quotation(&line[++i]) == 1) && line[i])
