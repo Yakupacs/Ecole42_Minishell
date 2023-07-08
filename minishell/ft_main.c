@@ -1,8 +1,8 @@
 #include "minishell.h"
 
-extern t_data g_data;
+extern	t_data	g_data;
 
-void ft_struct_initilaize(char **envp, int flag)
+void	ft_struct_initilaize(char **envp, int flag)
 {
 	if (flag)
 	{
@@ -21,13 +21,13 @@ void ft_struct_initilaize(char **envp, int flag)
 	g_data.here_fd = 0;
 }
 
-int after_loop(t_arg *temp)
+int	after_loop(t_arg *temp)
 {
 	printf("after loop temp->content: %s\n", temp->arg);
-	return 0;
+	return (0);
 }
 
-void loop(void)
+void	loop(void)
 {
 	//t_arg	*cpy_g_data_list;
 
@@ -38,7 +38,7 @@ void loop(void)
 		if (g_data.sig_flag == 1) // NULL Enter
 		{
 			free(g_data.line);
-			continue;
+			continue ;
 		}
 		if (!g_data.line) // Ctrl + D
 			signal_exit();
@@ -51,7 +51,7 @@ void loop(void)
 	}
 }
 
-int main(int ac, char **av, char **envp)
+int	main(int ac, char **av, char **envp)
 {
 	if (ac > 1)
 	{

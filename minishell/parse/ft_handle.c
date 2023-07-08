@@ -1,7 +1,6 @@
 #include "../minishell.h"
 #include "parse.h"
 
-
 t_arg	*create_front(int st, int len, t_arg **list, t_arg *tmp)
 {
 	t_arg	*front;

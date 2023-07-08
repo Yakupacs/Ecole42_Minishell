@@ -1,12 +1,12 @@
 #include "../minishell.h"
 #include "parse.h"
 
-int is_space(char c)
+int	is_space(char c)
 {
 	return (c == 32);
 }
 
-int is_quotation(char *s)
+int	is_quotation(char *s)
 {
 	if (*s == '\"')
 		return (1);
@@ -15,10 +15,10 @@ int is_quotation(char *s)
 	return (0);
 }
 
-void split_line(char *s, t_arg *line)
+void	split_line(char *s, t_arg *line)
 {
-	int st;
-	int len;
+	int	st;
+	int	len;
 
 	st = 0;
 	len = 1;
@@ -26,9 +26,9 @@ void split_line(char *s, t_arg *line)
 	split_line2(st, len, s, line);
 }
 
-void split_line2(int st, int len, char *line, t_arg *tmp_line)
+void	split_line2(int st, int len, char *line, t_arg *s)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i || 1)
@@ -42,12 +42,12 @@ void split_line2(int st, int len, char *line, t_arg *tmp_line)
 		if (is_space(line[i]) || !line[i])
 		{
 			if (len != 1)
-				p_lstadd_back(&tmp_line, p_lstnew(0, ft_substr(line, st, len - 1)));
+				p_lstadd_back(&s, p_lstnew(0, ft_substr(line, st, len - 1)));
 			st = i + 1;
 			len = 0;
 		}
 		if (!line[i])
-			break;
+			break ;
 		len++;
 	}
 	free(line);

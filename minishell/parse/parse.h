@@ -31,8 +31,8 @@ typedef struct s_type_counter{
 
 typedef struct s_arg {
 	char				*arg;
-    enum e_character	type;
-    struct s_arg		*next;
+	enum e_character	type;
+	struct s_arg		*next;
 }					t_arg;
 
 int		ft_parse(void);
