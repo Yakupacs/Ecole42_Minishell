@@ -63,7 +63,7 @@ t_arg	*create_front(int st, int len, t_arg **list, t_arg *tmp);
 
 int		identify_token(t_arg **prompt);
 int		initialize_metacharacter(t_arg *node);
-int		contains_dollars(char *s);
+int		is_dollar(char *s);
 
 int		check_quotation(char *s);
 int		calculate_new_arg_len(char *s);

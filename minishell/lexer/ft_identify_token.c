@@ -1,29 +1,39 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
+int is_dollar(char *str)
+{
+	int i;
+
+	i = -1;
+	if (!str || !*str)
+		return (0);
+	while (str[++i])
+		if (str[i] == '$')
+			return (1);
+	return (0);
+}
+
 int identify_token(t_arg **prompt)
 {
-	t_arg *iter;
+	t_arg *node;
 
-	iter = *prompt;
-	printf("a\n");
-	while (iter)
+	node = *prompt;
+	while (node)
 	{
-		printf("b\n");
-		if (contains_dollars(iter->arg))
-			iter->type = DOLLAR;
-		else if (is_redirection(iter->arg) || is_pipe(iter->arg))
+		if (is_dollar(node->arg))
+			node->type = DOLLAR;
+		else if (is_redirection(node->arg) || is_pipe(node->arg))
 		{
-			if (initialize_metacharacter(iter) == -2)
+			if (initialize_metacharacter(node) == -2)
 			{
 				g_data.list = *prompt;
 				return (0);
 			}
 		}
 		else
-			iter->type = WORD;
-		iter = iter->next;
-		printf("c\n");
+			node->type = WORD;
+		node = node->next;
 	}
 	return (1);
 }

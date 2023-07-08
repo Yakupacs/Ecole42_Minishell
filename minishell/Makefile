@@ -12,7 +12,6 @@ SRCS		=	ft_main.c \
 				parse/ft_pipe.c \
 				lexer/ft_identify_token.c \
 				lexer/ft_metacharacter.c \
-				lexer/ft_contains_dollars.c \
 				lexer/ft_quot_cleaner.c \
 				lexer/ft_trim_quote.c \
 				lexer/ft_type_counter.c
