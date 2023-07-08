@@ -61,4 +61,17 @@ int		handle_character(t_arg **list, int (*checker)(char *));
 void	*append_list(t_arg **prompt, int st, int len);
 t_arg	*create_front(int st, int len, t_arg **list, t_arg *tmp);
 
+void	type_counter(t_arg	**prompt);
+void	quot_cleaner(t_arg **prompt);
+
+int		check_quotation(char *s);
+int		calculate_new_arg_len(char *s);
+char	*trim_quot2(char *s, char *new);
+char	*trim_quot(char *s);
+int		contains_quot(char *s);
+
+int		identify_token(t_arg **prompt);
+int		initilaze_metacharacter(t_arg *node);
+int		contains_dollars(char *s);
+
 #endif

@@ -29,7 +29,7 @@ int	after_loop(t_arg *temp)
 
 void	loop(void)
 {
-	//t_arg	*cpy_g_data_list;
+	t_arg	*cpy_g_data_list;
 
 	while (1)
 	{
@@ -45,11 +45,20 @@ void	loop(void)
 		ft_parse();
 		if (g_data.error_flag)
 			printf("Not closed quote!\n");
-		//cpy_g_data_list = g_data.list;
-		//add_history(g_data.line);
-		//free(g_data.line);
+		cpy_g_data_list = g_data.list;
+		add_history(g_data.line);
+
+		printf("Arguments:\n");
+		int i = 0;
+		while (g_data.list){
+			printf("%d.arg: %s, type: %u\n", i + 1, g_data.list->arg, g_data.list->type);
+			g_data.list = g_data.list->next;
+			i++;
+		}
+		
+		free(g_data.line);
 		//after_loop(cpy_g_data_list);
-		//freeliazer(cpy_g_data_list);
+		freeliazer(cpy_g_data_list);
 	}
 }
 

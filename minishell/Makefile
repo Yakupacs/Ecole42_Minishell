@@ -9,7 +9,9 @@ SRCS		=	ft_main.c \
 				parse/ft_split_line.c \
 				parse/ft_redirection.c \
 				parse/ft_handle.c \
-				parse/ft_pipe.c
+				parse/ft_pipe.c \
+				parse/ft_trim_quote.c \
+				lexer/identify_token.c
 
 LIBFT		=	libft/libft.a
 
