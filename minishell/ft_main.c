@@ -35,7 +35,7 @@ void	loop(void)
 	{
 		ft_struct_initilaize(g_data.envp, 0);
 		g_data.line = readline("minishell$ ");
-		if (g_data.sig_flag == 1) // NULL Enter
+		if (g_data.sig_flag == 1) // Ctrl + C
 		{
 			free(g_data.line);
 			continue ;
@@ -43,6 +43,8 @@ void	loop(void)
 		if (!g_data.line) // Ctrl + D
 			signal_exit();
 		ft_parse();
+		if (g_data.error_flag)
+			printf("Not closed quote!\n");
 		//cpy_g_data_list = g_data.list;
 		//add_history(g_data.line);
 		//free(g_data.line);
@@ -61,7 +63,7 @@ int	main(int ac, char **av, char **envp)
 		exit(127);
 	}
 	av = NULL;
-	signal(SIGINT, ft_sig_handler);
+	signal(SIGINT, ft_sig_handler); // Ctrl + C
 	signal(SIGQUIT, SIG_IGN);
 	g_data.exit_status = 1;
 	ft_struct_initilaize(envp, 1);
