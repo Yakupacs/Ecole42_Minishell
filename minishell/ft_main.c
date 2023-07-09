@@ -1,24 +1,22 @@
 #include "minishell.h"
 
-extern	t_data	g_data;
-
-void	ft_struct_initilaize(char **envp, int flag)
+void	ft_init_global(char **envp, int flag)
 {
 	if (flag)
 	{
-		g_data.ex_path = copy_env(envp);
-		g_data.envp = copy_env(envp);
+		g_global.ex_path = copy_env(envp);
+		g_global.envp = copy_env(envp);
 	}
-	g_data.signal_status = 0;
-	g_data.list = NULL;
-	g_data.command = NULL;
-	g_data.redirection = NULL;
-	g_data.count_type = NULL;
-	g_data.heredoc = NULL;
-	g_data.line = NULL;
-	g_data.sig_flag = 0;
-	g_data.error_flag = 0;
-	g_data.here_fd = 0;
+	g_global.signal_status = 0;
+	g_global.list = NULL;
+	g_global.command = NULL;
+	g_global.redirection = NULL;
+	g_global.count_type = NULL;
+	g_global.heredoc = NULL;
+	g_global.line = NULL;
+	g_global.sig_flag = 0;
+	g_global.error_flag = 0;
+	g_global.here_fd = 0;
 }
 
 int	after_loop(t_arg *temp)
@@ -33,47 +31,40 @@ void	loop(void)
 
 	while (1)
 	{
-		ft_struct_initilaize(g_data.envp, 0);
-		g_data.line = readline("minishell$ ");
-		if (g_data.sig_flag == 1) // Ctrl + C
+		ft_init_global(g_global.envp, 0);
+		g_global.line = readline("minishell$ ");
+		if (g_global.sig_flag == 1) // Ctrl + C
 		{
-			free(g_data.line);
+			free(g_global.line);
 			continue ;
 		}
-		if (!g_data.line) // Ctrl + D
+		if (!g_global.line) // Ctrl + D
 			signal_exit();
 		ft_parse();
-		cpy_g_data_list = g_data.list;
-		add_history(g_data.line);
-
+		cpy_g_data_list = g_global.list;
 		printf("Arguments:\n");
 		int i = 0;
-		while (g_data.list){
-			printf("%d.arg: %s, type: %u\n", i + 1, g_data.list->arg, g_data.list->type);
-			g_data.list = g_data.list->next;
+		while (g_global.list){
+			printf("%d.arg: %s, type: %u\n", i + 1, g_global.list->arg, g_global.list->type);
+			g_global.list = g_global.list->next;
 			i++;
 		}
-		
-		free(g_data.line);
-		//after_loop(cpy_g_data_list);
+		add_history(g_global.line);
+		free(g_global.line);
+		after_loop(cpy_g_data_list);
 		freeliazer(cpy_g_data_list);
 	}
 }
 
+/*  SIGINT: Ctrl + C */
 int	main(int ac, char **av, char **envp)
 {
-	if (ac > 1)
-	{
-		ft_putstr_fd("minishell: ", 2);
-		ft_putstr_fd(av[1], 2);
-		ft_putstr_fd(": No such file or directory\n", 2);
-		exit(127);
-	}
-	av = NULL;
-	signal(SIGINT, ft_sig_handler); // Ctrl + C
+	(void)ac;
+	(void)av;
+	signal(SIGINT, ft_sig_handler);
 	signal(SIGQUIT, SIG_IGN);
-	g_data.exit_status = 1;
-	ft_struct_initilaize(envp, 1);
+	g_global.exit_status = 1;
+	ft_init_global(envp, 1);
 	loop();
 	return (0);
 }

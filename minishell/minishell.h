@@ -13,7 +13,7 @@
 # include <stdarg.h>
 # include <string.h>
 
-typedef struct s_data
+typedef struct s_global
 {
 	t_arg			*list;
 	t_type_counter	*count_type;
@@ -39,12 +39,12 @@ typedef struct s_data
 	char			**dollar_line;
 	int				sig_flag;
 	int				error_flag;
-}	t_data;
+}	t_global;
 
 void	loop(void);
 int		after_loop(t_arg *temp);
 
-void	ft_struct_initilaize(char **envp, int flag);
+void	ft_init_global(char **envp, int flag);
 char	**copy_env(char **envp);
 
 void	signal_exit(void);
@@ -56,6 +56,6 @@ void	freeliazer(t_arg *temp);
 void	ft_free_all(void);
 void	ft_free_all2(void);
 
-t_data	g_data;
+t_global	g_global;
 
 #endif

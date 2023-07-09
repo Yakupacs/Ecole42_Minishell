@@ -5,20 +5,20 @@ void	ft_free_all2(void)
 	int	i;
 
 	i = 0;
-	if (g_data.redirection)
+	if (g_global.redirection)
 	{
-		while (g_data.redirection[i])
-			free(g_data.redirection[i++]);
-		free(g_data.redirection);
+		while (g_global.redirection[i])
+			free(g_global.redirection[i++]);
+		free(g_global.redirection);
 	}
-	if (g_data.count_type)
-		free(g_data.count_type);
+	if (g_global.count_type)
+		free(g_global.count_type);
 	i = 0;
-	if (g_data.heredoc)
+	if (g_global.heredoc)
 	{
-		while (g_data.heredoc[i])
-			free(g_data.heredoc[i++]);
-		free(g_data.heredoc);
+		while (g_global.heredoc[i])
+			free(g_global.heredoc[i++]);
+		free(g_global.heredoc);
 	}
 }
 
@@ -28,11 +28,11 @@ void	ft_free_all(void)
 
 	ft_free_all2();
 	i = 0;
-	if (g_data.command)
+	if (g_global.command)
 	{
-		while (g_data.command[i])
-			free(g_data.command[i++]);
-		free(g_data.command);
+		while (g_global.command[i])
+			free(g_global.command[i++]);
+		free(g_global.command);
 	}
 }
 
@@ -42,9 +42,9 @@ void	freeliazer(t_arg *temp)
 
 	tmp = NULL;
 	ft_free_all();
-	if (g_data.here_fd)
+	if (g_global.here_fd)
 	{
-		free(g_data.here_fd);
+		free(g_global.here_fd);
 	}
 	if (temp)
 	{

@@ -1,9 +1,9 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-int is_dollar(char *str)
+int	is_dollar(char *str)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (!str || !*str)
@@ -14,9 +14,9 @@ int is_dollar(char *str)
 	return (0);
 }
 
-int identify_token(t_arg **prompt)
+int	identify_token(t_arg **prompt)
 {
-	t_arg *node;
+	t_arg	*node;
 
 	node = *prompt;
 	while (node)
@@ -27,7 +27,7 @@ int identify_token(t_arg **prompt)
 		{
 			if (initialize_metacharacter(node) == -2)
 			{
-				g_data.list = *prompt;
+				g_global.list = *prompt;
 				return (0);
 			}
 		}

@@ -27,7 +27,7 @@ void	check_redirection(t_arg **tmp_line)
 	list = *tmp_line;
 	while (list)
 	{
-		if (handle_character(&list, &is_redirection)) // echo "yakup" > a.txt > b.txt > c.txt
+		if (handle_character(&list, &is_redirection))
 			list = list->next;
 		else
 			list = list->next;

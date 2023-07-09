@@ -1,5 +1,5 @@
 SRCS		=	ft_main.c \
-				ft_copy_env.c \
+				ft_envp.c \
 				ft_signals.c \
 				ft_free.c \
 				parse/ft_parse.c \

@@ -1,9 +1,9 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-int initialize_metacharacter(t_arg *node)
+int	initialize_metacharacter(t_arg *node)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(node->arg);
 	if (len == 1)
@@ -23,7 +23,7 @@ int initialize_metacharacter(t_arg *node)
 			node->type = DOUBLE_OUTPUT_RDR;
 		else
 		{
-			g_data.error_flag = -2;
+			g_global.error_flag = -2;
 			return (-2);
 		}
 	}

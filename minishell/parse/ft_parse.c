@@ -3,13 +3,12 @@
 
 int	tokenizer(t_arg **tmp_line)
 {
-	check_space(g_data.line, tmp_line);
-	if (g_data.error_flag)
+	check_space(g_global.line, tmp_line);
+	if (g_global.error_flag)
 	{
-		g_data.list = *tmp_line;
+		g_global.list = *tmp_line;
 		return (0);
 	}
-
 	check_redirection(tmp_line);
 	check_pipe(tmp_line);
 	return (1);
@@ -25,7 +24,7 @@ int	ft_parse(void)
 	if (!identify_token(&tokens))
 		return (-1);
 	quot_cleaner(&tokens);
-	g_data.list = tokens;
+	g_global.list = tokens;
 	type_counter(&tokens);
 	return (1);
 }

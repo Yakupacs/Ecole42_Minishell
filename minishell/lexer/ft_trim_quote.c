@@ -18,7 +18,7 @@ int	check_quotation(char *s)
 	}
 	if (len % 2)
 	{
-		g_data.error_flag = -1;
+		g_global.error_flag = -1;
 		return (-1);
 	}
 	else
