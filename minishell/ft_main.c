@@ -19,9 +19,14 @@ void	ft_init_global(char **envp, int flag)
 	g_global.here_fd = 0;
 }
 
-int	after_loop(t_command *temp)
+int	continue_loop(t_command *temp)
 {
-	printf("after loop temp->content: %s\n", temp->arg);
+	if (check_error() == -1)
+	{
+		temp = NULL;
+		return (-1);
+	}
+	printf("\n--\n%s\n--\n", temp[0].arg);
 	return (0);
 }
 
@@ -42,16 +47,16 @@ void	loop(void)
 			signal_exit();
 		ft_parse();
 		cpy_g_global_list = g_global.list;
-		printf("Arguments:\n");
+		/*printf("Arguments:\n");
 		int i = 0;
 		while (g_global.list){
 			printf("%d.arg: %s, type: %u\n", i + 1, g_global.list->arg, g_global.list->type);
 			g_global.list = g_global.list->next;
 			i++;
-		}
+		}*/
 		add_history(g_global.line);
 		free(g_global.line);
-		after_loop(cpy_g_global_list);
+		continue_loop(cpy_g_global_list);
 		freeliazer(cpy_g_global_list);
 	}
 }

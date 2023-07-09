@@ -2,6 +2,7 @@ SRCS		=	ft_main.c \
 				ft_envp.c \
 				ft_signals.c \
 				ft_free.c \
+				ft_error.c \
 				parse/ft_parse.c \
 				parse/ft_lists.c \
 				parse/ft_quote.c \
