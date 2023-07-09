@@ -20,8 +20,8 @@ t_command	*create_front(int st, int len, t_command **list, t_command *tmp)
 
 void	*append_list(t_command **list, int st, int len)
 {
-	char	*back;
-	char	*rdr;
+	char		*back;
+	char		*rdr;
 	t_command	*front;
 	t_command	*tmp;
 

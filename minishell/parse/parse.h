@@ -35,43 +35,43 @@ typedef struct s_command {
 	struct s_command	*next;
 }					t_command;
 
-int		ft_parse(void);
-int		tokenizer(t_command **tmp_line);
+int			ft_parse(void);
+int			tokenizer(t_command **tmp_line);
 
-void	split_line(char *s, t_command *line);
-void	split_line2(int st, int len, char *line, t_command *tmp_line);
+void		split_line(char *s, t_command *line);
+void		split_line2(int st, int len, char *line, t_command *tmp_line);
 
-int		check_quote(char *line);
-void	check_space(char *line, t_command **tmp_line);
+int			check_quote(char *line);
+void		check_space(char *line, t_command **tmp_line);
 
-void	check_redirection(t_command **tmp_line);
-void	check_pipe(t_command **prompt);
+void		check_redirection(t_command **tmp_line);
+void		check_pipe(t_command **prompt);
 
 t_command	*p_lstlast(t_command *lst);
-void	p_lstadd_back(t_command **lst, t_command *new);
+void		p_lstadd_back(t_command **lst, t_command *new);
 t_command	*p_lstnew(int type, char *line);
-int		p_lstsize(t_command *lst);
+int			p_lstsize(t_command *lst);
 
-int 	is_space(char c);
-int		is_quotation(char *s);
-int		is_pipe(char *s);
-int		is_redirection(char *line);
+int			is_space(char c);
+int			is_quotation(char *s);
+int			is_pipe(char *s);
+int			is_redirection(char *line);
 
-int		handle_character(t_command **list, int (*checker)(char *));
-void	*append_list(t_command **prompt, int st, int len);
+int			handle_character(t_command **list, int (*checker)(char *));
+void		*append_list(t_command **prompt, int st, int len);
 t_command	*create_front(int st, int len, t_command **list, t_command *tmp);
 
-int		identify_token(t_command **prompt);
-int		initialize_metacharacter(t_command *node);
-int		is_dollar(char *s);
+int			identify_token(t_command **prompt);
+int			initialize_metacharacter(t_command *node);
+int			is_dollar(char *s);
 
-int		check_quotation(char *s);
-int		calculate_new_arg_len(char *s);
-char	*trim_quot2(char *s, char *new);
-char	*trim_quot(char *s);
-int		contains_quot(char *s);
+int			check_quotation(char *s);
+int			calculate_new_arg_len(char *s);
+char		*trim_quot2(char *s, char *new);
+char		*trim_quot(char *s);
+int			contains_quot(char *s);
 
-void	type_counter(t_command	**prompt);
-void	quot_cleaner(t_command **prompt);
+void		type_counter(t_command	**prompt);
+void		quot_cleaner(t_command **prompt);
 
 #endif
