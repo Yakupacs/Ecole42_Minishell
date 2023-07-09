@@ -14,9 +14,9 @@ int	is_dollar(char *str)
 	return (0);
 }
 
-int	identify_token(t_arg **prompt)
+int	identify_token(t_command **prompt)
 {
-	t_arg	*node;
+	t_command	*node;
 
 	node = *prompt;
 	while (node)

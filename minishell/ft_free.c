@@ -36,9 +36,9 @@ void	ft_free_all(void)
 	}
 }
 
-void	freeliazer(t_arg *temp)
+void	freeliazer(t_command *temp)
 {
-	t_arg	*tmp;
+	t_command	*tmp;
 
 	tmp = NULL;
 	ft_free_all();

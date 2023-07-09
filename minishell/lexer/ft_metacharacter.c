@@ -1,7 +1,7 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-int	initialize_metacharacter(t_arg *node)
+int	initialize_metacharacter(t_command *node)
 {
 	int	len;
 

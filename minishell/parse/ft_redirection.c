@@ -20,9 +20,9 @@ int	is_redirection(char *line)
 	return (len);
 }
 
-void	check_redirection(t_arg **tmp_line)
+void	check_redirection(t_command **tmp_line)
 {
-	t_arg	*list;
+	t_command	*list;
 
 	list = *tmp_line;
 	while (list)

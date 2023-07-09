@@ -8,9 +8,9 @@ int	is_pipe(char *s)
 	return (0);
 }
 
-void	check_pipe(t_arg **prompt)
+void	check_pipe(t_command **prompt)
 {
-	t_arg	*iter;
+	t_command	*iter;
 
 	iter = *prompt;
 	while (iter)

@@ -1,9 +1,9 @@
 #include "../minishell.h"
 #include "parse.h"
 
-t_arg	*create_front(int st, int len, t_arg **list, t_arg *tmp)
+t_command	*create_front(int st, int len, t_command **list, t_command *tmp)
 {
-	t_arg	*front;
+	t_command	*front;
 
 	front = p_lstnew(0, ft_substr((*list)->arg, (st + len),
 				(ft_strlen((*list)->arg) - (st + len))));
@@ -18,12 +18,12 @@ t_arg	*create_front(int st, int len, t_arg **list, t_arg *tmp)
 	return (front);
 }
 
-void	*append_list(t_arg **list, int st, int len)
+void	*append_list(t_command **list, int st, int len)
 {
 	char	*back;
 	char	*rdr;
-	t_arg	*front;
-	t_arg	*tmp;
+	t_command	*front;
+	t_command	*tmp;
 
 	tmp = (*list)->next;
 	front = create_front(st, len, list, tmp);
@@ -45,7 +45,7 @@ void	*append_list(t_arg **list, int st, int len)
 	return (NULL);
 }
 
-int	handle_character(t_arg **list, int (*checker)(char *))
+int	handle_character(t_command **list, int (*checker)(char *))
 {
 	int		i;
 	int		len;

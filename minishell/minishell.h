@@ -15,7 +15,7 @@
 
 typedef struct s_global
 {
-	t_arg			*list;
+	t_command		*list;
 	t_type_counter	*count_type;
 	char			*line;
 	char			**envp;
@@ -42,7 +42,7 @@ typedef struct s_global
 }	t_global;
 
 void	loop(void);
-int		after_loop(t_arg *temp);
+int		after_loop(t_command *temp);
 
 void	ft_init_global(char **envp, int flag);
 char	**copy_env(char **envp);
@@ -52,7 +52,7 @@ void	ft_sig_handler(int sig);
 
 int		ft_parse(void);
 
-void	freeliazer(t_arg *temp);
+void	freeliazer(t_command *temp);
 void	ft_free_all(void);
 void	ft_free_all2(void);
 

@@ -1,9 +1,9 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-void	quot_cleaner(t_arg **prompt)
+void	quot_cleaner(t_command **prompt)
 {
-	t_arg	*iter;
+	t_command	*iter;
 	char	*s;
 
 	iter = *prompt;

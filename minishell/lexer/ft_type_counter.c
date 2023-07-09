@@ -1,7 +1,7 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-void	type_counter(t_arg	**prompt)
+void	type_counter(t_command	**prompt)
 {
 	g_global.count_type = ft_calloc(1, sizeof(t_type_counter));
 	while (*prompt)

@@ -15,7 +15,7 @@ int	is_quotation(char *s)
 	return (0);
 }
 
-void	split_line(char *s, t_arg *line)
+void	split_line(char *s, t_command *line)
 {
 	int	st;
 	int	len;
@@ -25,7 +25,7 @@ void	split_line(char *s, t_arg *line)
 	split_line2(st, len, s, line);
 }
 
-void	split_line2(int st, int len, char *line, t_arg *s)
+void	split_line2(int st, int len, char *line, t_command *s)
 {
 	int	i;
 

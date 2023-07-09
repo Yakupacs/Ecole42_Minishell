@@ -1,7 +1,7 @@
 #include "../minishell.h"
 #include "parse.h"
 
-t_arg	*p_lstlast(t_arg *lst)
+t_command	*p_lstlast(t_command *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -10,9 +10,9 @@ t_arg	*p_lstlast(t_arg *lst)
 	return (lst);
 }
 
-void	p_lstadd_back(t_arg **lst, t_arg *new)
+void	p_lstadd_back(t_command **lst, t_command *new)
 {
-	t_arg	*list;
+	t_command	*list;
 
 	list = p_lstlast((*lst));
 	if (!list)
@@ -21,11 +21,11 @@ void	p_lstadd_back(t_arg **lst, t_arg *new)
 		list->next = new;
 }
 
-t_arg	*p_lstnew(int type, char *line)
+t_command	*p_lstnew(int type, char *line)
 {
-	t_arg	*node;
+	t_command	*node;
 
-	node = malloc (sizeof(t_arg));
+	node = malloc (sizeof(t_command));
 	if (!node)
 	{
 		free(line);
@@ -39,7 +39,7 @@ t_arg	*p_lstnew(int type, char *line)
 	return (node);
 }
 
-int	p_lstsize(t_arg *lst)
+int	p_lstsize(t_command *lst)
 {
 	int	i;
 

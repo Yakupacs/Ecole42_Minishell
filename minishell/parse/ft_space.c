@@ -1,7 +1,7 @@
 #include "../minishell.h"
 #include "parse.h"
 
-void	check_space(char *line, t_arg **tmp_line)
+void	check_space(char *line, t_command **tmp_line)
 {
 	if (check_quote(line) != 0)
 	{
