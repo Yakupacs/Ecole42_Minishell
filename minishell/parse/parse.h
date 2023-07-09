@@ -61,7 +61,7 @@ int			handle_character(t_command **list, int (*checker)(char *));
 void		*append_list(t_command **prompt, int st, int len);
 t_command	*create_front(int st, int len, t_command **list, t_command *tmp);
 
-int			identify_token(t_command **prompt);
+int			identify_token(t_command **token);
 int			initialize_metacharacter(t_command *node);
 int			is_dollar(char *s);
 
@@ -71,7 +71,7 @@ char		*trim_quot2(char *s, char *new);
 char		*trim_quot(char *s);
 int			contains_quot(char *s);
 
-void		type_counter(t_command	**prompt);
-void		quot_cleaner(t_command **prompt);
+void		type_counter(t_command	**token);
+void		quot_cleaner(t_command **token);
 
 #endif

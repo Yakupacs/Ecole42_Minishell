@@ -1,22 +1,22 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-void	type_counter(t_command	**prompt)
+void	type_counter(t_command	**token)
 {
 	g_global.count_type = ft_calloc(1, sizeof(t_type_counter));
-	while (*prompt)
+	while (*token)
 	{
-		if ((*prompt)->type == INPUT_RDR || (*prompt)->type == OUTPUT_RDR
-			|| (*prompt)->type == DOUBLE_OUTPUT_RDR)
+		if ((*token)->type == INPUT_RDR || (*token)->type == OUTPUT_RDR
+			|| (*token)->type == DOUBLE_OUTPUT_RDR)
 			g_global.count_type->rdr++;
-		else if ((*prompt)->type == DOLLAR)
+		else if ((*token)->type == DOLLAR)
 			g_global.count_type->dollar++;
-		else if ((*prompt)->type == WORD)
+		else if ((*token)->type == WORD)
 			g_global.count_type->word++;
-		else if ((*prompt)->type == DOUBLE_INPUT_RDR)
+		else if ((*token)->type == DOUBLE_INPUT_RDR)
 			g_global.count_type->heredoc++;
-		else if ((*prompt)->type == PIPE)
+		else if ((*token)->type == PIPE)
 			g_global.count_type->pipe++;
-		(*prompt) = (*prompt)->next;
+		(*token) = (*token)->next;
 	}
 }

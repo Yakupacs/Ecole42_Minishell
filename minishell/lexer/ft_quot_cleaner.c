@@ -1,23 +1,23 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-void	quot_cleaner(t_command **prompt)
+void	quot_cleaner(t_command **token)
 {
-	t_command	*iter;
+	t_command	*node;
 	char	*s;
 
-	iter = *prompt;
-	while (iter)
+	node = *token;
+	while (node)
 	{
-		if (contains_quot(iter->arg))
+		if (contains_quot(node->arg))
 		{
-			if (iter->type != DOLLAR)
+			if (node->type != DOLLAR)
 			{
-				s = iter->arg;
-				iter->arg = trim_quot(iter->arg);
+				s = node->arg;
+				node->arg = trim_quot(node->arg);
 				free(s);
 			}
 		}
-		iter = iter->next;
+		node = node->next;
 	}
 }

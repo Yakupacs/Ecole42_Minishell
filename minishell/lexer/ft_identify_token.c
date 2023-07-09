@@ -14,11 +14,11 @@ int	is_dollar(char *str)
 	return (0);
 }
 
-int	identify_token(t_command **prompt)
+int	identify_token(t_command **token)
 {
 	t_command	*node;
 
-	node = *prompt;
+	node = *token;
 	while (node)
 	{
 		if (is_dollar(node->arg))
@@ -27,7 +27,7 @@ int	identify_token(t_command **prompt)
 		{
 			if (initialize_metacharacter(node) == -2)
 			{
-				g_global.list = *prompt;
+				g_global.list = *token;
 				return (0);
 			}
 		}
