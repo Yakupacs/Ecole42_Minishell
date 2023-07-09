@@ -26,7 +26,7 @@ int	continue_loop(t_command *temp)
 		temp = NULL;
 		return (-1);
 	}
-	printf("\n--\n%s\n--\n", temp[0].arg);
+	(void)temp;
 	return (0);
 }
 
@@ -47,13 +47,6 @@ void	loop(void)
 			signal_exit();
 		ft_parse();
 		cpy_g_global_list = g_global.list;
-		/*printf("Arguments:\n");
-		int i = 0;
-		while (g_global.list){
-			printf("%d.arg: %s, type: %u\n", i + 1, g_global.list->arg, g_global.list->type);
-			g_global.list = g_global.list->next;
-			i++;
-		}*/
 		add_history(g_global.line);
 		free(g_global.line);
 		continue_loop(cpy_g_global_list);

@@ -10,14 +10,14 @@ int	error_msg(int flag, t_command *temp)
 			str = ft_strdup("newline");
 		else
 			str = ft_strdup(temp->next->arg);
-		printf("minishell: syntax error near unexpected token '%s'\n", str);
+		printf("Syntax Error: unexpected token '%s'\n", str);
 		free(str);
 		return (-1);
 	}
 	else if (flag == 2)
 	{
 		if (g_global.error_flag == -2)
-			printf("minishell: syntax error near unexpected token '%s'\n", "<");
+			printf("Syntax Error: unexpected token '%s'\n", "<");
 		if (g_global.error_flag == -1)
 			printf("Syntax Error: quotes not closed!\n");
 		return (-1);
