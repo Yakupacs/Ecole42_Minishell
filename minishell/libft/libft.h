@@ -4,12 +4,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
@@ -45,6 +39,11 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				ft_striteri(char *s, void (*d)(unsigned int, char *));
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
