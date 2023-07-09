@@ -65,7 +65,6 @@ int			identify_token(t_command **token);
 int			initialize_metacharacter(t_command *node);
 int			is_dollar(char *s);
 
-int			check_quotation(char *s);
 int			calculate_new_arg_len(char *s);
 char		*trim_quot2(char *s, char *new);
 char		*trim_quot(char *s);

@@ -1,96 +1,72 @@
 #include "../minishell.h"
 #include "../parse/parse.h"
 
-int	check_quotation(char *s)
-{
-	char	handle;
-	int		i;
-	int		len;
-
-	handle = '\"';
-	i = 0;
-	len = 0;
-	while (s[i])
-	{
-		if (s[i] == handle)
-			len++;
-		i++;
-	}
-	if (len % 2)
-	{
-		g_global.error_flag = -1;
-		return (-1);
-	}
-	else
-		return (len);
-}
-
-int	calculate_new_arg_len(char *s)
+int	calculate_new_arg_len(char *str)
 {
 	int	i;
-	int	len;
+	int	arg_len;
 
 	i = 0;
-	len = 0;
-	while (s[i])
+	arg_len = 0;
+	while (str[i])
 	{
-		if (s[i] == '\"')
-			while (s[++i] != '\"')
-				len++;
-		else if (s[i] == '\'')
-			while (s[++i] != '\'')
-				len++;
+		if (str[i] == '\"')
+			while (str[++i] != '\"')
+				arg_len++;
+		else if (str[i] == '\'')
+			while (str[++i] != '\'')
+				arg_len++;
 		else
-			len++;
+			arg_len++;
 		i++;
 	}
-	return (len);
+	return (arg_len);
 }
 
-char	*trim_quot2(char *s, char *new)
+char	*trim_quot2(char *str, char *new)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (s[i] == '\"')
-			while (s[++i] != '\"')
-				new[j++] = s[i];
-		else if (s[i] == '\'')
-			while (s[++i] != '\'')
-				new[j++] = s[i];
+		if (str[i] == '\"')
+			while (str[++i] != '\"')
+				new[j++] = str[i];
+		else if (str[i] == '\'')
+			while (str[++i] != '\'')
+				new[j++] = str[i];
 		else
-			new[j++] = s[i];
+			new[j++] = str[i];
 		i++;
 	}
 	new[j] = '\0';
 	return (new);
 }
 
-char	*trim_quot(char *s)
+char	*trim_quot(char *str)
 {
 	int		len;
 	char	*new;
 
-	len = calculate_new_arg_len(s);
+	len = calculate_new_arg_len(str);
 	new = malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
-	new = trim_quot2(s, new);
+	new = trim_quot2(str, new);
 	return (new);
 }
 
-int	contains_quot(char *s)
+int	contains_quot(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (is_quotation(&s[i]))
+		if (is_quotation(&str[i]))
 			return (1);
 		i++;
 	}
