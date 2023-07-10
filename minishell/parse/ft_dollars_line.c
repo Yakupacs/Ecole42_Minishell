@@ -1,5 +1,43 @@
 #include "../minishell.h"
 
+int	special_parse(void)
+{
+	if (g_global.list->arg[1] == '?')
+	{
+		free(g_global.list->arg);
+		g_global.list->arg = ft_itoa(g_global.exit_status);
+		return (0);
+	}
+	else if (g_global.list->arg[1] == '0')
+	{
+		free(g_global.list->arg);
+		g_global.list->arg = ft_strdup("minishell");
+		return (0);
+	}
+	return (-1);
+}
+
+void	dollar_prs(char *str)
+{
+	int	len;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	len = ft_strlen(str);
+	while (i < len)
+	{
+		if (str[i] != '"' && str[i] != '\'')
+		{
+			str[j] = str[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = '\0';
+}
+
 int	quot_parse(char *str)
 {
 	int	i;

@@ -75,4 +75,15 @@ void		quot_cleaner(t_command **token);
 
 
 
+void		ft_dollars_line(void);
+int			quot_parse(char *str);
+void		dollar_prs(char *str);
+int			special_parse(void);
+void		ft_parse_dollars(void);
+
+char		*ft_find_env(char *arg);
+char		*ft_find_env2(char *line, char *arg, char *ret, int j);
+char		*line_connect(char *arg);
+int			ft_equal_finder(char *s1, char *s2);
+
 #endif

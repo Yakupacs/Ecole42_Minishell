@@ -11,11 +11,14 @@ SRCS		=	ft_main.c \
 				lexer/ft_check_redirection.c \
 				lexer/ft_handle.c \
 				lexer/ft_check_pipe.c \
-				parse/ft_identify_token.c \
-				parse/ft_metacharacter.c \
-				parse/ft_quot_cleaner.c \
-				parse/ft_trim_quote.c \
-				parse/ft_type_counter.c
+				lexer/ft_identify_token.c \
+				lexer/ft_metacharacter.c \
+				lexer/ft_quot_cleaner.c \
+				lexer/ft_trim_quote.c \
+				lexer/ft_type_counter.c \
+				parse/ft_dollars_line.c \
+				parse/ft_parse_dollars.c \
+				parse/ft_find_env.c
 
 LIBFT		=	libft/libft.a
 
