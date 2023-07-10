@@ -5,12 +5,12 @@ SRCS		=	ft_main.c \
 				ft_error.c \
 				lexer/ft_lexer.c \
 				lexer/ft_lists.c \
-				lexer/ft_quote.c \
-				lexer/ft_space.c \
+				lexer/ft_check_quote.c \
+				lexer/ft_check_space.c \
 				lexer/ft_split_line.c \
-				lexer/ft_redirection.c \
+				lexer/ft_check_redirection.c \
 				lexer/ft_handle.c \
-				lexer/ft_pipe.c \
+				lexer/ft_check_pipe.c \
 				parse/ft_identify_token.c \
 				parse/ft_metacharacter.c \
 				parse/ft_quot_cleaner.c \

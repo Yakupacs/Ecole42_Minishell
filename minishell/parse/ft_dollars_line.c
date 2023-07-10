@@ -1,5 +1,30 @@
 #include "../minishell.h"
 
+int	quot_parse(char *str)
+{
+	int	i;
+	int	double_count;
+	int	single_count;
+
+	i = 0;
+	double_count = 0;
+	single_count = 0;
+	while (str[i])
+	{
+		if (str[i] == '\"')
+			double_count++;
+		else if (str[i] == '\'')
+			single_count++;
+		i++;
+	}
+	if (single_count == 2)
+		return (-1);
+	else if (double_count == 2)
+		return (0);
+	else
+		return (0);
+}
+
 void	ft_dollars_line(void)
 {
 	t_command	*temp_s;
