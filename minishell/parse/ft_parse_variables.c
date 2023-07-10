@@ -1,6 +1,6 @@
 #include "../minishell.h"
 
-char	*ft_parse_dollars2(char **line, char *src)
+char	*ft_parse_variables2(char **line, char *src)
 {
 	int		i;
 	char	*temp;
@@ -23,7 +23,7 @@ char	*ft_parse_dollars2(char **line, char *src)
 	return (src);
 }
 
-void	ft_parse_dollars(void)
+void	ft_parse_variables(void)
 {
 	char	*str;
 	char	**variable;
@@ -38,6 +38,6 @@ void	ft_parse_dollars(void)
 		variable[i] = ft_find_env(variable[i]);
 		i++;
 	}
-	str = ft_parse_dollars2(variable, str);
+	str = ft_parse_variables2(variable, str);
 	g_global.list->arg = str;
 }

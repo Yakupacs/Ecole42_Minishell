@@ -2,7 +2,8 @@
 
 void	ft_heredoc_start(int i)
 {
-	while (1)
+	(void)i;
+/* 	while (1)
 	{
 		g_global.here_line = readline("> ");
 		if (ft_strcmp(g_global.here_line, g_global.heredoc[i]))
@@ -17,7 +18,7 @@ void	ft_heredoc_start(int i)
 			}
 			free(g_global.here_line);
 		}
-	}
+	} */
 	close(g_global.here_fd[1]);
 }
 

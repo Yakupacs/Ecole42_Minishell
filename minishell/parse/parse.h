@@ -79,7 +79,7 @@ void		ft_dollars_line(void);
 int			quote_parse(char *str);
 void		dollar_parse(char *str);
 int			special_dollar(void);
-void		ft_parse_dollars(void);
+void		ft_parse_variables(void);
 
 char		*ft_find_env(char *arg);
 char		*ft_find_env2(char *line, char *arg, char *ret, int j);
@@ -90,7 +90,5 @@ void		ft_heredoc_line(void);
 void		init_pipe(void);
 void		ft_heredoc(void);
 void		ft_heredoc_start(int i);
-
-int 		ft_strcmp(char *s1, char *s2);
 
 #endif

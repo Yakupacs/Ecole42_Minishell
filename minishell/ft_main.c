@@ -30,7 +30,7 @@ int	continue_loop(t_command *cpy_g_global_list)
 		ft_dollars_line();
 	if (g_global.count_type->heredoc > 0)
 		ft_heredoc_line();
-	if (ft_strcmp(g_global.list->arg, "exit"))
+	if (!ft_strncmp(g_global.list->arg, "exit\0", 5))
 	{
 		ft_exit(cpy_g_global_list);
 		return (-1);

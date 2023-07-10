@@ -59,7 +59,7 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 	return (NULL);
 }
 
-char	*ft_find_env(char *arg)
+char	*ft_find_env(char *arg) // HOME
 {
 	int		j;
 	char	*line;
@@ -70,7 +70,7 @@ char	*ft_find_env(char *arg)
 	while (arg[j] && ft_isalnum(arg[j]))
 		j++;
 	line = line_connect(arg);
-	free(line);
+	free(line); // ?
 	ret = ft_find_env2(line, arg, ret, j);
 	line = ft_strdup("");
 	free(arg);

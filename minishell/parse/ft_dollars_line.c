@@ -85,7 +85,7 @@ void	ft_dollars_line(void)
 			if (flag != -1)
 			{
 				if (special_dollar() == -1)
-					ft_parse_dollars();
+					ft_parse_variables();
 			}
 		}
 		g_global.list = g_global.list->next;
