@@ -43,9 +43,7 @@ void	freeliazer(t_command *temp)
 	tmp = NULL;
 	ft_free_all();
 	if (g_global.here_fd)
-	{
 		free(g_global.here_fd);
-	}
 	if (temp)
 	{
 		while (temp)
