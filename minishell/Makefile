@@ -3,6 +3,7 @@ SRCS		=	ft_main.c \
 				ft_signals.c \
 				ft_free.c \
 				ft_error.c \
+				ft_exit.c \
 				lexer/ft_lexer.c \
 				lexer/ft_lists.c \
 				lexer/ft_check_quote.c \
@@ -18,7 +19,9 @@ SRCS		=	ft_main.c \
 				lexer/ft_type_counter.c \
 				parse/ft_dollars_line.c \
 				parse/ft_parse_dollars.c \
-				parse/ft_find_env.c
+				parse/ft_find_env.c \
+				parse/ft_exec_heredoc.c \
+				parse/ft_strcmp.c
 
 LIBFT		=	libft/libft.a
 

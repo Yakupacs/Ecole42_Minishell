@@ -28,6 +28,13 @@ int	continue_loop(t_command *cpy_g_global_list)
 	}
 	if (g_global.count_type->dollar > 0)
 		ft_dollars_line();
+	if (g_global.count_type->heredoc > 0)
+		ft_heredoc_line();
+	if (ft_strcmp(g_global.list->arg, "exit"))
+	{
+		ft_exit(cpy_g_global_list);
+		return (-1);
+	}
 	(void)cpy_g_global_list;
 	return (0);
 }

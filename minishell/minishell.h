@@ -47,7 +47,6 @@ int		continue_loop(t_command *cpy_g_global_list);
 void	ft_init_global(char **envp, int flag);
 char	**copy_env(char **envp);
 
-void	signal_exit(void);
 void	ft_sig_handler(int sig);
 
 int		ft_lexer(void);
@@ -59,6 +58,11 @@ int		error_msg(int flag, t_command *temp);
 void	freeliazer(t_command *temp);
 void	ft_free_all(void);
 void	ft_free_all2(void);
+
+void	ft_exit(t_command *data);
+void	ft_exit2(t_command *temp);
+int		ft_check_digit(char *str);
+void	signal_exit(void);
 
 t_global	g_global;
 

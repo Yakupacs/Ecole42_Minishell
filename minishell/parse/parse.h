@@ -86,4 +86,11 @@ char		*ft_find_env2(char *line, char *arg, char *ret, int j);
 char		*line_connect(char *arg);
 int			ft_equal_finder(char *s1, char *s2);
 
+void		ft_heredoc_line(void);
+void		init_pipe(void);
+void		ft_heredoc(void);
+void		ft_heredoc_start(int i);
+
+int 		ft_strcmp(char *s1, char *s2);
+
 #endif

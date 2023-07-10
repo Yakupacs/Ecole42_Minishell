@@ -1,12 +1,5 @@
 #include "minishell.h"
 
-void	signal_exit(void)
-{
-	write(1, "\033[2D", 4);
-	write(1, "\033[0mexit\n", 9);
-	exit(0);
-}
-
 /* '\00' -> Escape karakteri, '[A' -> Cursor Up, imleci yukarı taşır. */
 /* Standart girişe \n karakterini gönderir  */
 /* TIOCSTI "Terminal input characters in string" */
