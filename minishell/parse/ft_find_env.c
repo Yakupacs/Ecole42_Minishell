@@ -1,13 +1,13 @@
 #include "../minishell.h"
 
-int	ft_equal_finder(char *s1, char *s2)
+int	ft_equal_finder(char *line, char *envp)
 {
-	while (*s1 && *s2 && (*s1 == *s2))
+	while (*line && *envp && (*line == *envp))
 	{
-		s1++;
-		s2++;
+		line++;
+		envp++;
 	}
-	if (*s1 == '\0' && *s2 == '=')
+	if (*line == '\0' && *envp == '=')
 		return (1);
 	else
 		return (0);
@@ -50,7 +50,7 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 			ret = ft_strdup(g_global.envp[i] + len + 1);
 			temp = ret;
 			ret = ft_strjoin(ret, arg + j);
-			free (temp);
+			free(temp);
 			free(arg);
 			return (ret);
 		}
@@ -70,8 +70,8 @@ char	*ft_find_env(char *arg) // HOME
 	while (arg[j] && ft_isalnum(arg[j]))
 		j++;
 	line = line_connect(arg);
-	free(line); // ?
-	ret = ft_find_env2(line, arg, ret, j);
+ 	free(line); // ?
+ 	ret = ft_find_env2(line, arg, ret, j);
 	line = ft_strdup("");
 	free(arg);
 	if (ret)
