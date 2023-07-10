@@ -1,5 +1,5 @@
 #include "../minishell.h"
-#include "parse.h"
+#include "../parse/parse.h"
 
 t_command	*create_front(int st, int len, t_command **list, t_command *tmp)
 {

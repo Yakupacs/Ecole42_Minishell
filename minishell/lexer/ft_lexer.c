@@ -1,5 +1,5 @@
 #include "../minishell.h"
-#include "parse.h"
+#include "../parse/parse.h"
 
 int	tokenizer(t_command **tmp_line)
 {
@@ -14,7 +14,7 @@ int	tokenizer(t_command **tmp_line)
 	return (1);
 }
 
-int	ft_parse(void)
+int	ft_lexer(void)
 {
 	t_command	*tokens;
 

@@ -42,7 +42,7 @@ typedef struct s_global
 }	t_global;
 
 void	loop(void);
-int		continue_loop(t_command *temp);
+int		continue_loop(t_command *cpy_g_global_list);
 
 void	ft_init_global(char **envp, int flag);
 char	**copy_env(char **envp);
@@ -50,7 +50,7 @@ char	**copy_env(char **envp);
 void	signal_exit(void);
 void	ft_sig_handler(int sig);
 
-int		ft_parse(void);
+int		ft_lexer(void);
 
 int		check_error(void);
 int		error_check2(int flag, t_command *temp);

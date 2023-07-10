@@ -3,19 +3,19 @@ SRCS		=	ft_main.c \
 				ft_signals.c \
 				ft_free.c \
 				ft_error.c \
-				parse/ft_parse.c \
-				parse/ft_lists.c \
-				parse/ft_quote.c \
-				parse/ft_space.c \
-				parse/ft_split_line.c \
-				parse/ft_redirection.c \
-				parse/ft_handle.c \
-				parse/ft_pipe.c \
-				lexer/ft_identify_token.c \
-				lexer/ft_metacharacter.c \
-				lexer/ft_quot_cleaner.c \
-				lexer/ft_trim_quote.c \
-				lexer/ft_type_counter.c
+				lexer/ft_lexer.c \
+				lexer/ft_lists.c \
+				lexer/ft_quote.c \
+				lexer/ft_space.c \
+				lexer/ft_split_line.c \
+				lexer/ft_redirection.c \
+				lexer/ft_handle.c \
+				lexer/ft_pipe.c \
+				parse/ft_identify_token.c \
+				parse/ft_metacharacter.c \
+				parse/ft_quot_cleaner.c \
+				parse/ft_trim_quote.c \
+				parse/ft_type_counter.c
 
 LIBFT		=	libft/libft.a
 

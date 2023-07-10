@@ -4,6 +4,7 @@ void	signal_exit(void)
 {
 	write(1, "\033[2D", 4);
 	write(1, "\033[0mexit\n", 9);
+	system("leaks minishell");
 	exit(0);
 }
 

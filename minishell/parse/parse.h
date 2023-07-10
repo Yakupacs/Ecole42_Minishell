@@ -35,7 +35,7 @@ typedef struct s_command {
 	struct s_command	*next;
 }					t_command;
 
-int			ft_parse(void);
+int			ft_lexer(void);
 int			tokenizer(t_command **tmp_line);
 
 void		split_line(char *s, t_command *line);
@@ -72,5 +72,7 @@ int			contains_quot(char *s);
 
 void		type_counter(t_command	**token);
 void		quot_cleaner(t_command **token);
+
+
 
 #endif

@@ -1,5 +1,5 @@
 #include "../minishell.h"
-#include "parse.h"
+#include "../parse/parse.h"
 
 t_command	*p_lstlast(t_command *lst)
 {

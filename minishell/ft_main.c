@@ -19,14 +19,16 @@ void	ft_init_global(char **envp, int flag)
 	g_global.here_fd = 0;
 }
 
-int	continue_loop(t_command *temp)
+int	continue_loop(t_command *cpy_g_global_list)
 {
 	if (check_error() == -1)
 	{
-		temp = NULL;
+		cpy_g_global_list = NULL;
 		return (-1);
 	}
-	(void)temp;
+	if (g_global.count_type->dollar > 0)
+		ft_dollars_line();
+	(void)cpy_g_global_list;
 	return (0);
 }
 
@@ -45,7 +47,7 @@ void	loop(void)
 		}
 		if (!g_global.line) // Ctrl + D
 			signal_exit();
-		ft_parse();
+		ft_lexer();
 		cpy_g_global_list = g_global.list;
 		add_history(g_global.line);
 		free(g_global.line);
