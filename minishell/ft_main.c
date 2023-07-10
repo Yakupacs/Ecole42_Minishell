@@ -47,12 +47,12 @@ void	loop(void)
 	{
 		ft_init_global(g_global.envp, 0);
 		g_global.line = readline("minishell$ ");
-		if (g_global.sig_flag == 1) // Ctrl + C
+		if (g_global.sig_flag == 1)
 		{
 			free(g_global.line);
 			continue ;
 		}
-		if (!g_global.line) // Ctrl + D
+		if (!g_global.line)
 			signal_exit();
 		ft_lexer();
 		cpy_g_global_list = g_global.list;

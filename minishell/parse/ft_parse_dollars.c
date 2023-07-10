@@ -26,18 +26,18 @@ char	*ft_parse_dollars2(char **line, char *src)
 void	ft_parse_dollars(void)
 {
 	char	*str;
-	char	**line;
+	char	**variable;
 	int		i;
 
 	i = 0;
 	str = g_global.list->arg;
-	line = ft_split(str, '$');
+	variable = ft_split(str, '$');
 	free(str);
-	while (line[i])
+	while (variable[i])
 	{
-		line[i] = ft_find_env(line[i]);
+		variable[i] = ft_find_env(variable[i]);
 		i++;
 	}
-	str = ft_parse_dollars2(line, str);
+	str = ft_parse_dollars2(variable, str);
 	g_global.list->arg = str;
 }
