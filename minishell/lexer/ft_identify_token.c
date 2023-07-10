@@ -9,7 +9,7 @@ int	is_dollar(char *str)
 	if (!str || !*str)
 		return (0);
 	while (str[++i])
-		if (str[i] == '$' && (str[i + 1] == '?' || str[i + 1] == '0'))
+		if (str[i] == '$' && str[i + 1] != ' ' && str[i + 1] != '\0')
 			return (1);
 	return (0);
 }

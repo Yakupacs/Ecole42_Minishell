@@ -76,9 +76,9 @@ void		quot_cleaner(t_command **token);
 
 
 void		ft_dollars_line(void);
-int			quot_parse(char *str);
-void		dollar_prs(char *str);
-int			special_parse(void);
+int			quote_parse(char *str);
+void		dollar_parse(char *str);
+int			special_dollar(void);
 void		ft_parse_dollars(void);
 
 char		*ft_find_env(char *arg);

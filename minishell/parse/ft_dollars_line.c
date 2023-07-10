@@ -1,6 +1,6 @@
 #include "../minishell.h"
 
-int	special_parse(void)
+int	special_dollar(void)
 {
 	if (g_global.list->arg[1] == '?')
 	{
@@ -14,10 +14,16 @@ int	special_parse(void)
 		g_global.list->arg = ft_strdup("minishell");
 		return (0);
 	}
+	else if (g_global.list->arg[1] == '$')
+	{
+		free(g_global.list->arg);
+		g_global.list->arg = ft_strdup("420042");
+		return (0);
+	}
 	return (-1);
 }
 
-void	dollar_prs(char *str)
+void	dollar_parse(char *str)
 {
 	int	len;
 	int	i;
@@ -28,7 +34,7 @@ void	dollar_prs(char *str)
 	len = ft_strlen(str);
 	while (i < len)
 	{
-		if (str[i] != '"' && str[i] != '\'')
+		if (str[i] != '\"' && str[i] != '\'')
 		{
 			str[j] = str[i];
 			j++;
@@ -38,15 +44,15 @@ void	dollar_prs(char *str)
 	str[j] = '\0';
 }
 
-int	quot_parse(char *str)
+int	quote_parse(char *str)
 {
 	int	i;
-	int	double_count;
 	int	single_count;
+	int	double_count;
 
 	i = 0;
-	double_count = 0;
 	single_count = 0;
+	double_count = 0;
 	while (str[i])
 	{
 		if (str[i] == '\"')
@@ -65,24 +71,24 @@ int	quot_parse(char *str)
 
 void	ft_dollars_line(void)
 {
-	t_command	*temp_s;
+	t_command	*tmp;
 	int			flag;
 
-	temp_s = g_global.list;
+	tmp = g_global.list;
 	while (g_global.list)
 	{
 		if (g_global.list->type == DOLLAR)
 		{
-			flag = quot_parse(g_global.list->arg);
-			dollar_prs(g_global.list->arg);
+			flag = quote_parse(g_global.list->arg);
+			dollar_parse(g_global.list->arg);
 			g_global.list->type = WORD;
 			if (flag != -1)
 			{
-				if (special_parse() == -1)
+				if (special_dollar() == -1)
 					ft_parse_dollars();
 			}
 		}
 		g_global.list = g_global.list->next;
 	}
-	g_global.list = temp_s;
+	g_global.list = tmp;
 }
