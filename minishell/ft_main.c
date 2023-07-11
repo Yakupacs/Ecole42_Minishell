@@ -63,9 +63,9 @@ void	loop(void)
 	}
 }
 
-/*  SIGINT: Ctrl + C 
+/*  SIGINT: Ctrl + C
 	Error:
-		echo $?$0'$?''$0'"$?""$0" 
+		echo $?$0'$?''$0'"$?""$0"
 */
 int	main(int ac, char **av, char **envp)
 {

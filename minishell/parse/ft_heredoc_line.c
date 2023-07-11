@@ -59,7 +59,7 @@ void	ft_heredoc_line(void)
 	init_pipe();
 	if (g_global.count_type->heredoc > 0)
 		g_global.heredoc = malloc(sizeof(char *)
-				* (g_global.count_type->heredoc * 2 + 1));
+				* (g_global.count_type->heredoc * 2 + 1)); // ?
 	i = 0;
 	while (temp)
 	{

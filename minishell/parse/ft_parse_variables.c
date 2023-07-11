@@ -26,18 +26,19 @@ char	*ft_parse_variables2(char **line, char *src)
 void	ft_parse_variables(void)
 {
 	char	*str;
-	char	**variable;
+	char	**variables;
 	int		i;
 
 	i = 0;
 	str = g_global.list->arg;
-	variable = ft_split(str, '$');
+	variables = ft_split(str, '$');
 	free(str);
-	while (variable[i])
+	while (variables[i])
 	{
-		variable[i] = ft_find_env(variable[i]);
+		variables[i] = ft_find_env(variables[i]);
+		printf("%d. variable: %s\n", i + 1, variables[i]);
 		i++;
 	}
-	str = ft_parse_variables2(variable, str);
+	str = ft_parse_variables2(variables, str);
 	g_global.list->arg = str;
 }

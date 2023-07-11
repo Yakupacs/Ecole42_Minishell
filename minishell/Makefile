@@ -20,7 +20,7 @@ SRCS		=	ft_main.c \
 				parse/ft_dollars_line.c \
 				parse/ft_parse_variables.c \
 				parse/ft_find_env.c \
-				parse/ft_exec_heredoc.c \
+				parse/ft_heredoc_line.c \
 
 LIBFT		=	libft/libft.a
 

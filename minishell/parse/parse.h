@@ -35,6 +35,8 @@ typedef struct s_command {
 	struct s_command	*next;
 }					t_command;
 
+/* LEXER */
+
 int			ft_lexer(void);
 int			tokenizer(t_command **tmp_line);
 
@@ -73,7 +75,7 @@ int			contains_quot(char *s);
 void		type_counter(t_command	**token);
 void		quot_cleaner(t_command **token);
 
-
+/* PARSER */
 
 void		ft_dollars_line(void);
 int			quote_parse(char *str);
