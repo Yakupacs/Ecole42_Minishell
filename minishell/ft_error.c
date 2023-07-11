@@ -60,7 +60,7 @@ int	check_error(void)
 	t_command	*tmp_list;
 
 	flag = 0;
-	tmp_list = g_global.list;
+	tmp_list = g_global.list; // echo "a" >>> a.txt
 	if (g_global.error_flag)
 		return (error_msg(2, tmp_list));
 	if (!tmp_list)

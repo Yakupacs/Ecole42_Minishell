@@ -3,7 +3,7 @@
 void	ft_heredoc_start(int i)
 {
 	(void)i;
-/* 	while (1)
+	while (1)
 	{
 		g_global.here_line = readline("> ");
 		if (ft_strcmp(g_global.here_line, g_global.heredoc[i]))
@@ -18,7 +18,7 @@ void	ft_heredoc_start(int i)
 			}
 			free(g_global.here_line);
 		}
-	} */
+	}
 	close(g_global.here_fd[1]);
 }
 
@@ -57,9 +57,8 @@ void	ft_heredoc_line(void)
 
 	temp = g_global.list;
 	init_pipe();
-	if (g_global.count_type->heredoc > 0)
-		g_global.heredoc = malloc(sizeof(char *)
-				* (g_global.count_type->heredoc * 2 + 1)); // ?
+	g_global.heredoc = malloc(sizeof(char *)
+				* (g_global.count_type->heredoc * 2 + 1));
 	i = 0;
 	while (temp)
 	{

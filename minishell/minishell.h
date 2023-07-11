@@ -64,6 +64,8 @@ void	ft_exit2(t_command *temp);
 int		ft_check_digit(char *str);
 void	signal_exit(void);
 
+int		ft_strcmp(char *s1, char *s2);
+
 t_global	g_global;
 
 #endif

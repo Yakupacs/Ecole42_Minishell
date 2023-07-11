@@ -51,9 +51,7 @@ void	ft_exit(t_command *data)
 		exit(0);
 	}
 	else if (temp->next != NULL && temp->next->next == NULL)
-	{
 		ft_exit2(temp);
-	}
 	else
 	{
 		ft_putstr_fd("exit\n", 1);

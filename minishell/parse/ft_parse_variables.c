@@ -36,7 +36,6 @@ void	ft_parse_variables(void)
 	while (variables[i])
 	{
 		variables[i] = ft_find_env(variables[i]);
-		printf("%d. variable: %s\n", i + 1, variables[i]);
 		i++;
 	}
 	str = ft_parse_variables2(variables, str);

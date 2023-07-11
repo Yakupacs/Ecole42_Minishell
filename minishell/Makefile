@@ -21,6 +21,7 @@ SRCS		=	ft_main.c \
 				parse/ft_parse_variables.c \
 				parse/ft_find_env.c \
 				parse/ft_heredoc_line.c \
+				parse/ft_strcmp.c \
 
 LIBFT		=	libft/libft.a
 

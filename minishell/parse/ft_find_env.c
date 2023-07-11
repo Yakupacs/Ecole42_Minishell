@@ -39,7 +39,6 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 {
 	int		i;
 	int		len;
-	char	*temp;
 
 	i = 0;
 	len = ft_strlen(line);
@@ -48,9 +47,7 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 		if (ft_equal_finder(line, g_global.envp[i]) == 1)
 		{
 			ret = ft_strdup(g_global.envp[i] + len + 1);
-			temp = ret;
 			ret = ft_strjoin(ret, arg + j);
-			free(temp);
 			free(arg);
 			return (ret);
 		}
@@ -59,7 +56,7 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 	return (NULL);
 }
 
-char	*ft_find_env(char *arg) // HOME
+char	*ft_find_env(char *arg)
 {
 	int		j;
 	char	*line;
@@ -70,9 +67,8 @@ char	*ft_find_env(char *arg) // HOME
 	while (arg[j] && ft_isalnum(arg[j]))
 		j++;
 	line = line_connect(arg);
- 	// free(line); // ?
  	ret = ft_find_env2(line, arg, ret, j);
-	// line = ft_strdup(""); // ?
+	line = ft_strdup("");
 	free(arg);
 	if (ret)
 		return (ret);
