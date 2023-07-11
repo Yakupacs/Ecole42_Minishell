@@ -27,7 +27,7 @@ int	continue_loop(t_command *cpy_g_global_list)
 		return (-1);
 	}
 	if (g_global.count_type->dollar > 0)
-		ft_dollars_line();
+		ft_dollars();
 	if (g_global.count_type->heredoc > 0)
 		ft_heredoc_line();
 	if (ft_strcmp(g_global.list->arg, "exit"))
@@ -63,10 +63,6 @@ void	loop(void)
 	}
 }
 
-/*  SIGINT: Ctrl + C
-	Error:
-		echo $?$0'$?''$0'"$?""$0"
-*/
 int	main(int ac, char **av, char **envp)
 {
 	(void)ac;

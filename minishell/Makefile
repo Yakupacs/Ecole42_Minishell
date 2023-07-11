@@ -17,7 +17,7 @@ SRCS		=	ft_main.c \
 				lexer/ft_quot_cleaner.c \
 				lexer/ft_trim_quote.c \
 				lexer/ft_type_counter.c \
-				parse/ft_dollars_line.c \
+				parse/ft_dollars.c \
 				parse/ft_parse_variables.c \
 				parse/ft_find_env.c \
 				parse/ft_heredoc_line.c \

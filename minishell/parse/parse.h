@@ -15,12 +15,6 @@ enum e_character {
 	DOLLAR
 };
 
-enum e_loc_quot {
-	none,
-	head_end,
-	midle
-};
-
 typedef struct s_type_counter{
 	int	dollar;
 	int	rdr;
@@ -77,7 +71,7 @@ void		quot_cleaner(t_command **token);
 
 /* PARSER */
 
-void		ft_dollars_line(void);
+void		ft_dollars(void);
 int			quote_parse(char *str);
 void		dollar_parse(char *str);
 int			special_dollar(void);

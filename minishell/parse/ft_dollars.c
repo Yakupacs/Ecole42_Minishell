@@ -72,7 +72,7 @@ int quote_parse(char *str)
 		return (0);
 }
 
-void ft_dollars_line(void)
+void ft_dollars(void)
 {
 	t_command *tmp;
 	int flag;
