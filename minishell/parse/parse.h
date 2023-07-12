@@ -82,9 +82,8 @@ char		*ft_find_env2(char *line, char *arg, char *ret, int j);
 char		*line_connect(char *arg);
 int			ft_equal_finder(char *line, char *envp);
 
-void		ft_heredoc_line(void);
-void		init_pipe(void);
 void		ft_heredoc(void);
-void		ft_heredoc_start(int i);
+void		ft_heredoc_start(void);
+void		ft_heredoc_readline(int i);
 
 #endif

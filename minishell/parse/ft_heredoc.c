@@ -1,8 +1,7 @@
 #include "../minishell.h"
 
-void	ft_heredoc_start(int i)
+void	ft_heredoc_readline(int i)
 {
-	(void)i;
 	while (1)
 	{
 		g_global.here_line = readline("> ");
@@ -22,7 +21,7 @@ void	ft_heredoc_start(int i)
 	close(g_global.here_fd[1]);
 }
 
-void	ft_heredoc(void)
+void	ft_heredoc_start(void)
 {
 	int	i;
 	int	status;
@@ -34,7 +33,7 @@ void	ft_heredoc(void)
 		if (status == 0)
 		{
 			close(g_global.here_fd[0]);
-			ft_heredoc_start(i + 1);
+			ft_heredoc_readline(i + 1);
 			exit(0);
 		}
 		else
@@ -44,21 +43,16 @@ void	ft_heredoc(void)
 	close(g_global.here_fd[1]);
 }
 
-void	init_pipe(void)
-{
-	g_global.here_fd = malloc(sizeof(int) * 2);
-	pipe(g_global.here_fd);
-}
-
-void	ft_heredoc_line(void)
+void	ft_heredoc(void)
 {
 	t_command	*temp;
-	int		i;
+	int			i;
 
 	temp = g_global.list;
-	init_pipe();
+	g_global.here_fd = malloc(sizeof(int) * 2);
+	pipe(g_global.here_fd);
 	g_global.heredoc = malloc(sizeof(char *)
-				* (g_global.count_type->heredoc * 2 + 1));
+			* (g_global.count_type->heredoc * 2 + 1));
 	i = 0;
 	while (temp)
 	{
@@ -71,9 +65,7 @@ void	ft_heredoc_line(void)
 	}
 	g_global.heredoc[i] = NULL;
 	if (i > 0)
-	{
-		ft_heredoc();
-	}
+		ft_heredoc_start();
 	else
 		return ;
 }

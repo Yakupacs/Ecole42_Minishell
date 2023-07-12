@@ -1,4 +1,5 @@
 SRCS		=	ft_main.c \
+				ft_global.c \
 				ft_envp.c \
 				ft_signals.c \
 				ft_free.c \
@@ -20,7 +21,7 @@ SRCS		=	ft_main.c \
 				parse/ft_dollars.c \
 				parse/ft_parse_variables.c \
 				parse/ft_find_env.c \
-				parse/ft_heredoc_line.c \
+				parse/ft_heredoc.c \
 				parse/ft_strcmp.c \
 
 LIBFT		=	libft/libft.a

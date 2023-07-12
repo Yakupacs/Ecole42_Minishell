@@ -1,24 +1,5 @@
 #include "minishell.h"
 
-void	ft_init_global(char **envp, int flag)
-{
-	if (flag)
-	{
-		g_global.ex_path = copy_env(envp);
-		g_global.envp = copy_env(envp);
-	}
-	g_global.signal_status = 0;
-	g_global.list = NULL;
-	g_global.command = NULL;
-	g_global.redirection = NULL;
-	g_global.count_type = NULL;
-	g_global.heredoc = NULL;
-	g_global.line = NULL;
-	g_global.sig_flag = 0;
-	g_global.error_flag = 0;
-	g_global.here_fd = 0;
-}
-
 int	continue_loop(t_command *cpy_g_global_list)
 {
 	if (check_error() == -1)
@@ -29,13 +10,12 @@ int	continue_loop(t_command *cpy_g_global_list)
 	if (g_global.count_type->dollar > 0)
 		ft_dollars();
 	if (g_global.count_type->heredoc > 0)
-		ft_heredoc_line();
+		ft_heredoc();
 	if (ft_strcmp(g_global.list->arg, "exit"))
 	{
 		ft_exit(cpy_g_global_list);
 		return (-1);
 	}
-	(void)cpy_g_global_list;
 	return (0);
 }
 
