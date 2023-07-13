@@ -12,14 +12,14 @@ void	check_way(void)
 	}
 	if (g_global.redirection != NULL)
 		exec_redir(status);
-/* 	if (ft_strcmp(g_global.command[0], "export"))
+	if (ft_strcmp(g_global.command[0], "export"))
 	{
 		if (g_global.command[1] == NULL)
 			ft_export_path();
 		else
 			ft_export();
 		exit(0);
-	} */
+	}
 	else if (ft_strcmp(g_global.command[0], "echo"))
 	{
 		ft_echo();

@@ -1,4 +1,3 @@
-
 #include "../minishell.h"
 
 int	equal_counter(char *name)
