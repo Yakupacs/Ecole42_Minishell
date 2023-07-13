@@ -43,14 +43,19 @@ void	ft_heredoc_start(void)
 	close(g_global.here_fd[1]);
 }
 
+void	init_pipe(void)
+{
+	g_global.here_fd = malloc(sizeof(int) * 2);
+	pipe(g_global.here_fd);
+}
+
 void	ft_heredoc(void)
 {
 	t_command	*temp;
 	int			i;
 
 	temp = g_global.list;
-	g_global.here_fd = malloc(sizeof(int) * 2);
-	pipe(g_global.here_fd);
+	init_pipe();
 	g_global.heredoc = malloc(sizeof(char *)
 			* (g_global.count_type->heredoc * 2 + 1));
 	i = 0;

@@ -27,7 +27,7 @@ void	ft_command_line2(t_command *temp, int i, int j)
 	if (g_global.list->type == PIPE)
 		g_global.list = g_global.list->next;
 }
-
+/* ls | grep "ft_" | grep "fre" */
 void	ft_command_redirection_len(t_command *temp, int i, int j)
 {
 	while (temp && temp->type != PIPE)

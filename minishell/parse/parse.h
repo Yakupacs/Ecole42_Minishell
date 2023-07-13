@@ -85,5 +85,6 @@ int			ft_equal_finder(char *line, char *envp);
 void		ft_heredoc(void);
 void		ft_heredoc_start(void);
 void		ft_heredoc_readline(int i);
+void		init_pipe(void);
 
 #endif
