@@ -23,6 +23,21 @@ SRCS		=	ft_main.c \
 				parse/ft_find_env.c \
 				parse/ft_heredoc.c \
 				parse/ft_strcmp.c \
+				executor/ft_pipe.c \
+				executor/ft_fork.c \
+				executor/ft_command_line.c \
+				executor/ft_closes.c \
+				executor/ft_exec.c \
+				executor/ft_execve.c \
+				executor/ft_exec_redir.c \
+				builtin/ft_builtin.c \
+				builtin/ft_echo.c \
+				builtin/ft_cd.c \
+				builtin/ft_pwd.c \
+				builtin/ft_export.c \
+				builtin/ft_unset.c \
+				builtin/ft_env_utils.c \
+				builtin/ft_upenv.c \
 
 LIBFT		=	libft/libft.a
 

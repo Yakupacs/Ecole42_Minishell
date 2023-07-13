@@ -43,6 +43,7 @@ typedef struct s_global
 
 void	loop(void);
 int		continue_loop(t_command *cpy_g_global_list);
+void	exec_shell(int status);
 
 void	ft_init_global(char **envp, int flag);
 char	**copy_env(char **envp);
@@ -65,6 +66,63 @@ int		ft_check_digit(char *str);
 void	signal_exit(void);
 
 int		ft_strcmp(char *s1, char *s2);
+
+int		initialize_pipe(void);
+int		pipe_counter(void);
+void	create_pipes(void);
+
+void	initialize_fork(void);
+void	initialize_fork2(void);
+void	pipe_free(void);
+void	set_file_descriptor(int id);
+
+void	ft_command_line(void);
+void	ft_command_redirection_len(t_command *temp, int i, int j);
+void	ft_command_line2(t_command *temp, int i, int j);
+
+void	ft_free_command_redirection(void);
+void	close_fd(int id);
+void	close_fd2(int k, int i);
+void	close_fd3(int k, int i, int id);
+
+void	execute(void);
+void	check_way(void);
+int		builtin(void);
+
+void	ft_echo(void);
+int		ft_echo_param_checker(char *str);
+
+void	exec_redir(int status);
+void	exec_redir2(int status, char **redir, int i);
+
+void	ft_execve(void);
+int		control_bin(void);
+int		control_bin2(char *path, int j);
+
+void	ft_cd(void);
+void	ft_pwd_changer(void);
+void	ft_oldpwd_changer(void);
+void	ft_pwd(void);
+
+void	ft_unset(void);
+int		ft_path_founder(char **envp, char *name);
+int		ft_path_counter(char *name);
+int		env_founder(char *envp, char *name, int len);
+
+void	ft_export(void);
+void	ft_export2(int line, int line_exp, int j);
+int		ft_env_controller(int j);
+void	*ft_export_path(void);
+int		name_error(int j);
+
+void	ft_env(void);
+void	upenv(char **envp, int j, int flag);
+int		equal_counter(char *name);
+void	ft_delenv(char **envp, int j, int flag);
+void	ft_delenv2(char **new_envp, int flag);
+void	ft_addenv(char **envp, int j, int flag);
+int		env_counter(char **envp);
+
 
 t_global	g_global;
 

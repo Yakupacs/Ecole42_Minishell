@@ -1,5 +1,13 @@
 #include "minishell.h"
 
+void exec_shell(int status)
+{
+	if (status == 0)
+		ft_execve();
+	else
+		perror("minishell");
+}
+
 int	continue_loop(t_command *cpy_g_global_list)
 {
 	if (check_error() == -1)
@@ -16,6 +24,8 @@ int	continue_loop(t_command *cpy_g_global_list)
 		ft_exit(cpy_g_global_list);
 		return (-1);
 	}
+	if (initialize_pipe() == -1)
+		execute();
 	return (0);
 }
 
