@@ -87,7 +87,7 @@ void ft_dollars(void)
 			g_global.list->type = WORD;
 			if (flag != -1)
 			{
-				if (special_dollar() == -1)
+ 				if (special_dollar() == -1) 
 					ft_parse_variables();
 			}
 		}

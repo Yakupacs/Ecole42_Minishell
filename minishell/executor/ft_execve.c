@@ -66,8 +66,9 @@ void	ft_execve(void)
 	{
 		if (execve(g_global.command[0], g_global.command, g_global.envp))
 		{
-			perror("minishell");
-			exit(127);
+			printf("minishell: %s: command not found\n", g_global.command[0]);
+/* 			perror("minishell");
+ */			exit(127);
 		}
 	}
 }

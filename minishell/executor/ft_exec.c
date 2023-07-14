@@ -26,8 +26,20 @@ void	check_way(void)
 		exit(0);
 	}
 	else if (g_global.command != NULL)
-		ft_execve();
+	{
+        if (ft_strcmp(g_global.command[0], "0") 
+			|| ft_strcmp(g_global.command[0], "1") 
+				|| ft_strcmp(g_global.command[0], "127") 
+					|| ft_strcmp(g_global.command[0], "256"))
+        {
+            printf("minishell: %s: command not found\n", g_global.command[0]);
+            exit(0);
+        }
+        else
+            ft_execve();
+	}
 }
+
 
 void	execute(void)
 {
