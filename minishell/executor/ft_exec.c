@@ -6,13 +6,13 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/15 00:11:42 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/15 00:15:18 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	check_dollar_exit(void)
+void	check_dollar_exit(void)
 {
 	if (ft_strcmp(g_global.command[0], "0")
 		|| ft_strcmp(g_global.command[0], "1")
