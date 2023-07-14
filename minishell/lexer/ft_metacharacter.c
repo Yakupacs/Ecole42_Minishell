@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_metacharacter.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:06:32 by ikayacio          #+#    #+#             */
+/*   Updated: 2023/07/15 00:13:40 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
-#include "../parse/parse.h"
+#include "../parser/parse.h"
 
 int	initialize_metacharacter(t_command *node)
 {

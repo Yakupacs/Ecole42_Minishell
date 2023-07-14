@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_trim_quote.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ikayacio <ikayacio@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:06:38 by ikayacio          #+#    #+#             */
+/*   Updated: 2023/07/15 00:06:39 by ikayacio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
-#include "../parse/parse.h"
+#include "../parser/parse.h"
 
 int	calculate_new_arg_len(char *str)
 {

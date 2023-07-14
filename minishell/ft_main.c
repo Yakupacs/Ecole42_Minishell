@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_main.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:04:55 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:07:59 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-void exec_shell(int status)
+void	exec_shell(int status)
 {
 	if (status == 0)
 		ft_execve();
@@ -55,7 +67,7 @@ void	loop(void)
 
 int	main(int ac, char **av, char **envp)
 {
- 	(void)ac;
+	(void)ac;
 	(void)av;
 	signal(SIGINT, ft_sig_handler);
 	signal(SIGQUIT, SIG_IGN);

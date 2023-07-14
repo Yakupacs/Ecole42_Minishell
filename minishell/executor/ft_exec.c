@@ -1,4 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_exec.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:11:42 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
+
+int	check_dollar_exit(void)
+{
+	if (ft_strcmp(g_global.command[0], "0")
+		|| ft_strcmp(g_global.command[0], "1")
+		|| ft_strcmp(g_global.command[0], "127")
+		|| ft_strcmp(g_global.command[0], "256"))
+	{
+		printf("minishell: %s: command not found\n", g_global.command[0]);
+		exit(0);
+	}
+	else
+		ft_execve();
+}
 
 void	check_way(void)
 {
@@ -26,20 +52,8 @@ void	check_way(void)
 		exit(0);
 	}
 	else if (g_global.command != NULL)
-	{
-        if (ft_strcmp(g_global.command[0], "0") 
-			|| ft_strcmp(g_global.command[0], "1") 
-				|| ft_strcmp(g_global.command[0], "127") 
-					|| ft_strcmp(g_global.command[0], "256"))
-        {
-            printf("minishell: %s: command not found\n", g_global.command[0]);
-            exit(0);
-        }
-        else
-            ft_execve();
-	}
+		check_dollar_exit();
 }
-
 
 void	execute(void)
 {

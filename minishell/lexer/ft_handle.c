@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:06:23 by ikayacio          #+#    #+#             */
+/*   Updated: 2023/07/15 00:08:35 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
-#include "../parse/parse.h"
+#include "../parser/parse.h"
 
 t_command	*create_front(int st, int len, t_command **list, t_command *tmp)
 {

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: ikayacio <ikayacio@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 00:03:42 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/15 00:03:43 by yacis            ###   ########.fr       */
+/*   Created: 2023/07/15 00:06:56 by ikayacio          #+#    #+#             */
+/*   Updated: 2023/07/15 00:06:57 by ikayacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../minishell.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_strcmp(char *s1, char *s2)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
+	while (*s1 && *s2 && (*s1 == *s2))
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		s1++;
+		s2++;
 	}
-	write(fd, "\n", 1);
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1);
+	else
+		return (0);
 }

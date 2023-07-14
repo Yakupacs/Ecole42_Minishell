@@ -1,8 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_signals.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:04:58 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:13:20 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-/* '\00' -> Escape karakteri, '[A' -> Cursor Up, imleci yukarı taşır. */
-/* Standart girişe \n karakterini gönderir  */
-/* TIOCSTI "Terminal input characters in string" */
 void	ft_sig_handler(int sig)
 {
 	if (sig == SIGINT)
@@ -11,7 +20,7 @@ void	ft_sig_handler(int sig)
 		g_global.signal_status = -1;
 		g_global.exit_status = 1;
 		g_global.sig_flag = 1;
-		write(1, "\033[A", 3); // 
+		write(1, "\033[A", 3);
 		ioctl(STDIN_FILENO, TIOCSTI, "\n");
 	}
 }

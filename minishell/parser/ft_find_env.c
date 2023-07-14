@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find_env.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ikayacio <ikayacio@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:06:49 by ikayacio          #+#    #+#             */
+/*   Updated: 2023/07/15 00:06:50 by ikayacio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 int	ft_equal_finder(char *line, char *envp)
@@ -67,7 +79,7 @@ char	*ft_find_env(char *arg)
 	while (arg[j] && ft_isalnum(arg[j]))
 		j++;
 	line = line_connect(arg);
- 	ret = ft_find_env2(line, arg, ret, j);
+	ret = ft_find_env2(line, arg, ret, j);
 	line = ft_strdup("");
 	free(arg);
 	if (ret)

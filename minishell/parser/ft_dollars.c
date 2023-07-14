@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_dollars.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
+/*   Updated: 2023/07/15 00:12:32 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
-/* Burada $$, $? ve $0 gibi özel dolarlar işlenir. */
-int special_dollar(void)
+int	special_dollar(void)
 {
 	if (g_global.list->arg[1] == '?')
 	{
@@ -24,12 +35,11 @@ int special_dollar(void)
 	return (-1);
 }
 
-/* "$a" '$a' dışındaki tırnakları siler. */
-void dollar_parse(char *str)
+void	dollar_parse(char *str)
 {
-	int len;
-	int i;
-	int j;
+	int	len;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -46,12 +56,11 @@ void dollar_parse(char *str)
 	str[j] = '\0';
 }
 
-/* Dışındaki tırnaklara göre tek tırnak ise -1 dönüp işlem yapmaz, çift tırnak ise 0 dönüp doları işler. */
-int quote_parse(char *str)
+int	quote_parse(char *str)
 {
-	int i;
-	int single_count;
-	int double_count;
+	int	i;
+	int	single_count;
+	int	double_count;
 
 	i = 0;
 	single_count = 0;
@@ -72,10 +81,10 @@ int quote_parse(char *str)
 		return (0);
 }
 
-void ft_dollars(void)
+void	ft_dollars(void)
 {
-	t_command *tmp;
-	int flag;
+	t_command	*tmp;
+	int			flag;
 
 	tmp = g_global.list;
 	while (g_global.list)
@@ -87,7 +96,7 @@ void ft_dollars(void)
 			g_global.list->type = WORD;
 			if (flag != -1)
 			{
- 				if (special_dollar() == -1) 
+				if (special_dollar() == -1) 
 					ft_parse_variables();
 			}
 		}

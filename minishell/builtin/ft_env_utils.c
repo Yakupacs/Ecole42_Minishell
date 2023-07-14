@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_env_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:02:17 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:08:55 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 void	ft_delenv2(char **new_envp, int flag)
@@ -36,7 +48,6 @@ void	ft_delenv(char **envp, int j, int flag)
 	free(envp);
 }
 
-
 void	ft_addenv(char **envp, int j, int flag)
 {
 	int		i;
@@ -70,7 +81,6 @@ int	env_counter(char **envp)
 		i++;
 	return (i);
 }
-
 
 void	ft_env(void)
 {

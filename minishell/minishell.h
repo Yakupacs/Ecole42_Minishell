@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:05:02 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
-# include "parse/parse.h"
+# include "parser/parse.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
@@ -122,7 +134,6 @@ void	ft_delenv(char **envp, int j, int flag);
 void	ft_delenv2(char **new_envp, int flag);
 void	ft_addenv(char **envp, int j, int flag);
 int		env_counter(char **envp);
-
 
 t_global	g_global;
 

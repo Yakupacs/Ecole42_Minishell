@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_exec_redir.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:02:34 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:02:35 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 void	exec_redir2(int status, char **redir, int i)
@@ -23,24 +35,24 @@ void	exec_redir2(int status, char **redir, int i)
 
 void	exec_redir(int status)
 {
-	char	**redir;
+	char	**rdr;
 	int		i;
 
-	redir = g_global.redirection;
+	rdr = g_global.redirection;
 	i = 0;
-	while (redir[i])
+	while (rdr[i])
 	{
-		if (ft_strcmp(redir[i], ">"))
+		if (ft_strcmp(rdr[i], ">"))
 		{
-			g_global.fd = open(redir[i + 1], O_CREAT | O_WRONLY | O_TRUNC, 0644);
+			g_global.fd = open(rdr[i + 1], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 			dup2(g_global.fd, 1);
-			if (g_global.command && !redir[i + 2]
+			if (g_global.command && !rdr[i + 2]
 				&& !ft_strcmp(g_global.command[0], "echo"))
 				exec_shell(status);
 			close(g_global.fd);
 		}
 		else
-			exec_redir2(status, redir, i);
+			exec_redir2(status, rdr, i);
 		if (g_global.fd == -1)
 		{
 			perror("minishell");

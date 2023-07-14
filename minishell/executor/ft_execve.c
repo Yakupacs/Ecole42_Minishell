@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_execve.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:02:39 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:14:13 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 int	control_bin2(char *path, int j)
@@ -67,8 +79,7 @@ void	ft_execve(void)
 		if (execve(g_global.command[0], g_global.command, g_global.envp))
 		{
 			printf("minishell: %s: command not found\n", g_global.command[0]);
-/* 			perror("minishell");
- */			exit(127);
+			exit(127);
 		}
 	}
 }

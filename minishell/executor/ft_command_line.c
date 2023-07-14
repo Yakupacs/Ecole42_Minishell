@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_command_line.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:02:31 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:02:32 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 void	ft_command_line2(t_command *temp, int i, int j)
@@ -27,7 +39,7 @@ void	ft_command_line2(t_command *temp, int i, int j)
 	if (g_global.list->type == PIPE)
 		g_global.list = g_global.list->next;
 }
-/* ls | grep "ft_" | grep "fre" */
+
 void	ft_command_redirection_len(t_command *temp, int i, int j)
 {
 	while (temp && temp->type != PIPE)
@@ -58,8 +70,8 @@ void	ft_command_redirection_len(t_command *temp, int i, int j)
 void	ft_command_line(void)
 {
 	t_command	*temp;
-	int		i;
-	int		j;
+	int			i;
+	int			j;
 
 	i = 0;
 	j = 0;

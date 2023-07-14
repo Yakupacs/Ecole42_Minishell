@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:04:46 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:04:47 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 int	error_msg(int flag, t_command *temp)
@@ -60,7 +72,7 @@ int	check_error(void)
 	t_command	*tmp_list;
 
 	flag = 0;
-	tmp_list = g_global.list; // echo "a" >>> a.txt
+	tmp_list = g_global.list;
 	if (g_global.error_flag)
 		return (error_msg(2, tmp_list));
 	if (!tmp_list)

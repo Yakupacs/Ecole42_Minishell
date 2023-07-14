@@ -18,11 +18,11 @@ SRCS		=	ft_main.c \
 				lexer/ft_quot_cleaner.c \
 				lexer/ft_trim_quote.c \
 				lexer/ft_type_counter.c \
-				parse/ft_dollars.c \
-				parse/ft_parse_variables.c \
-				parse/ft_find_env.c \
-				parse/ft_heredoc.c \
-				parse/ft_strcmp.c \
+				parser/ft_dollars.c \
+				parser/ft_parse_variables.c \
+				parser/ft_find_env.c \
+				parser/ft_heredoc.c \
+				parser/ft_strcmp.c \
 				executor/ft_pipe.c \
 				executor/ft_fork.c \
 				executor/ft_command_line.c \

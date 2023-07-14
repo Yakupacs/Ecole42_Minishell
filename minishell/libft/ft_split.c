@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 00:03:52 by yacis             #+#    #+#             */
+/*   Updated: 2023/07/15 00:12:58 by yacis            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	if_word_len(char const *s, char c)
@@ -25,7 +37,7 @@ static size_t	len_word(char const *s, char c)
 }
 
 char	**ft_split(char const *s, char c)
-{	
+{
 	size_t		i;
 	size_t		j;
 	size_t		len;
