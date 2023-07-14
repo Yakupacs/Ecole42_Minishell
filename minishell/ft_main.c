@@ -55,7 +55,7 @@ void	loop(void)
 
 int	main(int ac, char **av, char **envp)
 {
-	(void)ac;
+ 	(void)ac;
 	(void)av;
 	signal(SIGINT, ft_sig_handler);
 	signal(SIGQUIT, SIG_IGN);
