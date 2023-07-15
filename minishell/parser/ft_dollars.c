@@ -6,18 +6,76 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 02:39:01 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/15 21:50:49 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
+char *ft_strjoin2(char const *s1, char c)
+{
+	size_t i;
+	char *dizi;
+
+	i = 0;
+	if (!s1 || !c)
+		return (NULL);
+	dizi = malloc(sizeof(char) * (ft_strlen(s1) + 2));
+	if (dizi == NULL)
+		return (NULL);
+	while (*s1)
+		dizi[i++] = *s1++;
+	dizi[i++] = c;
+	dizi[i] = '\0';
+	return (dizi);
+}
+
+void	ft_special_func(void)
+{
+	int		i;
+	char	*tmp;
+	char	*str;
+	char	*str_temp;
+
+	i = 0;
+	while (g_global.list->arg[i]) 
+	{
+		if (g_global.list->arg[i] == '$')
+		{
+			if (g_global.list->arg[i + 1] == '?')
+			{
+				tmp = ft_itoa(g_global.exit_status);
+				str_temp = str;
+				str = ft_strjoin(str, tmp);
+				free(str_temp);
+				free(tmp);
+				i++;
+			}
+		}
+		else
+		{
+			if (str)
+				str_temp = str;
+			str = ft_strjoin2(str, g_global.list->arg[i]);
+			free(str_temp);
+		}
+		i++;
+	}
+	free(g_global.list->arg);
+	g_global.list->arg = ft_strdup(str);
+}
+
 int	special_dollar(void)
 {
 	if (g_global.list->arg[1] == '?')
 	{
-		free(g_global.list->arg);
-		g_global.list->arg = ft_itoa(g_global.exit_status);
+		if (ft_strlen(g_global.list->arg) > 2)
+			ft_special_func();
+		else
+		{
+			free(g_global.list->arg);
+			g_global.list->arg = ft_itoa(g_global.exit_status);
+		}
 		return (0);
 	}
 	else if (g_global.list->arg[1] == '0')
@@ -96,7 +154,7 @@ void	ft_dollars(void)
 			g_global.list->type = WORD;
 			if (flag != -1)
 			{
-				if (special_dollar() == -1) 
+				if (special_dollar() == -1)
 					ft_parse_variables();
 			}
 		}
