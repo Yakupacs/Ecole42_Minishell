@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:54 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 02:55:25 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/15 14:54:42 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void	ft_parse_variables(void)
 		i++;
 	}
 	str = ft_parse_variables2(variables, str);
-	g_global.list->arg = str; // LEAKS
+	g_global.list->arg = str;
 }

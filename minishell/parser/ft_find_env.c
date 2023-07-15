@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:49 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 02:50:04 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/15 15:07:19 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ char	*ft_find_env(char *arg)
 {
 	int		j;
 	char	*line;
+	char	*line_tmp;
 	char	*ret;
 
 	j = 0;
@@ -82,8 +83,10 @@ char	*ft_find_env(char *arg)
 	while (arg[j] && ft_isalnum(arg[j]))
 		j++;
 	line = line_connect(arg);
+	line_tmp = line;
 	ret = ft_find_env2(line, arg, ret, j);
 	line = ft_strdup("");
+	free(line_tmp);
 	free(arg);
 	if (ret)
 		return (ret);
