@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikayacio <ikayacio@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:07:00 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 00:07:01 by ikayacio         ###   ########.fr       */
+/*   Updated: 2023/07/16 01:41:37 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int			quote_parse(char *str);
 void		dollar_parse(char *str);
 int			special_dollar(void);
 void		ft_parse_variables(void);
+char		*ft_strjoin_char(char const *s1, char c);
 
 char		*ft_find_env(char *arg);
 char		*ft_find_env2(char *line, char *arg, char *ret, int j);

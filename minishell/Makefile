@@ -23,6 +23,7 @@ SRCS		=	ft_main.c \
 				parser/ft_find_env.c \
 				parser/ft_heredoc.c \
 				parser/ft_strcmp.c \
+				parser/ft_strjoin_char.c \
 				executor/ft_pipe.c \
 				executor/ft_fork.c \
 				executor/ft_command_line.c \
