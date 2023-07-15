@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikayacio <ikayacio@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:49 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 00:06:50 by ikayacio         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:50:04 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 {
 	int		i;
 	int		len;
+	char	*temp;
 
 	i = 0;
 	len = ft_strlen(line);
@@ -59,7 +60,9 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 		if (ft_equal_finder(line, g_global.envp[i]) == 1)
 		{
 			ret = ft_strdup(g_global.envp[i] + len + 1);
+			temp = ret;
 			ret = ft_strjoin(ret, arg + j);
+			free(temp);
 			free(arg);
 			return (ret);
 		}
