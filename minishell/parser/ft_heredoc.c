@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:52 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 00:12:38 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:11:58 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	ft_heredoc_readline(int i)
 	while (1)
 	{
 		g_global.here_line = readline("> ");
-		if (ft_strcmp(g_global.here_line, g_global.heredoc[i]))
+		if (ft_strcmp(g_global.here_line, g_global.heredoc[i])
+			|| g_global.heredoc_flag == 1)
 			break ;
 		else
 		{

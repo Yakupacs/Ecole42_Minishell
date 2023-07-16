@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/15 21:37:16 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:11:05 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_global
 	char			**dollar_line;
 	int				sig_flag;
 	int				error_flag;
+	int				heredoc_flag;
 }	t_global;
 
 void	loop(void);
@@ -89,7 +90,7 @@ void	pipe_free(void);
 void	set_file_descriptor(int id);
 
 void	ft_command_line(void);
-void	ft_command_redirection_len(t_command *temp, int i, int j);
+void	ft_allocate_commands(t_command *temp, int i, int j);
 void	ft_command_line2(t_command *temp, int i, int j);
 
 void	ft_free_command_redirection(void);
