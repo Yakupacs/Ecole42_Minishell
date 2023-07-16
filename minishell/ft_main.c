@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:55 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 17:27:19 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 19:08:14 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	continue_loop(t_command *cpy_g_global_list)
 	}
 	if (initialize_pipe() == -1)
 		execute();
-	system("leaks minishell");
 	return (0);
 }
 

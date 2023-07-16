@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 17:35:54 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 18:58:56 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	check_way(void)
 		check_dollar_exit();
 }
 
+/* WIFEXITED child process sonlanırsa 1 döner. */
+/* WEXITSTATUS child process'in exit değerini alır. */
+
 void	execute(void)
 {
 	int	status;
@@ -67,6 +70,7 @@ void	execute(void)
 	if (WIFEXITED(g_global.exit_status) && i == 0)
 	{
 		g_global.exit_status = WEXITSTATUS(g_global.exit_status);
+		printf("%d\n", g_global.exit_status);
 		i++;
 	}
 }
