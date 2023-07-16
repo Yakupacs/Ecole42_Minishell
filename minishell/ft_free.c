@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:51 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 11:57:18 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 12:05:03 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	freeliazer(t_command *temp)
 	{
 		while (temp)
 		{
-			tmp = temp; // !
+			tmp = temp;
 			free(tmp->arg);
 			temp = temp->next;
 			free(tmp);
