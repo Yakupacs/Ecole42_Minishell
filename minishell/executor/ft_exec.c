@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 01:14:26 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 17:35:54 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 void	check_dollar_exit(void)
 {
-	if (ft_strcmp(g_global.command[0], "0")
-		|| ft_strcmp(g_global.command[0], "1")
-		|| ft_strcmp(g_global.command[0], "127")
-		|| ft_strcmp(g_global.command[0], "256"))
-	{
-		printf("minishell: %s: command not found\n", g_global.command[0]);
+	if (g_global.dollar_flag)
 		exit(0);
-	}
 	else
 		ft_execve();
 }

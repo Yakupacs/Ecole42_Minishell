@@ -6,19 +6,20 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/16 12:09:23 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 17:39:02 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	ft_special_func(void)
+void	ft_special_func(int j)
 {
 	int		i;
 	char	*tmp;
-	char	*str;
 
 	i = 0;
+	if (j == 0)
+		ft_putstr_fd("minishell: ", 1);
 	while (g_global.list->arg[i]) 
 	{
 		if (g_global.list->arg[i] == '$')
@@ -26,25 +27,31 @@ void	ft_special_func(void)
 			if (g_global.list->arg[i + 1] == '?')
 			{
 				tmp = ft_itoa(g_global.exit_status);
-				str = ft_strjoin(str, tmp);
+				ft_putstr_fd(tmp, 1);
 				free(tmp);
-				i++;
+				i += 2;
 			}
+			else
+				ft_putchar_fd(g_global.list->arg[i++], 1);
 		}
 		else
-			str = ft_strjoin_char(str, g_global.list->arg[i]);
-		i++;
+			ft_putchar_fd(g_global.list->arg[i++], 1);
 	}
-	free(g_global.list->arg);
-	g_global.list->arg = ft_strdup(str);
+	if (j == 0)
+		ft_putstr_fd(": command not found\n", 1);
 }
 
-int	special_dollar(void)
+int	special_dollar(int i)
 {
 	if (g_global.list->arg[1] == '?')
 	{
 		if (ft_strlen(g_global.list->arg) > 2)
-			ft_special_func();
+		{
+			ft_special_func(i);
+			free(g_global.list->arg);
+			g_global.dollar_flag = 1;
+			g_global.list->arg = ft_strdup("");
+		}
 		else
 		{
 			free(g_global.list->arg);
@@ -105,7 +112,9 @@ void	ft_dollars(void)
 {
 	t_command	*tmp;
 	int			flag;
+	int			i;
 
+	i = 0;
 	tmp = g_global.list;
 	while (g_global.list)
 	{
@@ -116,11 +125,12 @@ void	ft_dollars(void)
 			g_global.list->type = WORD;
 			if (flag != -1 && ft_strlen(g_global.list->arg) > 1)
 			{
-				if (special_dollar() == -1)
+				if (special_dollar(i) == -1)
 					ft_parse_variables();
 			}
 		}
 		g_global.list = g_global.list->next;
+		i++;
 	}
 	g_global.list = tmp;
 }
