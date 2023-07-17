@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:34 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 20:03:13 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 01:02:37 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	exec_redir2(int status, char **redir, int i)
 	{
 		g_global.fd = open(redir[i + 1], O_RDONLY, 0644);
 		dup2(g_global.fd, 0);
+		if (g_global.fd == -1)
+		{
+			printf("minishell: %s: No such file or directory\n",
+				redir[i + 1]);
+			exit(1);
+		}
 		if (g_global.command && !redir[i + 2])
 			exec_shell(status);
 		close(g_global.fd);
