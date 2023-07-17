@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 18:58:56 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/16 22:31:33 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	execute(void)
 	if (WIFEXITED(g_global.exit_status) && i == 0)
 	{
 		g_global.exit_status = WEXITSTATUS(g_global.exit_status);
-		printf("%d\n", g_global.exit_status);
 		i++;
 	}
 }

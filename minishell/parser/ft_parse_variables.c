@@ -6,11 +6,21 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:54 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/16 01:44:56 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/17 02:42:11 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
+
+int	ft_str2len(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char	*ft_parse_variables2(char **line, char *src)
 {
@@ -44,8 +54,13 @@ void	ft_parse_variables(void)
 	i = 0;
 	str = g_global.list->arg;
 	variables = ft_split(str, '$');
+	if (ft_str2len(variables) == 0)
+	{
+		free(variables);
+		return ;
+	}
 	free(str);
-	while (variables[i])
+	while (variables[i]) 
 	{
 		variables[i] = ft_find_env(variables[i]);
 		i++;

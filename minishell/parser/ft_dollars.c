@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/16 17:39:02 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/17 14:09:36 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,9 @@ void	ft_dollars(void)
 			g_global.list->type = WORD;
 			if (flag != -1 && ft_strlen(g_global.list->arg) > 1)
 			{
-				if (special_dollar(i) == -1)
+				if (special_dollar(i) == -1){
 					ft_parse_variables();
+				}
 			}
 		}
 		g_global.list = g_global.list->next;
