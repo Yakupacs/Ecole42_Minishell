@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:39 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 01:00:48 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 01:27:40 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	ft_execve(void)
 	}
 	else if (control_bin())
 	{
-		close(g_global.fd);
 		if (execve(g_global.command[0], g_global.command, g_global.envp))
 		{
 			printf("minishell: %s: command not found\n", g_global.command[0]);
