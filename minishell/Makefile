@@ -28,7 +28,7 @@ SRCS		=	ft_main.c \
 				executor/ft_fork.c \
 				executor/ft_command_line.c \
 				executor/ft_closes.c \
-				executor/ft_exec.c \
+				executor/ft_execute.c \
 				executor/ft_execve.c \
 				executor/ft_exec_redir.c \
 				builtin/ft_builtin.c \
