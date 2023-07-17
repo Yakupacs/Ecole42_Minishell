@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 22:31:33 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/17 17:58:34 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	execute(void)
 	int	i;
 
 	i = 0;
+	g_global.sighandler_flag = 1;
 	ft_command_line();
 	if (builtin() == -1)
 		status = fork();

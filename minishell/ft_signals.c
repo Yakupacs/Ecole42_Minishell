@@ -6,11 +6,21 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:58 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 14:12:56 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/17 18:01:00 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+void	ft_sighandler_quit(int sig)
+{
+	(void)sig;
+	if (g_global.sighandler_flag == 1)
+	{
+		printf("Quit: 3\n");
+		g_global.sighandler_flag = 0;
+	}
+}
 
 void	ft_sig_handler(int sig)
 {

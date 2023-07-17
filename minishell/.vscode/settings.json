@@ -2,6 +2,8 @@
 	"files.associations": {
 		"unistd.h": "c",
 		"minishell.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"parse.h": "c",
+		"libft.h": "c"
 	}
 }
