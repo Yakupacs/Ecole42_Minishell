@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:20 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 14:17:06 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 20:14:03 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	ft_export2(int line, int line_exp, int j)
 		{
 			printf("minishell: export: %s : not a valid identifier\n",
 				g_global.command[j++]);
+			g_global.exit_status = 1;
 			continue ;
 		}
 		line = ft_path_founder(g_global.envp, g_global.command[j]);

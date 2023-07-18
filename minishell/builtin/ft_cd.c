@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:09 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 14:20:30 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 19:37:52 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ void	ft_cd(void)
 	if (g_global.command[1] && ft_strcmp(g_global.command[1], "~") == 0)
 	{
 		if (chdir(g_global.command[1]))
+		{
+			g_global.exit_status = 1;
 			perror("minishell ");
+		}
 	}
 	else if (chdir(getenv("HOME")))
 		perror("minishell ");

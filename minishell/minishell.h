@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/17 17:21:34 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 15:10:04 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_global
 	int				heredoc_flag;
 	int				dollar_flag;
 	int				sighandler_flag;
+	int				execute_signal_flag;
 }	t_global;
 
 void	loop(void);

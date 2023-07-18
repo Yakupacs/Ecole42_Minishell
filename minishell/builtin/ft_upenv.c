@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:26 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/15 00:02:27 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 20:11:32 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	upenv(char **envp, int j, int flag)
 			g_global.envp[l] = force;
 		else
 			g_global.ex_path[l] = force;
+		g_global.exit_status = 0;
 	}
 	else
 		return ;

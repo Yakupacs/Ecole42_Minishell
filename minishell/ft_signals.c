@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:58 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 00:08:05 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 15:10:29 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_sighandler_quit(int sig)
 
 void	ft_sig_handler(int sig)
 {
-	if (sig == SIGINT)
+	if (sig == SIGINT && g_global.execute_signal_flag == 0)
 	{
 		(void)sig;
 		g_global.signal_status = -1;

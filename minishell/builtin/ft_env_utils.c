@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:17 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/15 00:08:55 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 20:13:11 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_addenv(char **envp, int j, int flag)
 		g_global.envp = new_envp;
 	else
 		g_global.ex_path = new_envp;
+	g_global.exit_status = 0;
 	free(envp);
 }
 
@@ -93,4 +94,5 @@ void	ft_env(void)
 		ft_putstr_fd("\n", 1);
 		i++;
 	}
+	g_global.exit_status = 0;
 }

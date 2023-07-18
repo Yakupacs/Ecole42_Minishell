@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:24 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/15 00:02:25 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 19:46:14 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ void	ft_unset(void)
 			ft_delenv(g_global.ex_path, l, 1);
 		j++;
 	}
+	g_global.exit_status = 0;
 }

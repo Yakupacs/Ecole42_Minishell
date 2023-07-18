@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:53 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/17 17:48:36 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 15:10:15 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ void	ft_init_global(char **envp, int flag)
 	g_global.heredoc_flag = 0;
 	g_global.dollar_flag = 0;
 	g_global.sighandler_flag = 0;
+	g_global.execute_signal_flag = 0;
 }

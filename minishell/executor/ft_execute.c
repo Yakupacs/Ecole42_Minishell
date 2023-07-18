@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 14:17:14 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 15:12:57 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,12 @@ void	execute(void)
 		status = fork();
 	else
 		return ;
+	g_global.execute_signal_flag = 1;
 	if (status == 0)
 		check_way();
 	else
 		waitpid(status, &g_global.exit_status, 0);
+	g_global.execute_signal_flag = 0;
 	if (WIFEXITED(g_global.exit_status) && i == 0)
 	{
 		g_global.exit_status = WEXITSTATUS(g_global.exit_status);
