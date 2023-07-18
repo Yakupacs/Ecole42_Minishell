@@ -6,13 +6,13 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/18 14:29:31 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 01:19:56 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	ft_special_func(int j) // echo $?+$?
+void	ft_special_func(int j)
 {
 	int		i;
 	char	*tmp;

@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:51 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 12:05:03 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/18 22:39:45 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ void	ft_free_all(void)
 	if (g_global.command)
 	{
 		while (g_global.command[i])
+		{
+			printf("%d.command: %s\n", i + 1, g_global.command[i]);
 			free(g_global.command[i++]);
+		}
 		free(g_global.command);
 	}
 }
