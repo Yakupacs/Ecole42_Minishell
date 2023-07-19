@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:07:00 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/19 19:54:08 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/20 01:50:57 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void		quot_cleaner(t_command **token);
 void		ft_dollars(void);
 int			quote_parse(char *str);
 void		dollar_parse(char *str);
-int			special_dollar(int i);
+int			special_dollar(int i, char *prev_arg);
 void		ft_parse_variables(void);
 char		*ft_strjoin_char(char *s1, char c);
 

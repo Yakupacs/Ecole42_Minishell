@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/19 18:28:56 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/20 02:02:54 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ void	ft_special_func(int j)
 		ft_putstr_fd(": command not found\n", 1);
 }
 
-int	special_dollar(int i)
+int	special_dollar(int i, char *prev_arg)
 {
+	if (i > 0 && !ft_strcmp(prev_arg, "echo"))
+		return (0);
 	if (g_global.list->arg[1] == '?')
 	{
 		if (ft_strlen(g_global.list->arg) > 2)
@@ -92,7 +94,7 @@ int	quote_parse(char *str)
 	i = 0;
 	single_count = 0;
 	double_count = 0;
-	while (str[i])
+	while (str[i]) 
 	{
 		if (str[i] == '\"')
 			double_count++;
@@ -125,7 +127,7 @@ void	ft_dollars(void)
 			g_global.list->type = WORD;
 			if (flag != -1 && ft_strlen(g_global.list->arg) > 1)
 			{
-				if (special_dollar(i) == -1)
+				if (special_dollar(i, tmp->arg) == -1)
 					ft_parse_variables();
 			}
 		}
