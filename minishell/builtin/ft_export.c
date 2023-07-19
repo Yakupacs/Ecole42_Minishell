@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:20 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/19 01:50:09 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 15:34:19 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,37 +26,11 @@ int	name_error(int j)
 		if (g_global.command[j][i] == '=')
 			return (0);
 		if (ft_isalnum(g_global.command[j][i]) == 0
-			&& g_global.command[j][i] != '_'
-			&& g_global.command[j][i] != '$'
-			&& g_global.command[j][i] != '/'
-			&& g_global.command[j][i] != '=')
+			&& g_global.command[j][i] != '_')
 			return (-1);
 		i++;
 	}
 	return (0);
-}
-
-void	*ft_export_path(void)
-{
-	int		i;
-	int		j;
-	char	*tmp;
-
-	i = 0;
-	j = 0;
-	while (g_global.ex_path[i])
-	{
-		j = 0;
-		while (g_global.ex_path[i][j])
-			j++;
-		tmp = ft_substr(g_global.ex_path[i], 0, j);
-		ft_putstr_fd("declare -x ", 1);
-		ft_putstr_fd(tmp, 1);
-		ft_putstr_fd("\n", 1);
-		free(tmp);
-		i++;
-	}
-	return (NULL);
 }
 
 int	ft_env_controller(int j)
@@ -86,7 +60,6 @@ void	ft_export2(int line, int line_exp, int j)
 		}
 		line = ft_path_founder(g_global.envp, g_global.command[j]);
 		line_exp = ft_path_founder(g_global.ex_path, g_global.command[j]);
-		printf("line:%d, line_exp:%d\n", line, line_exp);
 		if (line != -1)
 			upenv(g_global.envp, j, 0);
 		if (line_exp != -1)

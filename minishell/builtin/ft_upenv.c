@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:26 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/19 01:39:54 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 15:22:54 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	equal_counter(char *name)
 	return (0);
 }
 
-int	ft_check_env(char	*check)
+/* int	ft_check_env(char *check)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	ft_check_env(char	*check)
 	}
 
 	return (0);
-}
+} */
 
 void	upenv(char **envp, int j, int flag)
 {
@@ -50,10 +50,7 @@ void	upenv(char **envp, int j, int flag)
 
 	if (equal_counter(g_global.command[j]) == 0)
 		return ;
-	if (ft_check_env(g_global.command[1]))
-		force = ft_strdup("hehe");
-	else
-		force = ft_strdup(g_global.command[j]);
+	force = ft_strdup(g_global.command[j]);
 	l = ft_path_founder(envp, g_global.command[j]);
 	if (l != -1)
 	{

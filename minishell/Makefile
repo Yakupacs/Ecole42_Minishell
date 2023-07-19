@@ -36,6 +36,7 @@ SRCS		=	ft_main.c \
 				builtin/ft_cd.c \
 				builtin/ft_pwd.c \
 				builtin/ft_export.c \
+				builtin/ft_export_path.c \
 				builtin/ft_unset.c \
 				builtin/ft_env_utils.c \
 				builtin/ft_upenv.c \
