@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:54 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/17 02:42:11 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 19:54:16 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ft_parse_variables(void)
 
 	i = 0;
 	str = g_global.list->arg;
+	if (str[0] != '$')
+		i++;
 	variables = ft_split(str, '$');
 	if (ft_str2len(variables) == 0)
 	{

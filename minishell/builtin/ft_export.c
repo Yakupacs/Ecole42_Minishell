@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:20 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/19 15:34:19 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 19:55:19 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,11 @@ void	ft_export(void)
 	int	j;
 	int	line;
 	int	line_exp;
+	int	i;
 
 	line = 0;
 	line_exp = 0;
 	j = 1;
+	i = 0;
 	ft_export2(line, line_exp, j);
 }

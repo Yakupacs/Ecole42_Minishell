@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:26 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/19 15:22:54 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 19:55:45 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,6 @@ int	equal_counter(char *name)
 	}
 	return (0);
 }
-
-/* int	ft_check_env(char *check)
-{
-	int	i;
-
-	i = 0;
-	if (check[0] == '$')
-	{
-		while (g_global.envp[i])
-		{
-			if (ft_strcmp(&check[1], g_global.envp[i]))
-				return (1);
-		}
-	}
-
-	return (0);
-} */
 
 void	upenv(char **envp, int j, int flag)
 {
