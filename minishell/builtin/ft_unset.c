@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:24 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/19 01:19:45 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 15:11:02 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	env_founder(char *envp, char *name, int len)
 	i = 0;
 	while (envp[i] == name[i] && i < len)
 		i++;
-	if ((envp[i] == '=' || envp[i] == '\0') && name[i] == '=')
+	if ((envp[i] == '=' || envp[i] == '\0') 
+		&& (name[i] == '=' || name[i] == '\0'))
 		return (1);
 	else
 		return (0);

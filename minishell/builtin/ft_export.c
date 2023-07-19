@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:20 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/19 01:06:53 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/19 01:50:09 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	name_error(int j)
 		if (g_global.command[j][i] == '=')
 			return (0);
 		if (ft_isalnum(g_global.command[j][i]) == 0
-			&& g_global.command[j][i] != '_')
+			&& g_global.command[j][i] != '_'
+			&& g_global.command[j][i] != '$'
+			&& g_global.command[j][i] != '/'
+			&& g_global.command[j][i] != '=')
 			return (-1);
 		i++;
 	}
