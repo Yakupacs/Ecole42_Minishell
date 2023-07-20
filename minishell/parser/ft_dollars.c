@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/20 18:38:31 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/21 02:49:27 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_special_func(int j)
 int	special_dollar(int i, char *prev_arg)
 {
 	if (i > 0 && !ft_strcmp(prev_arg, "echo")
-			&& !ft_strcmp(prev_arg, "export"))
+		&& !ft_strcmp(prev_arg, "export"))
 		return (0);
 	if (g_global.list->arg[1] == '?')
 	{
@@ -76,11 +76,14 @@ void	dollar_parse(char *str)
 	len = ft_strlen(str);
 	while (i < len)
 	{
-		if (str[i] != '\"' && str[i] != '\'')
-		{
-			str[j] = str[i];
-			j++;
-		}
+		if (str[i] == '\'')
+			while (str[++i] != '\'' && str[i] != '\0')
+				str[j++] = str[i];
+		else if (str[i] == '\"')
+			while (str[++i] != '\"' && str[i] != '\0')
+				str[j++] = str[i];
+		else
+			str[j++] = str[i];
 		i++;
 	}
 	str[j] = '\0';
@@ -89,26 +92,17 @@ void	dollar_parse(char *str)
 int	quote_parse(char *str)
 {
 	int	i;
-	int	single_count;
-	int	double_count;
 
 	i = 0;
-	single_count = 0;
-	double_count = 0;
 	while (str[i]) 
 	{
-		if (str[i] == '\"')
-			double_count++;
-		else if (str[i] == '\'')
-			single_count++;
+		if (str[i] == '\"' && str[i + 1] != '\"')
+			return (2);
+		else if (str[i] == '\'' && str[i + 1] != '\'')
+			return (1);
 		i++;
 	}
-	if (single_count == 2)
-		return (-1);
-	else if (double_count == 2)
-		return (0);
-	else
-		return (0);
+	return (0);
 }
 
 void	ft_dollars(void)
@@ -121,12 +115,12 @@ void	ft_dollars(void)
 	tmp = g_global.list;
 	while (g_global.list)
 	{
-		if (g_global.list->type == DOLLAR)
+		if (g_global.list->type == DOLLAR) 
 		{
 			flag = quote_parse(g_global.list->arg);
 			dollar_parse(g_global.list->arg);
 			g_global.list->type = WORD;
-			if (flag != -1 && ft_strlen(g_global.list->arg) > 1)
+			if (flag != 1 && ft_strlen(g_global.list->arg) > 1)
 			{
 				if (special_dollar(i, tmp->arg) == -1)
 					ft_parse_variables();
