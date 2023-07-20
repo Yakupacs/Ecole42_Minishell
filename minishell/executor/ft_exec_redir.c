@@ -6,11 +6,19 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:34 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 19:32:14 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/20 19:24:12 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
+
+void	exec_shell(int status)
+{
+	if (status == 0)
+		ft_execve();
+	else
+		perror("minishell");
+}
 
 void	exec_redir2(int status, char **redir, int i)
 {

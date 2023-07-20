@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:47 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/20 02:02:54 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/20 18:38:31 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	ft_special_func(int j)
 
 int	special_dollar(int i, char *prev_arg)
 {
-	if (i > 0 && !ft_strcmp(prev_arg, "echo"))
+	if (i > 0 && !ft_strcmp(prev_arg, "echo")
+			&& !ft_strcmp(prev_arg, "export"))
 		return (0);
 	if (g_global.list->arg[1] == '?')
 	{

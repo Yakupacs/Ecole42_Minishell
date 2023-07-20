@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_space.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikayacio <ikayacio@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:21 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 00:06:22 by ikayacio         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:54:53 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

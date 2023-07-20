@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:09 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 19:37:52 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/20 20:32:22 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_pwd_changer(void)
 
 void	ft_cd(void)
 {
+	g_global.exit_status = 0;
 	ft_oldpwd_changer();
 	if (g_global.command[1] && ft_strcmp(g_global.command[1], "~") == 0)
 	{
@@ -64,6 +65,9 @@ void	ft_cd(void)
 		}
 	}
 	else if (chdir(getenv("HOME")))
+	{
+		g_global.exit_status = 1;
 		perror("minishell ");
+	}
 	ft_pwd_changer();
 }
