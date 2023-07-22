@@ -6,13 +6,13 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:20 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/20 22:32:43 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 19:52:10 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	name_error(int j)
+int	is_valid(int j)
 {
 	int	i;
 
@@ -47,39 +47,39 @@ int	ft_env_controller(int j)
 	return (0);
 }
 
-void	ft_export2(int line, int line_exp, int j)
+void	ft_export2(int line, int line_exp, int i)
 {
-	while (g_global.command[j])
+	while (g_global.command[i])
 	{
-		if (name_error(j) == -1)
+		if (is_valid(i) == -1)
 		{
 			printf("minishell: export: %s : not a valid identifier\n",
-				g_global.command[j++]);
+				g_global.command[i++]);
 			g_global.exit_status = 1;
 			continue ;
 		}
-		line = ft_path_founder(g_global.envp, g_global.command[j]);
-		line_exp = ft_path_founder(g_global.ex_path, g_global.command[j]);
+		line = ft_path_founder(g_global.envp, g_global.command[i]);
+		line_exp = ft_path_founder(g_global.ex_path, g_global.command[i]);
 		if (line != -1)
-			upenv(g_global.envp, j, 0);
+			upenv(g_global.envp, i, 0);
 		if (line_exp != -1)
-			upenv(g_global.ex_path, j, 1);
-		if (line == -1 && ft_env_controller(j))
-			ft_addenv(g_global.envp, j, 0);
+			upenv(g_global.ex_path, i, 1);
+		if (line == -1 && ft_env_controller(i))
+			ft_addenv(g_global.envp, i, 0);
 		if (line_exp == -1)
-			ft_addenv(g_global.ex_path, j, 1);
-		j++;
+			ft_addenv(g_global.ex_path, i, 1);
+		i++;
 	}
 }
 
 void	ft_export(void)
 {
-	int	j;
+	int	index;
 	int	line;
 	int	line_exp;
 
 	line = 0;
 	line_exp = 0;
-	j = 1;
-	ft_export2(line, line_exp, j);
+	index = 1;
+	ft_export2(line, line_exp, index);
 }

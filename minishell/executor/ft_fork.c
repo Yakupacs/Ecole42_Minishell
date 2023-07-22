@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:41 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/17 02:00:49 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 19:45:45 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ void	set_file_descriptor(int id)
 	{
 		dup2(g_global.all_pipe_fd[id][1], 1);
 		close_fd(id);
-		check_way();
+		execute2();
 	}
 	else if (id == g_global.pipe_c)
 	{
 		dup2(g_global.all_pipe_fd[id - 1][0], 0);
 		close_fd(id);
-		check_way();
+		execute2();
 	}
 	else
 	{
 		dup2(g_global.all_pipe_fd[id - 1][0], 0);
 		dup2(g_global.all_pipe_fd[id][1], 1);
 		close_fd(id);
-		check_way();
+		execute2();
 	}
 }
 

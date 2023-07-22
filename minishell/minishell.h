@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/22 11:24:23 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 19:50:14 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	close_fd2(int k, int i);
 void	close_fd3(int k, int i, int id);
 
 void	execute(void);
-void	check_way(void);
+void	execute2(void);
 int		builtin(void);
 
 void	ft_echo(void);
@@ -125,7 +125,7 @@ void	ft_export(void);
 void	ft_export2(int line, int line_exp, int j);
 int		ft_env_controller(int j);
 void	*ft_export_path(void);
-int		name_error(int j);
+int		is_valid(int j);
 
 void	ft_env(void);
 void	upenv(char **envp, int j, int flag);

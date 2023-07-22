@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/21 11:35:49 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 19:45:33 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_dollar_exit(void)
 		ft_execve();
 }
 
-void	check_way(void)
+void	execute2(void)
 {
 	int		status;
 
@@ -49,26 +49,23 @@ void	check_way(void)
 		check_dollar_exit();
 }
 
-/* WIFEXITED child process sonlanırsa 1 döner. */
-/* WEXITSTATUS child process'in exit değerini alır. */
-
 void	execute(void)
 {
-	int	status;
+	int	id;
 	int	i;
 
 	i = 0;
 	g_global.sighandler_flag = 1;
 	ft_command_line();
 	if (builtin() == -1)
-		status = fork();
+		id = fork();
 	else
 		return ;
 	g_global.execute_signal_flag = 1;
-	if (status == 0)
-		check_way();
+	if (id == 0)
+		execute2();
 	else
-		waitpid(status, &g_global.exit_status, 0);
+		waitpid(id, &g_global.exit_status, 0);
 	g_global.execute_signal_flag = 0;
 	if (WIFEXITED(g_global.exit_status) && i == 0)
 	{

@@ -6,13 +6,11 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:31 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/16 12:47:55 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 19:19:35 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-/* Command'leri tek tek uygun bir şekilde açılan yerlere dolduruyoruz. */
 
 void	ft_command_line2(t_command *temp, int i, int j)
 {
@@ -41,8 +39,6 @@ void	ft_command_line2(t_command *temp, int i, int j)
 	if (g_global.list->type == PIPE)
 		g_global.list = g_global.list->next;
 }
-
-/* Command ve redirection'lar için gerekli yer tahsis edilir. */
 
 void	ft_allocate_commands(t_command *temp, int i, int j)
 {
