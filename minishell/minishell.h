@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/22 11:06:38 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 11:24:23 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,7 @@ typedef struct s_global
 	int				exit_status;
 	char			*here_line;
 	int				*here_fd;
-	int				*exec_fd;
-	int				here_count;
-	char			*main_here_line;
 	int				main_here_size;
-	char			**dollars;
-	char			**dollar_line;
 	int				sig_flag;
 	int				error_flag;
 	int				heredoc_flag;
