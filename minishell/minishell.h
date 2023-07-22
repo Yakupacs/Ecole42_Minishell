@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 15:10:04 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/22 11:06:38 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,8 +139,6 @@ void	ft_delenv(char **envp, int j, int flag);
 void	ft_delenv2(char **new_envp, int flag);
 void	ft_addenv(char **envp, int j, int flag);
 int		env_counter(char **envp);
-
-char	*ft_strjoin2(char const *s1, char c);
 
 t_global	g_global;
 

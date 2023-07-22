@@ -1,6 +1,4 @@
 SRCS		=	ft_main.c \
-				ft_global.c \
-				ft_envp.c \
 				ft_signals.c \
 				ft_free.c \
 				ft_error.c \

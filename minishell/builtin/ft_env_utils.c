@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:17 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/20 18:36:46 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/21 12:39:45 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	ft_delenv(char **envp, int j, int flag)
 void	ft_addenv(char **envp, int j, int flag)
 {
 	int		i;
-	char	*force;
+	char	*new_element;
 	char	**new_envp;
 
 	i = 0;
-	force = ft_strdup(g_global.command[j]);
+	new_element = ft_strdup(g_global.command[j]);
 	new_envp = (char **)malloc(sizeof(char *) * (env_counter(envp) + 2));
 	while (envp[i])
 	{
@@ -63,7 +63,7 @@ void	ft_addenv(char **envp, int j, int flag)
 		free(envp[i]);
 		i++;
 	}
-	new_envp[i] = force;
+	new_envp[i] = new_element;
 	new_envp[i + 1] = NULL;
 	if (!flag)
 		g_global.envp = new_envp;
