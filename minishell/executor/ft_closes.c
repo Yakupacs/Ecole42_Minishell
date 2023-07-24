@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:28 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/24 09:24:48 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 11:38:22 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ void	close_fd2(int k, int i)
 		i = -1;
 	}
 }
-
-/*
-	close(g_global.all_pipe_fd[0][0])
-	close(g_global.all_pipe_fd[1][0])
-	close(g_global.all_pipe_fd[1][1])
-*/
 
 void	close_fd(int id)
 {
