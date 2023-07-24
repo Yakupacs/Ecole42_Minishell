@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:52 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/18 18:56:11 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 17:09:39 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_heredoc_readline(int i)
 			{
 				ft_putstr_fd(g_global.here_line, g_global.here_fd[1]);
 				ft_putstr_fd("\n", g_global.here_fd[1]);
-				g_global.main_here_size += ft_strlen(g_global.here_line);
 			}
 			free(g_global.here_line);
 		}
