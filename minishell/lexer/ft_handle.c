@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:23 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/15 00:08:35 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 11:32:13 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ int	handle_character(t_command **list, int (*checker)(char *))
 		if (checker && checker(&s[i]))
 		{
 			len = checker(&s[i]);
-			if (len == -1)
-				exit (1);
 			append_list(list, i, len);
 			return (1);
 		}
