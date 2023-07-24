@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:49 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/24 09:14:37 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 15:49:15 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_equal_finder(char *line, char *envp)
 		return (0);
 }
 
-char	*line_connect(char *arg)
+char	*invalid_cleaner(char *arg)
 {
 	int		i;
 	int		j;
@@ -47,7 +47,7 @@ char	*line_connect(char *arg)
 	return (line);
 }
 
-char	*ft_find_env2(char *line, char *arg, char *ret, int j)
+char	*ft_find_env2(char *line, char *arg, char *equal, int j)
 {
 	int		i;
 	int		len;
@@ -59,12 +59,12 @@ char	*ft_find_env2(char *line, char *arg, char *ret, int j)
 	{
 		if (ft_equal_finder(line, g_global.envp[i]) == 1)
 		{
-			ret = ft_strdup(g_global.envp[i] + len + 1);
-			temp = ret;
-			ret = ft_strjoin(ret, arg + j);
+			equal = ft_strdup(g_global.envp[i] + len + 1);
+			temp = equal;
+			equal = ft_strjoin(equal, arg + j);
 			free(temp);
 			free(arg);
-			return (ret);
+			return (equal);
 		}
 		i++;
 	}
@@ -82,7 +82,7 @@ char	*ft_find_env(char *arg)
 	ret = NULL;
 	while (arg[j] && (ft_isalnum(arg[j]) || arg[j] == '_'))
 		j++;
-	line = line_connect(arg);
+	line = invalid_cleaner(arg);
 	line_tmp = line;
 	ret = ft_find_env2(line, arg, ret, j);
 	line = ft_strdup("");

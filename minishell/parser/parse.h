@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:07:00 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/22 19:56:12 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 15:49:02 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ int			special_dollar(int i, char *prev_arg);
 void		ft_parse_variables(void);
 
 char		*ft_find_env(char *arg);
-char		*ft_find_env2(char *line, char *arg, char *ret, int j);
-char		*line_connect(char *arg);
+char		*ft_find_env2(char *line, char *arg, char *equal, int j);
+char		*invalid_cleaner(char *arg);
 int			ft_equal_finder(char *line, char *envp);
 
 void		ft_heredoc(void);

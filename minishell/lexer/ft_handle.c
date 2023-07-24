@@ -6,53 +6,53 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:23 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/24 11:32:13 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 14:38:20 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 #include "../parser/parse.h"
 
-t_command	*create_front(int st, int len, t_command **list, t_command *tmp)
+t_command	*create_back(int st, int len, t_command **list, t_command *tmp)
 {
-	t_command	*front;
+	t_command	*back;
 
-	front = p_lstnew(0, ft_substr((*list)->arg, (st + len),
+	back = p_lstnew(0, ft_substr((*list)->arg, (st + len),
 				(ft_strlen((*list)->arg) - (st + len))));
-	if (*front->arg)
-		front->next = tmp;
+	if (*back->arg)
+		back->next = tmp;
 	else
 	{
-		free(front->arg);
-		free(front);
-		front = tmp;
+		free(back->arg);
+		free(back);
+		back = tmp;
 	}
-	return (front);
+	return (back);
 }
 
 void	*append_list(t_command **list, int st, int len)
 {
-	char		*back;
+	char		*front;
 	char		*rdr;
-	t_command	*front;
+	t_command	*back;
 	t_command	*tmp;
 
 	tmp = (*list)->next;
-	front = create_front(st, len, list, tmp);
+	back = create_back(st, len, list, tmp);
 	rdr = ft_substr((*list)->arg, st, len);
 	if (st != 0)
 	{
-		back = ft_substr((*list)->arg, 0, st);
+		front = ft_substr((*list)->arg, 0, st);
 		free((*list)->arg);
-		(*list)->arg = back;
+		(*list)->arg = front;
 		(*list)->next = p_lstnew(0, rdr);
-		(*list)->next->next = front;
+		(*list)->next->next = back;
 	}
 	else
 	{
 		free((*list)->arg);
 		(*list)->arg = rdr;
-		(*list)->next = front;
+		(*list)->next = back;
 	}
 	return (NULL);
 }
