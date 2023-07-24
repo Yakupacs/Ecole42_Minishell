@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:58 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/18 15:10:29 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 18:01:33 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	ft_sighandler_quit(int sig)
 {
 	(void)sig;
-	if (g_global.sighandler_flag == 1)
+	if (g_global.sigquit_flag == 1)
 	{
 		printf("Quit: 3\n");
-		g_global.sighandler_flag = 0;
+		g_global.sigquit_flag = 0;
 	}
 }
 
 void	ft_sig_handler(int sig)
 {
-	if (sig == SIGINT && g_global.execute_signal_flag == 0)
+	if (sig == SIGINT && g_global.execute_flag == 0)
 	{
 		(void)sig;
 		g_global.signal_status = -1;

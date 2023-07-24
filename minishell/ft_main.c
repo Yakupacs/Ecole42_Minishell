@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:55 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/22 11:09:15 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 17:52:25 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	ft_init_global(char **envp, int flag)
 	g_global.here_fd = 0;
 	g_global.heredoc_flag = 0;
 	g_global.dollar_flag = 0;
-	g_global.sighandler_flag = 0;
-	g_global.execute_signal_flag = 0;
+	g_global.sigquit_flag = 0;
+	g_global.execute_flag = 0;
 }
 
 int	continue_loop(t_command *cpy_g_global_list)

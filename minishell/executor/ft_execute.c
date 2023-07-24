@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:02:36 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/23 18:48:53 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 17:52:45 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ void	execute(void)
 	int	i;
 
 	i = 0;
-	g_global.sighandler_flag = 1;
+	g_global.sigquit_flag = 1;
 	ft_command_line();
 	if (builtin() == -1)
 		id = fork();
 	else
 		return ;
-	g_global.execute_signal_flag = 1;
+	g_global.execute_flag = 1;
 	if (id == 0)
 		execute2();
 	else
 		waitpid(id, &g_global.exit_status, 0);
-	g_global.execute_signal_flag = 0;
+	g_global.execute_flag = 0;
 	if (WIFEXITED(g_global.exit_status) && i == 0)
 	{
 		g_global.exit_status = WEXITSTATUS(g_global.exit_status);

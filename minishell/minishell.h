@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/24 17:09:42 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 17:52:40 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ typedef struct s_global
 	char			**heredoc;
 	char			**command;
 	char			**redirection;
-	int				signal_status;
 	int				**all_pipe_fd;
 	int				fd;
 	int				pipe_c;
 	int				*pipe_id;
-	int				exit_status;
 	char			*here_line;
 	int				*here_fd;
+	int				exit_status;
+	int				signal_status;
 	int				sig_flag;
 	int				error_flag;
 	int				heredoc_flag;
 	int				dollar_flag;
-	int				sighandler_flag;
-	int				execute_signal_flag;
+	int				sigquit_flag;
+	int				execute_flag;
 }	t_global;
 
 void	loop(void);
