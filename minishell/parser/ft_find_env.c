@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:06:49 by ikayacio          #+#    #+#             */
-/*   Updated: 2023/07/19 19:53:21 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 09:14:37 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ char	*line_connect(char *arg)
 
 	i = 0;
 	j = 0;
-	while (arg[i] && ft_isalnum(arg[i]))
+	while (arg[i] && (ft_isalnum(arg[i]) || arg[i] == '_'))
 		i++;
 	line = malloc(sizeof(char) * i + 1);
 	i = 0;
-	while (arg[j] && ft_isalnum(arg[j]))
+	while (arg[j] && (ft_isalnum(arg[i]) || arg[i] == '_'))
 	{
 		line[i] = arg[j];
 		i++;
@@ -80,7 +80,7 @@ char	*ft_find_env(char *arg)
 
 	j = 0;
 	ret = NULL;
-	while (arg[j] && ft_isalnum(arg[j]))
+	while (arg[j] && (ft_isalnum(arg[j]) || arg[j] == '_'))
 		j++;
 	line = line_connect(arg);
 	line_tmp = line;
