@@ -6,13 +6,13 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:58 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/24 18:01:33 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 18:04:46 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_sighandler_quit(int sig)
+void	ft_sigquit(int sig)
 {
 	(void)sig;
 	if (g_global.sigquit_flag == 1)
@@ -22,7 +22,7 @@ void	ft_sighandler_quit(int sig)
 	}
 }
 
-void	ft_sig_handler(int sig)
+void	ft_sighandler(int sig)
 {
 	if (sig == SIGINT && g_global.execute_flag == 0)
 	{

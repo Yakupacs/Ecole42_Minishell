@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:04:55 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/24 17:52:25 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 18:04:42 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ int	main(int ac, char **av, char **envp)
 {
 	(void)ac;
 	(void)av;
-	signal(SIGINT, ft_sig_handler);
-	signal(SIGQUIT, ft_sighandler_quit);
+	signal(SIGINT, ft_sighandler);
+	signal(SIGQUIT, ft_sigquit);
 	g_global.exit_status = 1;
 	ft_init_global(envp, 1);
 	loop();

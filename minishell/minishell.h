@@ -6,7 +6,7 @@
 /*   By: yacis <yacis@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 00:05:01 by yacis             #+#    #+#             */
-/*   Updated: 2023/07/24 17:52:40 by yacis            ###   ########.fr       */
+/*   Updated: 2023/07/24 18:04:49 by yacis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	exec_shell(int status);
 void	ft_init_global(char **envp, int flag);
 char	**copy_env(char **envp);
 
-void	ft_sig_handler(int sig);
-void	ft_sighandler_quit(int sig);
+void	ft_sighandler(int sig);
+void	ft_sigquit(int sig);
 
 int		ft_lexer(void);
 
